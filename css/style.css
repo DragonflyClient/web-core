@@ -25,7 +25,8 @@ html,
 body {
   width: 100%;
   font-family: Rubik;
-  background-color: var(--clr-bg);
+  background-color: #f5f6fa;
+  overflow-x: hidden;
 }
 
 /* GLOBAL CLASSES */
@@ -111,10 +112,12 @@ li {
   font-size: 1.3em;
   transition: transform 0.5s ease;
   position: relative;
+  transform-origin: center;
 }
 .nav a {
   color: white;
   text-decoration: none;
+  transform-origin: center;
 }
 
 .nav li::after {
@@ -279,33 +282,50 @@ video {
 .features {
   padding: 70px 0;
   text-align: center;
+  z-index: 999;
 }
 .container {
   margin-top: -10px;
   border: 2px solid var(--clr-fg);
 }
 .big-cont {
-  margin: 0 100px;
+  padding: 0 30px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+}
+.big-cont:nth-child(2)::after,
+.big-cont:nth-child(3)::after {
+  content: '';
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+  height: 3px;
+  top: -30px;
+  left: 24.5%;
+  background-color: rgb(161, 158, 158);
+  position: absolute;
 }
 .big-cont + .big-cont {
   margin-top: 100px;
 }
 .desc {
-  margin: 20px 0px;
+  margin: 10px 0px;
   color: var(--clr-fg);
   font-weight: 400;
 }
 .desc h2 {
-  font-size: 25px;
+  font-size: 26px;
   font-weight: 400;
-  color: #fff;
+  color: rgb(0, 0, 0);
 }
 .desc p {
   font-weight: normal;
-  font-size: 14px;
-  margin-bottom: 10px;
+  font-size: 16px;
   margin: 0 10px;
-  margin-bottom: 0;
+  margin-bottom: 20px;
+  color: #292828;
 }
 .f-heading {
   display: inline;
@@ -313,7 +333,7 @@ video {
 }
 .f-intro {
   color: white;
-  margin: 50px 0;
+  margin: 20px 0;
 }
 .f-intro p {
   color: rgb(214, 214, 214);
@@ -375,7 +395,7 @@ video {
     align-items: center;
   }
   .nav li {
-    font-size: 20px;
+    font-size: 18px;
     cursor: pointer;
   }
   .nav li a {
@@ -396,7 +416,7 @@ video {
   }
   .landing {
     width: 100%;
-    height: 100vh;
+    height: 110vh;
     background-image: url(../assets/img/tabl-bg2.png);
     background-position: center;
     background-size: cover;
@@ -414,6 +434,12 @@ video {
     margin-left: 15%;
   }
   .t-shape {
+    /*height: 110%;
+    bottom: -400px;
+    object-fit: cover;
+    background-color: #f5f6fa;
+    clip-path: polygon(70% 0%, 70% 50%, 70% 100%, 41% 100%, 45% 49%, 41% 0%);
+    transform: rotate(90deg);*/
     display: none;
   }
   .cta-container {
@@ -433,8 +459,19 @@ video {
   .cta {
     padding: 12px 30px;
   }
+  .desc h2 {
+    font-size: 35px;
+  }
+  .desc p {
+    font-size: 20px;
+  }
 }
-@media (min-width: 920px) {
+@media (min-width: 950px) {
+  .t-shape {
+    display: none;
+  }
+}
+@media (min-width: 1050px) {
   .slider-wrapper {
     display: flex;
     flex-direction: column;
@@ -443,26 +480,24 @@ video {
     width: 100%;
     margin: 0 auto;
   }
-  .f-heading {
-    font-size: 55px;
-  }
-  .f-heading::before {
-    top: 50px;
-    left: 4px;
-    height: 2px;
-  }
   .big-cont {
+    width: 100%;
+    max-width: 1100px;
     display: grid;
     grid-template-columns: 500px 1fr;
   }
   .desc {
     grid-area: 1/2/1/2;
     text-align: left;
-    margin-top: 0;
-    margin-left: 10px;
+    margin-top: -10px;
+    margin-left: 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
   }
   .desc h2 {
-    text-decoration: underline;
     margin-left: 10px;
     margin-bottom: 10px;
     font-size: 35px;
@@ -487,6 +522,10 @@ video {
     align-items: center;
     margin-right: 50px;
   }
+  .nav li {
+    font-size: 20px;
+    cursor: pointer;
+  }
   video {
     display: block;
   }
@@ -497,11 +536,11 @@ video {
     display: none;
   }
   .hero-desc h1 {
-    font-size: 90px;
+    font-size: 70px;
   }
   .hero-desc p {
     width: 500px;
-    font-size: 23px;
+    font-size: 22px;
   }
   .landing .hero-desc,
   .cta-container {
@@ -509,31 +548,21 @@ video {
     margin-left: 20%;
   }
   .cta {
-    font-size: 22px;
-    padding: 15px 30px;
+    font-size: 20px;
+    padding: 12px 25px;
   }
   .cta + .cta {
     margin-left: 30px;
   }
+  .big-cont:nth-child(2)::after,
+  .big-cont:nth-child(3)::after {
+    content: '';
+    display: none;
+  }
 }
-@media (min-width: 1650px) {
-  .slider-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 500px 500px;
-    justify-content: center;
-    align-content: center;
-    width: 95%;
-  }
-  .big-cont {
-    margin-top: 0 !important;
-    margin: 0 30px;
-    padding: 0;
-  }
-  .desc {
-    margin-left: 20px;
-  }
-  .desc p {
-    max-width: 300px;
+@media (min-width: 1250px) {
+  .cta {
+    font-size: 22px;
+    padding: 12px 30px;
   }
 }
