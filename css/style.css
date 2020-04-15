@@ -39,7 +39,7 @@ li {
 }
 .s-heading {
   color: white;
-  font-size: 52px;
+  font-size: 36px;
   font-weight: 500;
   letter-spacing: -3px;
   text-transform: uppercase;
@@ -149,6 +149,8 @@ li {
   width: 25px;
   height: 25px;
   margin-right: 15px;
+
+  cursor: pointer;
 }
 .ham-active .line1 {
   transform: rotate(45deg);
@@ -283,7 +285,7 @@ video {
   border: 2px solid var(--clr-fg);
 }
 .big-cont {
-  margin: 0 30px;
+  margin: 0 100px;
 }
 .big-cont + .big-cont {
   margin-top: 100px;
@@ -315,14 +317,16 @@ video {
 }
 .f-intro p {
   color: rgb(214, 214, 214);
+  font-size: 15px;
+  padding: 0 20px;
 }
 .f-heading::before {
   content: '';
   position: absolute;
-  top: 49px;
-  left: 0%;
+  top: 34px;
+  left: 2px;
   height: 2px;
-  width: 100%;
+  width: 99%;
   background-color: #fff;
   transition: transform 0.5s ease;
   transform-origin: left;
@@ -429,22 +433,46 @@ video {
   .cta {
     padding: 12px 30px;
   }
+}
+@media (min-width: 920px) {
   .slider-wrapper {
     display: flex;
-    /* flex-direction: column; */
-    padding: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     margin: 0 auto;
-    width: 90%;
+  }
+  .f-heading {
+    font-size: 55px;
+  }
+  .f-heading::before {
+    top: 50px;
+    left: 4px;
+    height: 2px;
   }
   .big-cont {
-    width: 550px;
+    display: grid;
+    grid-template-columns: 500px 1fr;
   }
-  .big-cont img {
-    width: auto;
-    height: 300px;
+  .desc {
+    grid-area: 1/2/1/2;
+    text-align: left;
+    margin-top: 0;
+    margin-left: 10px;
   }
-  .big-cont + .big-cont {
-    margin-top: 0px;
+  .desc h2 {
+    text-decoration: underline;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    font-size: 35px;
+  }
+  .desc p {
+    font-size: 18px;
+    max-width: 500px;
+  }
+  .container {
+    width: 500px;
   }
 }
 @media (min-width: 950px) {
@@ -472,7 +500,7 @@ video {
     font-size: 90px;
   }
   .hero-desc p {
-    max-width: 800px;
+    width: 500px;
     font-size: 23px;
   }
   .landing .hero-desc,
@@ -488,5 +516,24 @@ video {
     margin-left: 30px;
   }
 }
-@media (min-width: 2020px) {
+@media (min-width: 1650px) {
+  .slider-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 500px 500px;
+    justify-content: center;
+    align-content: center;
+    width: 95%;
+  }
+  .big-cont {
+    margin-top: 0 !important;
+    margin: 0 30px;
+    padding: 0;
+  }
+  .desc {
+    margin-left: 20px;
+  }
+  .desc p {
+    max-width: 300px;
+  }
 }
