@@ -16,6 +16,7 @@ ham.classList.remove('ham-active');
 /* Eventlisteners */
 ham.addEventListener('click', toggleNav);
 
+/* Functions */
 function toggleNav() {
   nav.classList.toggle('nav-active');
   ham.classList.toggle('ham-active');
@@ -28,3 +29,8 @@ function closeMenu(e) {
   ham.classList.toggle('ham-active');
   e.preventDefault();
 }
+
+window.addEventListener('load', function () {
+  const loader = document.querySelector('.pre-loader');
+  loader.classList.add('pl-hide');
+})
