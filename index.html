@@ -1,172 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inception Cloud Minecraft Mod</title>
+    <link rel="icon" href="assets/logo.svg" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Inception Cloud Minecraft Mod</title>
-  <link rel="icon" href="assets/logo.svg" />
+    <!-- link stylesheet -->
+    <link rel="stylesheet" href="./css/style.css" />
 
-  <!-- link stylesheet -->
-  <link rel="stylesheet" href="./css/style.css" />
+    <!-- twentytwenty-master -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="./twentytwenty-master/js/jquery.event.move.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="./twentytwenty-master/js/jquery.twentytwenty.js"
+      type="text/javascript"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="./twentytwenty-master/css/twentytwenty.css"
+      type="text/css"
+      media="screen"
+    />
+  </head>
 
-  <!-- twentytwenty-master -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
-  <script src="./twentytwenty-master/js/jquery.event.move.js" type="text/javascript"></script>
-  <script src="./twentytwenty-master/js/jquery.twentytwenty.js" type="text/javascript"></script>
-  <link rel="stylesheet" href="./twentytwenty-master/css/twentytwenty.css" type="text/css" media="screen" />
-</head>
-
-<body>
-
-  <div class="pre-loader">
-    <div class="pre-loader-point"></div>
-    <div class="pre-loader-point"></div>
-    <div class="pre-loader-point"></div>
-  </div>
-  <div class="header">
-    <div class="upper-wrapper">
-      <div class="logo">
-        <img src="assets/logo-header.svg" alt="" />
-      </div>
-      <div class="ham-wrapper">
-        <div class="line line1"></div>
-        <div class="line line2"></div>
-        <div class="line line3"></div>
-      </div>
+  <body>
+    <div class="pre-loader">
+      <div class="pre-loader-point"></div>
+      <div class="pre-loader-point"></div>
+      <div class="pre-loader-point"></div>
     </div>
-    <div class="nav">
-      <ul>
-        <li class="item" onclick="closeMenu()">
-          <a href="#features">Features</a>
-        </li>
-        <li class="item" onclick="closeMenu()"><a href="#faq">FAQ</a></li>
-        <li class="item" onclick="closeMenu()">
-          <a href="/download">Download</a>
-        </li>
-        <div class="socials">
-          <a href="https://instagram.com/inceptioncloud" target="_blank">
-            <i class="fab fa-instagram"></i></a>
-          <a href="https://twitter.com/inceptioncloud" target="_blank">
-            <i class="fab fa-twitter"></i></a>
-          <a href="https://discord.gg/VS2eN2z" target="_blank">
-            <i class="fab fa-discord"></i></a>
+    <div class="header">
+      <div class="upper-wrapper">
+        <div class="logo">
+          <img src="assets/logo-header.svg" alt="" />
         </div>
-      </ul>
-    </div>
-  </div>
-  <video class="desktop-only landing-vid" src="assets/video.mp4" autoplay muted loop></video>
-  <div class="landing">
-    <div class="hero-img">
-      <img src="./assets/Logo-Main.svg" alt="logo" />
-    </div>
-    <div class="hero-desc">
-      <h1 class="hero">
-        A NEW<br />
-        EXPERIENCE
-      </h1>
-      <p>
-        Play Minecraft with useful features and rolling animations without
-        having to worry about your performance.
-      </p>
-    </div>
-    <div class="cta-container">
-      <a href="/download" class="cta cta-download"><i class="fas fa-download"></i>Download</a>
-      <a href="#faq" class="cta cta-faq">FAQ</a>
-    </div>
-    <div class="arrow-down">
-      <a href="#features"><i class="fas fa-angle-right"></i></a>
-    </div>
-    <div class="t-shape"></div>
-  </div>
-  <div class="features" id="features">
-    <div class="slider-wrapper">
-      <div class="big-cont">
-        <div class="desc">
-          <h2>Main Menu</h2>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Temporibus quod, laboriosam dolores, iure fugit unde culpa optio
-            perferendis cumque, quaerat ratione inventore veniam! Incidunt
-            nihil ducimus nobis quisquam doloremque totam? Officiis, ratione.
-            Sit id ea earum? Odit velit nesciunt eligendi cupiditate ipsam
-            exercitationem aut fugiat harum animi aliquid ratione id quo est,
-            unde modi incidunt, sunt earum. Ipsum, nostrum sit!
-          </p>
-        </div>
-        <div class="container" id="container1">
-          <img src="assets/img/first-main-menu.png" alt="" />
-          <img src="assets/img/second-main-menu.png" alt="" />
+        <div class="ham-wrapper">
+          <div class="line line1"></div>
+          <div class="line line2"></div>
+          <div class="line line3"></div>
         </div>
       </div>
-      <div class="big-cont">
-        <div class="desc">
-          <h2>Ingame Menu</h2>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Temporibus quod, laboriosam dolores, iure fugit unde culpa optio
-            perferendis cumque, quaerat ratione inventore veniam! Incidunt
-            nihil ducimus nobis quisquam doloremque totam? Officiis, ratione.
-            Sit id ea earum? Odit velit nesciunt eligendi cupiditate ipsam
-            exercitationem aut fugiat harum animi aliquid ratione id quo est,
-            unde modi incidunt, sunt earum. Ipsum, nostrum sit!
-          </p>
-        </div>
-        <div class="container" id="container2">
-          <img src="assets/img/first-ingame-menu.png" alt="" />
-          <img src="assets/img/second-ingame-menu.png" alt="" />
-        </div>
+      <div class="nav nav-active">
+        <ul>
+          <li class="item" onclick="closeMenu()">
+            <a href="#features">Features</a>
+          </li>
+          <li class="item" onclick="closeMenu()"><a href="#faq">FAQ</a></li>
+          <li class="item" onclick="closeMenu()">
+            <a href="/download">Download</a>
+          </li>
+          <div class="socials">
+            <a href="https://instagram.com/inceptioncloud" target="_blank">
+              <i class="fab fa-instagram"></i
+            ></a>
+            <a href="https://twitter.com/inceptioncloud" target="_blank">
+              <i class="fab fa-twitter"></i
+            ></a>
+            <a href="https://discord.gg/VS2eN2z" target="_blank">
+              <i class="fab fa-discord"></i
+            ></a>
+          </div>
+        </ul>
       </div>
-      <div class="big-cont">
-        <div class="desc">
-          <h2>Advanced Tablist</h2>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Temporibus quod, laboriosam dolores, iure fugit unde culpa optio
-            perferendis cumque, quaerat ratione inventore veniam! Incidunt
-            nihil ducimus nobis quisquam doloremque totam? Officiis, ratione.
-            Sit id ea earum? Odit velit nesciunt eligendi cupiditate ipsam
-            exercitationem aut fugiat harum animi aliquid ratione id quo est,
-            unde modi incidunt, sunt earum. Ipsum, nostrum sit!
-          </p>
+    </div>
+    <video
+      class="desktop-only landing-vid"
+      src="assets/video.mp4"
+      autoplay
+      muted
+      loop
+    ></video>
+    <div class="landing">
+      <div class="hero-img">
+        <img src="./assets/Logo-Main.svg" alt="logo" />
+      </div>
+      <div class="hero-desc">
+        <h1 class="hero">
+          A NEW<br />
+          EXPERIENCE
+        </h1>
+        <p>
+          Play Minecraft with useful features and rolling animations without
+          having to worry about your performance.
+        </p>
+      </div>
+      <div class="cta-container">
+        <a href="/download" class="cta cta-download"
+          ><i class="fas fa-download"></i>Download</a
+        >
+        <a href="#faq" class="cta cta-faq">FAQ</a>
+      </div>
+      <div class="arrow-down">
+        <a href="#features"><i class="fas fa-angle-right"></i></a>
+      </div>
+      <div class="t-shape"></div>
+    </div>
+    <div class="features" id="features">
+      <div class="slider-wrapper">
+        <div class="big-cont">
+          <div class="desc">
+            <h2>Main Menu</h2>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Temporibus quod, laboriosam dolores, iure fugit unde culpa optio
+              perferendis cumque, quaerat ratione inventore veniam! Incidunt
+              nihil ducimus nobis quisquam doloremque totam? Officiis, ratione.
+              Sit id ea earum? Odit velit nesciunt eligendi cupiditate ipsam
+              exercitationem aut fugiat harum animi aliquid ratione id quo est,
+              unde modi incidunt, sunt earum. Ipsum, nostrum sit!
+            </p>
+          </div>
+          <div class="container" id="container1">
+            <img src="assets/img/first-main-menu.png" alt="" />
+            <img src="assets/img/second-main-menu.png" alt="" />
+          </div>
         </div>
-        <div class="container" id="container3">
-          <img src="assets/img/first-tablist.png" alt="" />
-          <img src="assets/img/second-tablist.png" alt="" />
+        <div class="big-cont">
+          <div class="desc">
+            <h2>Ingame Menu</h2>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Temporibus quod, laboriosam dolores, iure fugit unde culpa optio
+              perferendis cumque, quaerat ratione inventore veniam! Incidunt
+              nihil ducimus nobis quisquam doloremque totam? Officiis, ratione.
+              Sit id ea earum? Odit velit nesciunt eligendi cupiditate ipsam
+              exercitationem aut fugiat harum animi aliquid ratione id quo est,
+              unde modi incidunt, sunt earum. Ipsum, nostrum sit!
+            </p>
+          </div>
+          <div class="container" id="container2">
+            <img src="assets/img/first-ingame-menu.png" alt="" />
+            <img src="assets/img/second-ingame-menu.png" alt="" />
+          </div>
+        </div>
+        <div class="big-cont">
+          <div class="desc">
+            <h2>Advanced Tablist</h2>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Temporibus quod, laboriosam dolores, iure fugit unde culpa optio
+              perferendis cumque, quaerat ratione inventore veniam! Incidunt
+              nihil ducimus nobis quisquam doloremque totam? Officiis, ratione.
+              Sit id ea earum? Odit velit nesciunt eligendi cupiditate ipsam
+              exercitationem aut fugiat harum animi aliquid ratione id quo est,
+              unde modi incidunt, sunt earum. Ipsum, nostrum sit!
+            </p>
+          </div>
+          <div class="container" id="container3">
+            <img src="assets/img/first-tablist.png" alt="" />
+            <img src="assets/img/second-tablist.png" alt="" />
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- Twenty Twenty Master -->
-  <script>
-    $(window).on('load', function () {
-      $('.container').twentytwenty({
-        default_offset_pct: 0.5, // How much of the before image is visible when the page loads
-        orientation: 'horizontal', // Orientation of the before and after images ('horizontal' or 'vertical')
-        before_label: 'Minecraft Mod', // Set a custom before label
-        after_label: 'Vanilla Minecraft', // Set a custom after label
-        no_overlay: true, //Do not show the overlay with before and after
-        move_slider_on_hover: true, // Move slider on mouse hover?
-        move_with_handle_only: true, // Allow a user to swipe anywhere on the image to control slider movement.
-        click_to_move: false, // Allow a user to click (or tap) anywhere on the image to move the slider to that location.
+    <!-- Twenty Twenty Master -->
+    <script>
+      $(window).on('load', function () {
+        $('.container').twentytwenty({
+          default_offset_pct: 0.5, // How much of the before image is visible when the page loads
+          orientation: 'horizontal', // Orientation of the before and after images ('horizontal' or 'vertical')
+          before_label: 'Minecraft Mod', // Set a custom before label
+          after_label: 'Vanilla Minecraft', // Set a custom after label
+          no_overlay: true, //Do not show the overlay with before and after
+          move_slider_on_hover: true, // Move slider on mouse hover?
+          move_with_handle_only: true, // Allow a user to swipe anywhere on the image to control slider movement.
+          click_to_move: false, // Allow a user to click (or tap) anywhere on the image to move the slider to that location.
+        });
       });
-    });
-  </script>
-  <!-- Fontawesome -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+    </script>
+    <!-- Fontawesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
 
-  <!-- Local js -->
-  <script src="./main.js"></script>
+    <!-- Local js -->
+    <script src="./main.js"></script>
 
-  <!-- SmoothScroll API -->
-  <script
-    src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
-  <script>
-    var scroll = new SmoothScroll('a[href*="#"]', {
-      speed: 1000,
-      speedAsDuration: false,
-    });
-  </script>
-</body>
-
+    <!-- SmoothScroll API -->
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
+    <script>
+      var scroll = new SmoothScroll('a[href*="#"]', {
+        speed: 1000,
+        speedAsDuration: false,
+      });
+    </script>
+  </body>
 </html>

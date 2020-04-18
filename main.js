@@ -23,7 +23,6 @@ function toggleNav() {
   socials.classList.toggle('socials-active');
   event.preventDefault();
 }
-
 function closeMenu(e) {
   nav.classList.toggle('nav-active');
   ham.classList.toggle('ham-active');
@@ -33,4 +32,4 @@ function closeMenu(e) {
 window.addEventListener('load', function () {
   const loader = document.querySelector('.pre-loader');
   loader.classList.add('pl-hide');
-})
+});
