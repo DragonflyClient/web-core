@@ -63,14 +63,11 @@ li {
   background-color: var(--clr-primary);
   animation: jump 700ms infinite;
 }
-.pre-loader-point:nth-child(1) {
+.pre-loader-point:nth-child(2) {
   animation-delay: 0.1s;
 }
-.pre-loader-point:nth-child(2) {
-  animation-delay: 0.2s;
-}
 .pre-loader-point:nth-child(3) {
-  animation-delay: 0.3s;
+  animation-delay: 0.2s;
 }
 .pl-hide {
   animation: fadeOut 700ms;
@@ -87,14 +84,14 @@ li {
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-20px);
+    transform: translateY(15px);
   }
   100% {
     transform: translateY(0px);
   }
 }
 .pre-loader-point + .pre-loader-point {
-  margin-left: 20px;
+  margin-left: 30px;
 }
 .header {
   position: fixed;
@@ -113,6 +110,7 @@ li {
   display: flex;
   width: 100%;
   height: 60px;
+  z-index: 9999;
 
   justify-content: space-between;
   align-items: center;
@@ -122,6 +120,7 @@ li {
   width: 100%;
   height: 100vh;
   position: fixed;
+  z-index: 9998;
   right: -100vh;
   visibility: hidden;
   background-color: var(--clr-pdark);
@@ -232,7 +231,6 @@ li {
 .landing {
   width: 100%;
   height: 100vh;
-  margin-bottom: -95px;
   padding-top: 90px;
   background-image: linear-gradient(
     180deg,
@@ -331,7 +329,7 @@ video {
   }
 }
 .features {
-  padding: 120px 0;
+  padding: 70px 0;
   text-align: center;
   z-index: 999;
 }
@@ -454,19 +452,12 @@ video {
   .nav {
     transition: 500ms cubic-bezier(0.98, -0.25, 0.27, 1);
   }
-  .landing {
-    margin-bottom: -20px !important;
-  }
 }
 @media (min-width: 650px) {
   .header,
   .upper-wrapper {
     height: 90px;
     display: flex;
-  }
-  .upper-wrapper {
-    width: 50%;
-    z-index: 9999;
   }
   .nav {
     background-color: unset;
@@ -625,44 +616,5 @@ video {
   .nav li {
     font-size: 20px;
     cursor: pointer;
-  }
-  video {
-    display: block;
-  }
-  .landing {
-    background-image: none;
-  }
-  .arrow-down {
-    display: none;
-  }
-  .hero-desc h1 {
-    font-size: 70px;
-  }
-  .hero-desc p {
-    width: 500px;
-    font-size: 22px;
-  }
-  .landing .hero-desc,
-  .cta-container {
-    padding: 0;
-    margin-left: 20%;
-  }
-  .cta {
-    font-size: 20px;
-    padding: 12px 25px;
-  }
-  .cta + .cta {
-    margin-left: 30px;
-  }
-  .big-cont:nth-child(2)::after,
-  .big-cont:nth-child(3)::after {
-    content: '';
-    display: none;
-  }
-}
-@media (min-width: 1250px) {
-  .cta {
-    font-size: 22px;
-    padding: 12px 30px;
   }
 }
