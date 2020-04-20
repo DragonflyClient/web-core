@@ -5,21 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inception Cloud Minecraft Mod</title>
     <link rel="icon" href="assets/logo.svg" />
-
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!-- link stylesheet -->
     <link rel="stylesheet" href="./css/style.css" />
 
     <!-- twentytwenty-master -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
-      type="text/javascript"
-    ></script>
-    <script
-      src="./twentytwenty-master/js/jquery.event.move.js"
-      type="text/javascript"
-    ></script>
-    <script
-      src="./twentytwenty-master/js/jquery.twentytwenty.js"
       type="text/javascript"
     ></script>
     <link
@@ -36,7 +29,7 @@
       <div class="pre-loader-point"></div>
       <div class="pre-loader-point"></div>
     </div>
-    <div class="header">
+    <div class="header" data-aos="fade-down">
       <div class="upper-wrapper">
         <div class="logo">
           <a href="/"><img src="assets/logo-header.svg" alt="" /></a>
@@ -50,9 +43,9 @@
       <div class="nav">
         <ul>
           <li class="item" onclick="closeMenu()">
-            <a href="#features">Features</a>
+            <a href="/patchnotes">Updates</a>
           </li>
-          <li class="item" onclick="closeMenu()"><a href="#faq">FAQ</a></li>
+          <li class="item" onclick="closeMenu()"><a href="/#faq">FAQ</a></li>
           <li class="item" onclick="closeMenu()">
             <a href="/download">Download</a>
           </li>
@@ -78,10 +71,10 @@
       loop
     ></video>
     <div class="landing">
-      <div class="hero-img">
+      <div class="hero-img" data-aos="fade-up">
         <img src="./assets/Logo-Main.svg" alt="logo" />
       </div>
-      <div class="hero-desc">
+      <div class="hero-desc" data-aos="fade-up">
         <h1 class="hero">
           A NEW<br />
           EXPERIENCE
@@ -91,7 +84,7 @@
           having to worry about your performance.
         </p>
       </div>
-      <div class="cta-container">
+      <div class="cta-container" data-aos="fade-up">
         <a href="/download" class="cta cta-download"
           ><i class="fas fa-download"></i>Download</a
         >
@@ -104,17 +97,14 @@
     </div>
     <div class="features" id="features">
       <div class="slider-wrapper">
-        <div class="big-cont">
+        <div class="big-cont" data-aos="zoom-in">
           <div class="desc">
             <h2>Main Menu</h2>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Temporibus quod, laboriosam dolores, iure fugit unde culpa optio
-              perferendis cumque, quaerat ratione inventore veniam! Incidunt
-              nihil ducimus nobis quisquam doloremque totam? Officiis, ratione.
-              Sit id ea earum? Odit velit nesciunt eligendi cupiditate ipsam
-              exercitationem aut fugiat harum animi aliquid ratione id quo est,
-              unde modi incidunt, sunt earum. Ipsum, nostrum sit!
+              The menu has been completely revised and redesigned in the colors
+              of InceptionCloud. Cool animations leave the main menu nice and
+              clear. The direct connect makes it easier for you to join the
+              desired server or world immediately.
             </p>
           </div>
           <div class="container" id="container1">
@@ -122,17 +112,14 @@
             <img src="assets/img/second-main-menu.png" alt="" />
           </div>
         </div>
-        <div class="big-cont">
+        <div class="big-cont" data-aos="zoom-in">
           <div class="desc">
             <h2>Ingame Menu</h2>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Temporibus quod, laboriosam dolores, iure fugit unde culpa optio
-              perferendis cumque, quaerat ratione inventore veniam! Incidunt
-              nihil ducimus nobis quisquam doloremque totam? Officiis, ratione.
-              Sit id ea earum? Odit velit nesciunt eligendi cupiditate ipsam
-              exercitationem aut fugiat harum animi aliquid ratione id quo est,
-              unde modi incidunt, sunt earum. Ipsum, nostrum sit!
+              The in-game menu has also been completely revised and redesigned
+              in the InceptionCloud colors. Again we have added some cool
+              animations. We also removed the "Open to LAN" button and replaced
+              it with the InceptionCloud mod options.
             </p>
           </div>
           <div class="container" id="container2">
@@ -140,17 +127,14 @@
             <img src="assets/img/second-ingame-menu.png" alt="" />
           </div>
         </div>
-        <div class="big-cont">
+        <div class="big-cont" data-aos="zoom-in">
           <div class="desc">
             <h2>Advanced Tablist</h2>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Temporibus quod, laboriosam dolores, iure fugit unde culpa optio
-              perferendis cumque, quaerat ratione inventore veniam! Incidunt
-              nihil ducimus nobis quisquam doloremque totam? Officiis, ratione.
-              Sit id ea earum? Odit velit nesciunt eligendi cupiditate ipsam
-              exercitationem aut fugiat harum animi aliquid ratione id quo est,
-              unde modi incidunt, sunt earum. Ipsum, nostrum sit!
+              We also made an effort with the tab list. An animation will make
+              it appear cool and smooth on your screen. As a player, you will be
+              marked with a golden apple in the tab list. If you are in a party,
+              this is shown by a cake.
             </p>
           </div>
           <div class="container" id="container3">
@@ -187,6 +171,25 @@
       var scroll = new SmoothScroll('a[href*="#"]', {
         speed: 1000,
         speedAsDuration: false,
+      });
+    </script>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        // Global settings:
+        startEvent: 'DOMContentLoaded',
+        debounceDelay: 50,
+        throttleDelay: 99,
+
+        offset: 0,
+        delay: 0,
+        duration: 450,
+        easing: 'ease',
+        once: true,
+        mirror: false,
+        anchorPlacement: 'top-bottom',
       });
     </script>
   </body>
