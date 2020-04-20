@@ -594,7 +594,7 @@ video {
 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: start;
     height: 100%;
   }
   .desc h2 {
@@ -616,7 +616,7 @@ video {
   }
   .nav ul {
     height: 90px;
-    width: 400px;
+    width: 550px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -660,6 +660,11 @@ video {
     display: none;
   }
 }
+/* @media (max-width: 950px) {
+  .pre-loader {
+    display: none;
+  }
+} */
 @media (min-width: 1250px) {
   .cta {
     font-size: 22px;

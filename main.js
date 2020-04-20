@@ -33,3 +33,5 @@ window.addEventListener('load', function () {
   const loader = document.querySelector('.pre-loader');
   loader.classList.add('pl-hide');
 });
+
+// AOS
