@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  outline: none;
 }
 :root {
   /* For writing text on either the background or the primary color.*/
@@ -332,6 +333,7 @@ video {
 }
 .features {
   padding: 120px 0;
+  padding-bottom: 0;
   text-align: center;
   z-index: 999;
 }
@@ -406,31 +408,73 @@ video {
   transition: transform 0.5s ease;
   transform-origin: left;
 }
-/* Not found page */
-.pnf-wrapper {
-  text-align: center;
-  width: 100%;
+/* FAQ Section */
+.faq {
+  margin: 250px 0;
+  margin-bottom: 0;
   height: 100vh;
+  position: relative;
+  background-color: var(--clr-primary);
+}
+.faq::before {
+  content: '';
+  width: 100%;
+  height: 75px;
+  clip-path: polygon(0 0, 100% 50%, 100% 100%, 0% 100%);
+  position: absolute;
+  top: -75px;
+  background-color: var(--clr-primary);
+}
+.accordion-wrapper {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-top: 7rem;
+}
+.accordion-item {
+  background: #ffffff;
+  color: #111;
+  margin: 1.5rem 0;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+}
+.accordion-item-header {
+  padding: 0.5rem 3rem 0.5rem 1rem;
+  min-height: 3.5rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  font-size: 1.4rem;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 0 20px;
+  position: relative;
+  cursor: pointer;
 }
-.pnf-wrapper h1 {
-  color: var(--clr-primary);
-  font-size: 120px;
-  letter-spacing: -5px;
-}
-.pnf-wrapper p {
-  font-weight: 400;
-  font-size: 23px;
-  margin-bottom: 12px;
-}
-.pnf-wrapper a {
+.accordion-item-header span {
+  margin-right: 0.5rem;
   color: var(--clr-primary);
 }
-
+.accordion-item-header::before {
+  content: '\002B';
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+  transition: transform 0.2s ease;
+}
+.accordion-item-header.accordion-active::before {
+  transform: rotate(45deg);
+}
+.accordion-item-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+.accordion-item-body-content {
+  padding: 1rem;
+  line-height: 1.5rem;
+  border-image: linear-gradient(to right, var(--clr-primary) 50%, #fff 75%) 1;
+  border-top: 2px solid;
+  font-size: 1.1rem;
+}
 /* Media Queries */
 /* height */
 @media (max-height: 750px) {

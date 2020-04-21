@@ -21,12 +21,10 @@ function toggleNav() {
   nav.classList.toggle('nav-active');
   ham.classList.toggle('ham-active');
   socials.classList.toggle('socials-active');
-  event.preventDefault();
 }
 function closeMenu(e) {
   nav.classList.toggle('nav-active');
   ham.classList.toggle('ham-active');
-  e.preventDefault();
 }
 
 window.addEventListener('load', function () {
@@ -48,4 +46,18 @@ function injectScript(source) {
   script.src = source;
   document.getElementsByTagName('head')[0].appendChild(script);
 }
-// AOS
+// FAQ Accordion
+
+const accordionHeader = document.querySelectorAll('.accordion-item-header');
+
+accordionHeader.forEach((accordionHeader) => {
+  accordionHeader.addEventListener('click', (event) => {
+    accordionHeader.classList.toggle('accordion-active');
+    const accordionItemBody = accordionHeader.nextElementSibling;
+    if (accordionHeader.classList.contains('accordion-active')) {
+      accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + 'px';
+    } else {
+      accordionItemBody.style.maxHeight = 0;
+    }
+  });
+});
