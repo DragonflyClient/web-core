@@ -412,7 +412,8 @@ video {
 .faq {
   margin: 250px 0;
   margin-bottom: 0;
-  height: 100vh;
+  padding-bottom: 150px;
+  height: 100%;
   position: relative;
   background-color: var(--clr-primary);
 }
@@ -422,7 +423,7 @@ video {
   height: 75px;
   clip-path: polygon(0 0, 100% 50%, 100% 100%, 0% 100%);
   position: absolute;
-  top: -75px;
+  top: -70px;
   background-color: var(--clr-primary);
 }
 .accordion-wrapper {
@@ -448,6 +449,13 @@ video {
   align-items: center;
   position: relative;
   cursor: pointer;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Opera and Firefox */
 }
 .accordion-item-header span {
   margin-right: 0.5rem;
@@ -661,6 +669,14 @@ video {
     width: 500px;
   }
 }
+@media (min-width: 1250px) {
+  video {
+    display: block;
+  }
+  .landing {
+    background-image: none;
+  }
+}
 @media (min-width: 950px) {
   .header {
     width: 100%;
@@ -676,12 +692,6 @@ video {
   .nav li {
     font-size: 20px;
     cursor: pointer;
-  }
-  video {
-    display: block;
-  }
-  .landing {
-    background-image: none;
   }
   .arrow-down {
     display: none;
