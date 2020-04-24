@@ -505,6 +505,9 @@ video {
   .landing {
     margin-bottom: -20px !important;
   }
+  .pre-loader {
+    display: none;
+  }
 }
 @media (min-width: 650px) {
   .header,
