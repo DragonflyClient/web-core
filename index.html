@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inception Cloud Minecraft Mod</title>
@@ -11,47 +12,39 @@
     <link rel="stylesheet" href="./css/style.css" />
 
     <!-- twentytwenty-master -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
-      type="text/javascript"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="./twentytwenty-master/css/twentytwenty.css"
-      type="text/css"
-      media="screen"
-    />
-  </head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="./twentytwenty-master/css/twentytwenty.css" type="text/css" media="screen" />
+</head>
 
-  <body>
+<body>
     <div class="pre-loader">
-      <div class="pre-loader-point"></div>
-      <div class="pre-loader-point"></div>
-      <div class="pre-loader-point"></div>
+        <div class="pre-loader-point"></div>
+        <div class="pre-loader-point"></div>
+        <div class="pre-loader-point"></div>
     </div>
     <div class="header" id="navbar" data-aos="fade-down">
-      <div class="upper-wrapper">
-        <div class="logo">
-          <a href="#"><img src="assets/logo-header.svg" alt="" /></a>
+        <div class="upper-wrapper">
+            <div class="logo">
+                <a href="#"><img src="assets/logo-header.svg" alt="" /></a>
+            </div>
+            <div class="ham-wrapper">
+                <div class="line line1"></div>
+                <div class="line line2"></div>
+                <div class="line line3"></div>
+            </div>
         </div>
-        <div class="ham-wrapper">
-          <div class="line line1"></div>
-          <div class="line line2"></div>
-          <div class="line line3"></div>
-        </div>
-      </div>
-      <div class="nav">
-        <ul>
-          <li class="item" onclick="closeMenu()">
-            <a href="/patchnotes">Updates</a>
-          </li>
-          <li class="item" onclick="closeMenu()"><a href="/#faq">FAQ</a></li>
-          <li class="item" onclick="closeMenu()">
-            <a href="/download">Download</a>
-          </li>
-          <div class="socials">
-            <a href="https://instagram.com/inceptioncloud" target="_blank">
-              <i class="fab fa-instagram"></i
+        <div class="nav">
+            <ul>
+                <li class="item" onclick="closeMenu()">
+                    <a href="/patchnotes">Updates</a>
+                </li>
+                <li class="item" onclick="closeMenu()"><a href="/#faq">FAQ</a></li>
+                <li class="item" onclick="closeMenu()">
+                    <a href="/download">Download</a>
+                </li>
+                <div class="socials">
+                    <a href="https://instagram.com/inceptioncloud" target="_blank">
+                        <i class="fab fa-instagram"></i
             ></a>
             <a href="https://twitter.com/inceptioncloud" target="_blank">
               <i class="fab fa-twitter"></i
@@ -70,7 +63,7 @@
       muted
       loop
     ></video>
-    <div class="landing">
+    <div class="landing" onclick="toggleVideoStatus()">
       <div class="hero-img" data-aos="fade-up">
         <img src="./assets/Logo-Main.svg" alt="logo" />
       </div>
@@ -86,182 +79,157 @@
       </div>
       <div class="cta-container" data-aos="fade-up">
         <a href="/download" class="cta cta-download"
-          ><i class="fas fa-download"></i>Download</a
-        >
-        <a href="#faq" class="cta cta-faq">FAQ</a>
-      </div>
-      <div class="arrow-down">
-        <a href="#features"><i class="fas fa-angle-right"></i></a>
-      </div>
-      <div class="t-shape"></div>
-    </div>
-    <div class="features" id="features">
-      <div class="slider-wrapper" data-aos="zoom-in" data-aos-offset="100">
-        <div class="big-cont">
-          <div class="desc">
-            <h2>Main Menu</h2>
-            <p>
-              The menu has been completely revised and redesigned in the colors
-              of InceptionCloud. Cool animations leave the main menu nice and
-              clear. The direct connect makes it easier for you to join the
-              desired server or world immediately.
-            </p>
-          </div>
-          <div class="container" id="container1">
-            <img src="assets/img/first-main-menu.png" alt="" />
-            <img src="assets/img/second-main-menu.png" alt="" />
-          </div>
+          ><i class="fas fa-download"></i>Download</a>
+                    <a href="#faq" class="cta cta-faq">FAQ</a>
+                </div>
+                <div class="arrow-down">
+                    <a href="#features"><i class="fas fa-angle-right"></i></a>
+                </div>
+                <div class="t-shape"></div>
         </div>
-        <div class="big-cont">
-          <div class="desc">
-            <h2>Ingame Menu</h2>
-            <p>
-              The in-game menu has also been completely revised and redesigned
-              in the InceptionCloud colors. Again we have added some cool
-              animations. We also removed the "Open to LAN" button and replaced
-              it with the InceptionCloud mod options.
-            </p>
-          </div>
-          <div class="container" id="container2">
-            <img src="assets/img/first-ingame-menu.png" alt="" />
-            <img src="assets/img/second-ingame-menu.png" alt="" />
-          </div>
-        </div>
-        <div class="big-cont">
-          <div class="desc">
-            <h2>Advanced Tablist</h2>
-            <p>
-              We also made an effort with the tab list. An animation will make
-              it appear cool and smooth on your screen. As a player, you will be
-              marked with a golden apple in the tab list. If you are in a party,
-              this is shown by a cake.
-            </p>
-          </div>
-          <div class="container" id="container3">
-            <img src="assets/img/first-tablist.png" alt="" />
-            <img src="assets/img/second-tablist.png" alt="" />
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="faq" id="faq">
-      <div class="accordion-wrapper">
-        <div class="accordion-item">
-          <div class="accordion-item-header">
-            <span>1</span>What are the advantages of playing with the
-            modification?
-          </div>
-          <div class="accordion-item-body">
-            <div class="accordion-item-body-content">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Voluptatibus perspiciatis minima enim iste. Provident quod,
-              aliquam impedit consequuntur nemo quam a magnam dolor modi
-              corporis nulla optio. Cum, distinctio itaque!Quaerat, quasi. Aut
-              numquam fuga natus molestias dolorem minus nostrum.
+        <div class="features" id="features">
+            <div class="slider-wrapper" data-aos="zoom-in" data-aos-offset="100">
+                <div class="big-cont">
+                    <div class="desc">
+                        <h2>Main Menu</h2>
+                        <p>
+                            The menu has been completely revised and redesigned in the colors of InceptionCloud. Cool animations leave the main menu nice and clear. The direct connect makes it easier for you to join the desired server or world immediately.
+                        </p>
+                    </div>
+                    <div class="container" id="container1">
+                        <img src="assets/img/first-main-menu.png" alt="" />
+                        <img src="assets/img/second-main-menu.png" alt="" />
+                    </div>
+                </div>
+                <div class="big-cont">
+                    <div class="desc">
+                        <h2>Ingame Menu</h2>
+                        <p>
+                            The in-game menu has also been completely revised and redesigned in the InceptionCloud colors. Again we have added some cool animations. We also removed the "Open to LAN" button and replaced it with the InceptionCloud mod options.
+                        </p>
+                    </div>
+                    <div class="container" id="container2">
+                        <img src="assets/img/first-ingame-menu.png" alt="" />
+                        <img src="assets/img/second-ingame-menu.png" alt="" />
+                    </div>
+                </div>
+                <div class="big-cont">
+                    <div class="desc">
+                        <h2>Advanced Tablist</h2>
+                        <p>
+                            We also made an effort with the tab list. An animation will make it appear cool and smooth on your screen. As a player, you will be marked with a golden apple in the tab list. If you are in a party, this is shown by a cake.
+                        </p>
+                    </div>
+                    <div class="container" id="container3">
+                        <img src="assets/img/first-tablist.png" alt="" />
+                        <img src="assets/img/second-tablist.png" alt="" />
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="accordion-item">
-          <div class="accordion-item-header">
-            <span>2</span>Can I join any server with the modification?
-          </div>
-          <div class="accordion-item-body">
-            <div class="accordion-item-body-content">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Voluptatibus perspiciatis minima enim iste. Provident quod,
-              aliquam impedit consequuntur nemo quam a magnam dolor modi
-              corporis nulla optio. Cum, distinctio itaque!Quaerat, quasi. Aut
-              numquam fuga natus molestias dolorem minus nostrum.
+        <div class="faq" id="faq">
+            <div class="accordion-wrapper">
+                <div class="accordion-item">
+                    <div class="accordion-item-header">
+                        <span>1</span>What are the advantages of playing with the modification?
+                    </div>
+                    <div class="accordion-item-body">
+                        <div class="accordion-item-body-content">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus perspiciatis minima enim iste. Provident quod, aliquam impedit consequuntur nemo quam a magnam dolor modi corporis nulla optio. Cum, distinctio itaque!Quaerat, quasi. Aut numquam fuga
+                            natus molestias dolorem minus nostrum.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-item-header">
+                        <span>2</span>Can I join any server with the modification?
+                    </div>
+                    <div class="accordion-item-body">
+                        <div class="accordion-item-body-content">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus perspiciatis minima enim iste. Provident quod, aliquam impedit consequuntur nemo quam a magnam dolor modi corporis nulla optio. Cum, distinctio itaque!Quaerat, quasi. Aut numquam fuga
+                            natus molestias dolorem minus nostrum.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-item-header">
+                        <span>3</span>Can I join any server with the modification?
+                    </div>
+                    <div class="accordion-item-body">
+                        <div class="accordion-item-body-content">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus perspiciatis minima enim iste. Provident quod, aliquam impedit consequuntur nemo quam a magnam dolor modi corporis nulla optio. Cum, distinctio itaque!Quaerat, quasi. Aut numquam fuga
+                            natus molestias dolorem minus nostrum.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-item-header">
+                        <span>4</span>Can I join any server with the modification?
+                    </div>
+                    <div class="accordion-item-body">
+                        <div class="accordion-item-body-content">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus perspiciatis minima enim iste. Provident quod, aliquam impedit consequuntur nemo quam a magnam dolor modi corporis nulla optio. Cum, distinctio itaque!Quaerat, quasi. Aut numquam fuga
+                            natus molestias dolorem minus nostrum.
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="accordion-item">
-          <div class="accordion-item-header">
-            <span>3</span>Can I join any server with the modification?
-          </div>
-          <div class="accordion-item-body">
-            <div class="accordion-item-body-content">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Voluptatibus perspiciatis minima enim iste. Provident quod,
-              aliquam impedit consequuntur nemo quam a magnam dolor modi
-              corporis nulla optio. Cum, distinctio itaque!Quaerat, quasi. Aut
-              numquam fuga natus molestias dolorem minus nostrum.
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <div class="accordion-item-header">
-            <span>4</span>Can I join any server with the modification?
-          </div>
-          <div class="accordion-item-body">
-            <div class="accordion-item-body-content">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Voluptatibus perspiciatis minima enim iste. Provident quod,
-              aliquam impedit consequuntur nemo quam a magnam dolor modi
-              corporis nulla optio. Cum, distinctio itaque!Quaerat, quasi. Aut
-              numquam fuga natus molestias dolorem minus nostrum.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Twenty Twenty Master -->
-    <script>
-      $(window).on('load', function () {
-        $('.container').twentytwenty({
-          default_offset_pct: 0.5, // How much of the before image is visible when the page loads
-          orientation: 'horizontal', // Orientation of the before and after images ('horizontal' or 'vertical')
-          before_label: 'Minecraft Mod', // Set a custom before label
-          after_label: 'Vanilla Minecraft', // Set a custom after label
-          no_overlay: true, //Do not show the overlay with before and after
-          move_slider_on_hover: true, // Move slider on mouse hover?
-          move_with_handle_only: true, // Allow a user to swipe anywhere on the image to control slider movement.
-          click_to_move: false, // Allow a user to click (or tap) anywhere on the image to move the slider to that location.
-        });
-      });
-    </script>
-    <!-- Fontawesome -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+        <!-- Twenty Twenty Master -->
+        <script>
+            $(window).on('load', function() {
+                $('.container').twentytwenty({
+                    default_offset_pct: 0.5, // How much of the before image is visible when the page loads
+                    orientation: 'horizontal', // Orientation of the before and after images ('horizontal' or 'vertical')
+                    before_label: 'Minecraft Mod', // Set a custom before label
+                    after_label: 'Vanilla Minecraft', // Set a custom after label
+                    no_overlay: true, //Do not show the overlay with before and after
+                    move_slider_on_hover: true, // Move slider on mouse hover?
+                    move_with_handle_only: true, // Allow a user to swipe anywhere on the image to control slider movement.
+                    click_to_move: false, // Allow a user to click (or tap) anywhere on the image to move the slider to that location.
+                });
+            });
+        </script>
+        <!-- Fontawesome -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
 
-    <!-- Local js -->
-    <script src="./main.js"></script>
+        <!-- Local js -->
+        <script src="./main.js"></script>
 
-    <!-- SmoothScroll API -->
-    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
-    <script>
-      var scroll = new SmoothScroll('a[href*="#"]', {
-        speed: 1000,
-        speedAsDuration: true,
-      });
-    </script>
+        <!-- SmoothScroll API -->
+        <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
+        <script>
+            var scroll = new SmoothScroll('a[href*="#"]', {
+                speed: 1000,
+                speedAsDuration: true,
+            });
+        </script>
 
-    <!-- AOS -->
-    <script
-      src="https://unpkg.com/aos@2.3.1/dist/aos.js"
-      type="text/javascript"
-    ></script>
-    <script>
-      AOS.init({
-        // Global settings:
-        disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
-        startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
-        initClassName: 'aos-init', // class applied after initialization
-        animatedClassName: 'aos-animate', // class applied on animation
-        useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
-        disableMutationObserver: false, // disables automatic mutations' detections (advanced)
-        debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
-        throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+        <!-- AOS -->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" type="text/javascript"></script>
+        <script>
+            AOS.init({
+                // Global settings:
+                disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+                startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+                initClassName: 'aos-init', // class applied after initialization
+                animatedClassName: 'aos-animate', // class applied on animation
+                useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+                disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+                debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+                throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
 
-        offset: 0,
-        delay: 0,
-        duration: 300,
-        easing: 'ease',
-        once: true,
-        mirror: false,
-        anchorPlacement: 'top',
-      });
-    </script>
-    <script>
-    </script>
-  </body>
+                offset: 0,
+                delay: 0,
+                duration: 300,
+                easing: 'ease',
+                once: true,
+                mirror: false,
+                anchorPlacement: 'top',
+            });
+        </script>
+        <script>
+        </script>
+</body>
+
 </html>
