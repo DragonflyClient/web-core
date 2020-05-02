@@ -1,5 +1,3 @@
-
-
 /*---------------*/
 /*== SELECTORS ==*/
 /*---------------*/
@@ -22,7 +20,7 @@ const width = window.innerWidth;
 
 /* #region fields */
 let withTwentyTwenty = false
-/* #endregion */
+    /* #endregion */
 
 
 /*---------------------*/
@@ -30,8 +28,6 @@ let withTwentyTwenty = false
 /*---------------------*/
 
 /* #region main-statements */
-vid.currentTime = 8;
-
 nav.classList.remove('nav-active');
 ham.classList.remove('ham-active');
 
@@ -72,7 +68,7 @@ window.addEventListener("resize", () => {
 });
 
 // Pre-Loader
-window.addEventListener('load', function () {
+window.addEventListener('load', function() {
     const loader = document.querySelector('.pre-loader');
     loader.classList.add('pl-hide');
 });
@@ -129,7 +125,7 @@ function refresh() {
 function injectScript(source) {
     script = document.createElement('script');
     script.type = 'text/javascript';
-    script.onload = function () {
+    script.onload = function() {
         console.log('Script with source' + source + ' was successfully injected!');
     };
     script.src = source;
@@ -146,3 +142,50 @@ function toggleVideoStatus() {
 }
 /* #endregion */
 
+//Sorry Moritz
+
+const carouselSlide = document.querySelector(".carousel-slide");
+const carouselImages = document.querySelectorAll(".carousel-slide img");
+//Buttons
+const prevBtn = document.querySelector("#prevBtn");
+const nextBtn = document.querySelector("#nextBtn");
+
+//Counter
+let counter = 1;
+let size = carouselImages[0].clientWidth;
+
+carouselSlide.style.transform = "translateX(" + (-size * counter) + "px)";
+
+//Button Listeners
+
+nextBtn.addEventListener("click", function() {
+    if (counter >= carouselImages.length - 1) return;
+    carouselSlide.style.transition = "transform 0.3s ease";
+    size = carouselImages[0].clientWidth;
+    counter++;
+    carouselSlide.style.transform = "translateX(" + (-size * counter) + "px)";
+    console.log(size)
+});
+prevBtn.addEventListener("click", function() {
+    if (counter <= 0) return;
+    carouselSlide.style.transition = "transform 0.3s ease";
+    size = carouselImages[0].clientWidth;
+    counter--;
+    carouselSlide.style.transform = "translateX(" + (-size * counter) + "px)";
+    console.log(size)
+});
+carouselSlide.addEventListener("transitionend", function() {
+    if (carouselImages[counter].id === "lastClone") {
+        carouselSlide.style.transition = "none";
+        counter = carouselImages.length - 2;
+        carouselSlide.style.transform = "translateX(" + (-size * counter) + "px)";
+    }
+    if (carouselImages[counter].id === "firstClone") {
+        carouselSlide.style.transition = "none";
+        counter = carouselImages.length - counter;
+        carouselSlide.style.transform = "translateX(" + (-size * counter) + "px)";
+    }
+});
+
+//Bitte hier lassen
+vid.currentTime = 8;
