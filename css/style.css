@@ -47,6 +47,13 @@ li {
     text-transform: uppercase;
 }
 
+.coming-soon {
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+}
+
 
 /* /GLOBAL CLASSES */
 
@@ -474,12 +481,23 @@ video {
 .faq {
     margin: 200px 0;
     margin-bottom: 0;
-    padding: 0px 0 150px;
-    height: 100%;
+    padding: 0px 0 50px;
+    height: 300px;
     top: 00px;
     z-index: 0;
     position: relative;
     background-color: var(--clr-primary);
+    /* Coming soon */
+    display: flex;
+    text-align: center;
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cs-text {
+    margin: 0 20px;
 }
 
 .faq::before {
@@ -744,7 +762,7 @@ video {
     }
     .landing {
         width: 100%;
-        height: 110vh;
+        height: 100vh;
         background-image: url(../assets/img/tabl-bg2.png);
         background-position: center;
         background-size: cover;
