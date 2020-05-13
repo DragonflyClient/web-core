@@ -20,7 +20,7 @@ const width = window.innerWidth;
 
 /* #region fields */
 let withTwentyTwenty = false
-    /* #endregion */
+/* #endregion */
 
 
 /*---------------------*/
@@ -68,7 +68,7 @@ window.addEventListener("resize", () => {
 });
 
 // Pre-Loader
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
     const loader = document.querySelector('.pre-loader');
     loader.classList.add('pl-hide');
 });
@@ -125,7 +125,7 @@ function refresh() {
 function injectScript(source) {
     script = document.createElement('script');
     script.type = 'text/javascript';
-    script.onload = function() {
+    script.onload = function () {
         console.log('Script with source' + source + ' was successfully injected!');
     };
     script.src = source;
@@ -158,7 +158,7 @@ carouselSlide.style.transform = "translateX(" + (-size * counter) + "px)";
 
 //Button Listeners
 
-nextBtn.addEventListener("click", function() {
+nextBtn.addEventListener("click", function () {
     if (counter >= carouselImages.length - 1) return;
     carouselSlide.style.transition = "transform 0.3s ease";
     size = carouselImages[0].clientWidth;
@@ -166,7 +166,7 @@ nextBtn.addEventListener("click", function() {
     carouselSlide.style.transform = "translateX(" + (-size * counter) + "px)";
     console.log(size)
 });
-prevBtn.addEventListener("click", function() {
+prevBtn.addEventListener("click", function () {
     if (counter <= 0) return;
     carouselSlide.style.transition = "transform 0.3s ease";
     size = carouselImages[0].clientWidth;
@@ -174,7 +174,7 @@ prevBtn.addEventListener("click", function() {
     carouselSlide.style.transform = "translateX(" + (-size * counter) + "px)";
     console.log(size)
 });
-carouselSlide.addEventListener("transitionend", function() {
+carouselSlide.addEventListener("transitionend", function () {
     if (carouselImages[counter].id === "lastClone") {
         carouselSlide.style.transition = "none";
         counter = carouselImages.length - 2;
