@@ -9,7 +9,7 @@ const socials = document.querySelector('.socials');
 const landing = document.querySelector('.landing');
 const vid = document.querySelector('.landing-vid');
 const video = document.querySelector('video');
-const accordionHeader = document.querySelectorAll('.accordion-item-header');
+const accordionList = document.querySelectorAll('.accordion-item-header');
 const width = window.innerWidth;
 /* #endregion */
 
@@ -81,11 +81,17 @@ window.addEventListener('load', function () {
 
 /* #region other-events */
 // FAQ Accordion
-accordionHeader.forEach((accordionHeader) => {
+accordionList.forEach((accordionHeader) => {
     accordionHeader.addEventListener('click', (event) => {
         accordionHeader.classList.toggle('accordion-active');
         const accordionItemBody = accordionHeader.nextElementSibling;
         if (accordionHeader.classList.contains('accordion-active')) {
+            accordionList.forEach((otherAccordion) => {
+                if (otherAccordion != accordionHeader) {
+                    otherAccordion.classList.remove('accordion-active')
+                    otherAccordion.nextElementSibling.style.maxHeight = 0;
+                }
+            })
             accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + 'px';
         } else {
             accordionItemBody.style.maxHeight = 0;
