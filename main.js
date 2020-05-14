@@ -46,13 +46,13 @@ if (width > 1000) {
 
 /* #region window-events */
 // Autostart Download
-window.addEventListener("load", () => {
-    const downloadLink = $("a[data-download]")[0];
-    setTimeout(() => {
-        window.location = downloadLink.getAttribute("href");
-        console.log("Hello");
-    }, 2000);
-});
+// window.addEventListener("load", () => {
+//     const downloadLink = $("a[data-download]")[0];
+//     setTimeout(() => {
+//         window.location = downloadLink.getAttribute("href");
+//         console.log("Hello");
+//     }, 2000);
+// });
 
 // Resize
 window.addEventListener("resize", () => {
