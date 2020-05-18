@@ -149,18 +149,20 @@ function toggleVideoStatus() {
 /* #endregion */
 
 // Shrink navbar on scroll
-window.onscroll = function () { scrollFunction() };
+var scroll;
+window.onscroll = function () { scrollFunction(); };
 window.onload = function () { scrollFunction() };
-
-function scrollFunction() {
-    if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-        document.getElementById("navbar").style.height = "70px";
-        document.getElementById("logo-img").style.width = "180px";
-        document.getElementById('nav').style.fontSize = "17px";
-    } else {
-        document.getElementById("navbar").style.height = "90px";
-        document.getElementById("logo-img").style.width = "240px";
-        document.getElementById('nav').style.fontSize = "22px";
+if (window.innerWidth > 800 || document.innerWidth > 800) {
+    function scrollFunction() {
+        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+            document.getElementById("navbar").style.height = "70px";
+            document.getElementById("logo-img").style.width = "180px";
+            document.getElementById('nav').style.fontSize = "17px";
+        } else {
+            document.getElementById("navbar").style.height = "90px";
+            document.getElementById("logo-img").style.width = "240px";
+            document.getElementById('nav').style.fontSize = "22px";
+        }
     }
 }
 //Bitte hier lassen
