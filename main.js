@@ -149,15 +149,14 @@ function toggleVideoStatus() {
 /* #endregion */
 
 // Shrink navbar on scroll
-var scroll;
 window.onscroll = function () { scrollFunction(); };
 window.onload = function () { scrollFunction() };
-if (window.innerWidth > 800 || document.innerWidth > 800) {
-    function scrollFunction() {
+function scrollFunction() {
+    if (window.innerWidth > 800 || document.innerWidth > 800) {
         if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
             document.getElementById("navbar").style.height = "70px";
             document.getElementById("logo-img").style.width = "180px";
-            document.getElementById('nav').style.fontSize = "17px";
+            document.getElementById('nav').style.fontSize = "18px";
         } else {
             document.getElementById("navbar").style.height = "90px";
             document.getElementById("logo-img").style.width = "240px";
