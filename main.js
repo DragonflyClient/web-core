@@ -149,6 +149,9 @@ function toggleVideoStatus() {
         }
     }
 }
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
 /* #endregion */
 
 // Shrink navbar on scroll

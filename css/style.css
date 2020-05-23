@@ -19,7 +19,9 @@ html {
     width: 100%;
     font-family: Rubik;
     background-color: #f5f6fa;
-    overflow-x: hidden
+    overflow-x: hidden;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 a {
@@ -571,13 +573,11 @@ video {
 }
 
 .download a {
-    display: block;
-    width: 100%
+    display: inline-block;
+    width: 340px;
 }
-
 .download img {
-    width: 100%;
-    max-width: 250px;
+    max-width: 100%;
     animation: bouncing 2s ease infinite
 }
 
@@ -662,11 +662,11 @@ video {
         width: 200px
     }
     .download img {
-        max-width: 250px !important;
+        max-width: 250px !important
     }
     .download h1 {
-        font-size:35px;
-        margin-top: 20px;
+        font-size: 25px;
+        margin-top: 20px
     }
 }
 
@@ -706,10 +706,9 @@ video {
         height: auto;
         padding: 0 0 50px
     }
-    
     .download h1 {
         margin-top: 20px;
-        font-size: 35px;
+        font-size: 30px
     }
 }
 
@@ -817,7 +816,8 @@ video {
         font-size: 150px
     }
 }
-@media (min-width: 800px) {
+
+@media (min-width:800px) {
     .download img {
         width: 100%;
         max-width: 450px;
