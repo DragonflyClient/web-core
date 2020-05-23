@@ -140,10 +140,13 @@ function injectScript(source) {
 
 // Pause / Play the background video
 function toggleVideoStatus() {
-    if (video.paused) {
-        video.play();
-    } else {
-        video.pause()
+    if (innerWidth > 1150) {
+
+        if (video.paused) {
+            video.play();
+        } else {
+            video.pause()
+        }
     }
 }
 /* #endregion */
