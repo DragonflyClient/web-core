@@ -768,7 +768,7 @@ video {
     .landing {
         width: 100%;
         height: 100vh;
-        background-image: url(../assets/img/tabl-bg2.jpg);
+        background-image: url(https://cdn.icnet.dev/web/mcicn/assets/img/png/tabl-bg2.jpg);
         background-position: center;
         background-size: cover;
         display: flex;
