@@ -163,11 +163,11 @@ function scrollFunction() {
     if (window.innerWidth > 800 || document.innerWidth > 800) {
         if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
             document.getElementById("navbar").style.height = "70px";
-            document.getElementById("logo-img").style.width = "180px";
+            document.getElementById("logo-img").style.width = "150px";
             document.getElementById('nav').style.fontSize = "18px";
         } else {
             document.getElementById("navbar").style.height = "90px";
-            document.getElementById("logo-img").style.width = "240px";
+            document.getElementById("logo-img").style.width = "180px";
             document.getElementById('nav').style.fontSize = "22px";
         }
     }

@@ -7,11 +7,20 @@
 }
 
 :root {
+    /* BLUE
     --clr-fg: #efefef;
     --clr-bg: #1c3e5b;
     --clr-pdark: #027bce;
     --clr-primary: #0495ff;
     --clr-plight: #4bb3fd
+    */
+
+    /* ORANGE */
+    --clr-fg: #EFF1F3;
+    --clr-bg: #37393A;
+    --clr-pdark: #DE4F3F;
+    --clr-primary: #EF852E;
+    --clr-plight: #FFC247
 }
 
 body,
@@ -192,7 +201,7 @@ li {
     transform-origin: center
 }
 
-.nav li::after {
+.nav li:after {
     content: '';
     width: 100%;
     height: 2px;
@@ -205,16 +214,16 @@ li {
     transition: transform .3s ease
 }
 
-.nav li:hover::after {
+.nav li:hover:after {
     transform: scaleX(1);
     transform-origin: left
 }
 
 .logo img {
-    width: 180px;
+    width: 120px;
     max-width: 100%;
-    margin-top: 3px;
-    transition: all .5s ease
+    margin-left: 10px;
+    transition: all .5s ease;
 }
 
 .ham-wrapper {
@@ -279,17 +288,19 @@ li {
 }
 
 .landing .hero-img {
-    text-align: center
+    text-align: center;
 }
 
 .landing .hero-img img {
     width: 250px;
     max-width: 100%;
+    filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.7));
+    -webkit-filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.7));
     height: auto
 }
 
 .hero-desc h1 {
-    font-family: Rubik;
+    font-family: Rubik, sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 45px;
@@ -433,8 +444,7 @@ video {
 .desc p {
     font-weight: 400;
     font-size: 16px;
-    margin: 0 10px;
-    margin-bottom: 20px;
+    margin: 0 10px 20px;
     color: #292828
 }
 
@@ -471,8 +481,7 @@ video {
 }
 
 .faq {
-    margin: 100px 0;
-    margin-bottom: 0;
+    margin: 100px 0 0;
     height: 600px;
     top: 00px;
     z-index: 0;
@@ -564,7 +573,6 @@ video {
     height: 100vh;
     width: 100%;
     display: flex;
-    text-align: center;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -757,7 +765,7 @@ video {
         background-color: var(--clr-pdark)
     }
     .logo img {
-        width: 230px
+        width: 180px
     }
     .landing {
         background-image: none
