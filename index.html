@@ -70,7 +70,7 @@
                 Play Minecraft with useful features and rolling animations without having to worry about your performance.
             </p>
         </div>
-        <div class="cta-container" data-aos="fade-up">
+        <div class="cta-container" id="cta-container" data-aos="fade-up">
             <a href="/download" class="cta cta-download"><i class="fas fa-download"></i>Download</a>
             <a href="#faq" class="cta cta-faq">FAQ</a>
         </div>
@@ -119,7 +119,6 @@
             </div>
         </div>
     </div>
-    <div class="faq" id="faq">
         <div class="faq" id="faq">
             <div class="accordion-wrapper">
                 <div class="accordion-item">
@@ -181,7 +180,6 @@
             <h2 class="coming-soon">Coming soon</h2>
             <p>We do our best to publish this content as soon as possible!</p>
         </div> -->
-    </div>
     <!-- Twenty Twenty Master -->
     <script>
         $(window).on('load', function() {
@@ -206,7 +204,7 @@
     <!-- SmoothScroll API -->
     <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
     <script>
-        var scroll = new SmoothScroll('a[href*="#"]', {
+        const scroll = new SmoothScroll('a[href*="#"]', {
             speed: 1000,
             speedAsDuration: true,
         });

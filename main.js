@@ -87,7 +87,7 @@ accordionList.forEach((accordionHeader) => {
         const accordionItemBody = accordionHeader.nextElementSibling;
         if (accordionHeader.classList.contains('accordion-active')) {
             accordionList.forEach((otherAccordion) => {
-                if (otherAccordion != accordionHeader) {
+                if (otherAccordion !== accordionHeader) {
                     otherAccordion.classList.remove('accordion-active')
                     otherAccordion.nextElementSibling.style.maxHeight = 0;
                 }
@@ -139,14 +139,16 @@ function injectScript(source) {
 }
 
 // Pause / Play the background video
-function toggleVideoStatus() {
-    if (innerWidth > 1150) {
 
-        if (video.paused) {
-            video.play();
-        } else {
-            video.pause()
-        }
+function toggleVideoStatus() {
+
+        if (innerWidth > 1150) {
+
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause()
+            }
     }
 }
 if ('scrollRestoration' in history) {
