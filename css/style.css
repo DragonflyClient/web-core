@@ -22,7 +22,9 @@
     --clr-primary: #EF852E;
     --clr-plight: #FFC247
 }
-
+html {
+    scroll-behavior: smooth;
+}
 body,
 html {
     width: 100%;
