@@ -1,10 +1,19 @@
 @import "https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap";
 :root {
+    /* BLUE
     --clr-fg: #efefef;
     --clr-bg: #1c3e5b;
     --clr-pdark: #027bce;
     --clr-primary: #0495ff;
     --clr-plight: #4bb3fd
+    */
+
+    /* ORANGE */
+    --clr-fg: #EFF1F3;
+    --clr-bg: #37393A;
+    --clr-pdark: #DE4F3F;
+    --clr-primary: #EF852E;
+    --clr-plight: #FFC247
 }
 
 html,
@@ -124,11 +133,12 @@ body {
 }
 
 .logo img {
-    width: 180px;
+    width: 120px;
     max-width: 100%;
-    margin-top: 3px;
+    margin-left: 10px;
     transition: all .5s ease;
 }
+
 a {
     outline: 0;
 }
@@ -207,7 +217,7 @@ a {
         justify-content: space-between;
         align-items: center;
         flex-direction: row;
-        margin: 0
+        margin-right: 30px
     }
     .nav li {
         font-size: 18px;
@@ -220,7 +230,7 @@ a {
         background-color: var(--clr-pdark)
     }
     .logo img {
-        width: 230px
+        width: 180px
     }
     .ham-wrapper {
         display: none
@@ -250,7 +260,7 @@ a {
     }
     .logo {
         position: absolute;
-        left: 15%
+        left: 20%
     }
     .nav {
         position: absolute;
