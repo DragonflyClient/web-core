@@ -1,12 +1,11 @@
 /*---------------*/
 /*== SELECTORS ==*/
 /*---------------*/
-
 /* #region selectors */
 const nav = document.querySelector('.nav');
 const ham = document.querySelector('.ham-wrapper');
 const socials = document.querySelector('.socials');
-const landing = document.querySelector('.landing');
+const landing = document.querySelector(".landing")
 const vid = document.querySelector('.landing-vid');
 const video = document.querySelector('video');
 const accordionList = document.querySelectorAll('.accordion-item-header');
@@ -20,6 +19,7 @@ const width = window.innerWidth;
 
 /* #region fields */
 let withTwentyTwenty = false
+let withLandingImg = false
 /* #endregion */
 
 
@@ -37,6 +37,33 @@ if (width > 1000) {
     injectScript('./twentytwenty-master/js/jquery.twentytwenty.js');
     withTwentyTwenty = true
 }
+
+function createLandinVideo(qualifiedName, value) {
+    const video = document.createElement("video")
+    video.classList.add("desktop-only")
+    video.classList.add("landing-vid")
+    video.muted = true;
+    video.autoplay = true;
+    video.loop = true;
+    video.currentTime = 8;
+    video.setAttribute('playsinline', true);
+    video.setAttribute("preload", "auto")
+    document.body.appendChild(video)
+    const source = document.createElement('source');
+    source.setAttribute('src', './assets/landing-vid.mp4');
+    video.appendChild(source);
+    document.getElementById("vid-wrapper").appendChild(video);
+}
+
+function injectLandingVideo() {
+    if (window.innerWidth > 1000 && !withLandingImg) {
+        createLandinVideo()
+        withLandingImg = true
+    }
+}
+
+injectLandingVideo()
+
 /* #endregion */
 
 
@@ -69,9 +96,14 @@ window.addEventListener("resize", () => {
 
 // Pre-Loader
 window.addEventListener('load', function () {
-    const loader = document.querySelector('.pre-loader');
-    loader.classList.add('pl-hide');
+    setTimeout(function () {
+        const loader = document.querySelector('.pre-loader');
+        loader.classList.add('pl-hide');
+    },350)
 });
+
+// Landing video
+window.addEventListener("resize", injectLandingVideo)
 /* #endregion */
 
 
@@ -109,6 +141,7 @@ ham.addEventListener('click', toggleNav);
 /*---------------*/
 
 /* #region functions */
+
 // Open / Close the nav menu
 function toggleNav() {
     nav.classList.toggle('nav-active');
@@ -142,23 +175,29 @@ function injectScript(source) {
 
 function toggleVideoStatus() {
 
-        if (innerWidth > 1150) {
+    if (innerWidth > 1150) {
 
-            if (video.paused) {
-                video.play();
-            } else {
-                video.pause()
-            }
+        if (vid.paused) {
+            vid.srcObject.play();
+        } else {
+            vid.srcObject.pause()
+        }
     }
 }
+
 if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
 }
 /* #endregion */
 
 // Shrink navbar on scroll
-window.onscroll = function () { scrollFunction(); };
-window.onload = function () { scrollFunction() };
+window.onscroll = function () {
+    scrollFunction();
+};
+window.onload = function () {
+    scrollFunction()
+};
+
 function scrollFunction() {
     if (window.innerWidth > 800 || document.innerWidth > 800) {
         if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
@@ -173,11 +212,7 @@ function scrollFunction() {
     }
 }
 
-
 const scroll = new SmoothScroll('a[href*="#"]', {
     speed: 1000,
     speedAsDuration: true,
 });
-
-//Bitte hier lassen
-vid.currentTime = 8;

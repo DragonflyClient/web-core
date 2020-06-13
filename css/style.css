@@ -144,7 +144,7 @@ li
 
 #navbar
 {
-    transition: all .5s ease
+    transition: .5s ease
 }
 
 .upper-wrapper
@@ -1096,7 +1096,7 @@ video
 
     .landing
     {
-        background-image: none
+        background-image: none;
     }
 
     .header
