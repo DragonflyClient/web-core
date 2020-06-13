@@ -172,5 +172,12 @@ function scrollFunction() {
         }
     }
 }
+
+
+const scroll = new SmoothScroll('a[href*="#"]', {
+    speed: 1000,
+    speedAsDuration: true,
+});
+
 //Bitte hier lassen
 vid.currentTime = 8;
