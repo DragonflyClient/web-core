@@ -5,9 +5,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    outline: 0
+    outline: 0;
 }
-
 :root
 {
     --clr-fg: #EFF1F3;
@@ -30,6 +29,9 @@ body, html
     overflow-x: hidden;
     user-select: none;
     -webkit-user-select: none;
+}
+
+body {
 }
 
 a
@@ -809,6 +811,9 @@ video
 
 @media (max-width: 800px)
 {
+    html {
+        overflow: hidden;
+    }
     .pre-loader
     {
         display: none
@@ -1193,5 +1198,14 @@ video
     .download img
     {
         width: 200px !important
+    }
+    /* AOS styles */
+    [data-aos-delay], [data-aos-delay] {
+        transition: none;
+        transition-delay: unset !important;
+    }
+    .cta-container[data-aos-delay] {
+        transition: none;
+        transition-delay: 0ms !important;
     }
 }

@@ -100,6 +100,7 @@ window.addEventListener('load', function () {
         const loader = document.querySelector('.pre-loader');
         loader.classList.add('pl-hide');
     },350)
+    document.documentElement.style.overflowY = "scroll"
 });
 
 // Landing video
