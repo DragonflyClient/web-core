@@ -38,7 +38,7 @@ if (width > 1000) {
     withTwentyTwenty = true
 }
 
-function createLandinVideo(qualifiedName, value) {
+function createLandingVideo(qualifiedName, value) {
     const video = document.createElement("video")
     video.classList.add("desktop-only")
     video.classList.add("landing-vid")
@@ -57,7 +57,7 @@ function createLandinVideo(qualifiedName, value) {
 
 function injectLandingVideo() {
     if (window.innerWidth > 1000 && !withLandingImg) {
-        createLandinVideo()
+        createLandingVideo()
         withLandingImg = true
     }
 }
@@ -186,8 +186,10 @@ function toggleVideoStatus() {
     }
 }
 
-if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
+if(!window.location.hash) {
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
 }
 /* #endregion */
 

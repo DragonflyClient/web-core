@@ -10,7 +10,7 @@
 body,
 html {
     width: 100%;
-    font-family: Rubik;
+    font-family: Rubik, sans-serif;
     background-color: #f5f6fa;
     overflow-x: hidden
 }
