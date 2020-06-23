@@ -7,6 +7,7 @@
     box-sizing: border-box;
     outline: 0;
 }
+
 :root
 {
     --clr-fg: #EFF1F3;
@@ -31,7 +32,8 @@ body, html
     -webkit-user-select: none;
 }
 
-body {
+body
+{
 }
 
 a
@@ -637,20 +639,29 @@ video
     transform: rotate(45deg)
 }
 
+.accordion-item-body-content
+{
+    padding: 1rem;
+    line-height: 1.5rem;
+    position: relative;
+}
+
+.accordion-item-body-content::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-image: linear-gradient(to right, var(--clr-primary) 50%, #fff 75%);
+}
+
 .accordion-item-body
 {
     max-height: 0;
     overflow: hidden;
     transition: max-height .2s ease-out
-}
-
-.accordion-item-body-content
-{
-    padding: 1rem;
-    line-height: 1.5rem;
-    border-image: linear-gradient(to right, var(--clr-primary) 50%, #fff 75%) 1;
-    border-top: 2px solid;
-    font-size: 1.1rem
 }
 
 .download
@@ -811,9 +822,11 @@ video
 
 @media (max-width: 800px)
 {
-    html {
+    html
+    {
         overflow: hidden;
     }
+
     .pre-loader
     {
         display: none
@@ -834,7 +847,9 @@ video
     {
         font-size: .9rem
     }
-    .accordion-wrapper {
+
+    .accordion-wrapper
+    {
         overflow: hidden;
     }
 
@@ -940,12 +955,12 @@ video
     {
         width: 100%;
         height: 110vh;
-        background-image: url(https://cdn.icnet.dev/web/mcicn/assets/img/png/tabl-bg2.jpg);
+        background-image: url(https://cdn.icnet.dev/web/drgn/assets/img/png/tabl-bg2.jpg);
         background-position: center;
         background-size: cover;
         display: flex;
         flex-direction: column;
-        justify-content: center
+        justify-content: center;
     }
 
     .landing .hero-img
@@ -1199,12 +1214,16 @@ video
     {
         width: 200px !important
     }
+
     /* AOS styles */
-    [data-aos-delay], [data-aos-delay] {
+    [data-aos-delay], [data-aos-delay]
+    {
         transition: none;
         transition-delay: unset !important;
     }
-    .cta-container[data-aos-delay] {
+
+    .cta-container[data-aos-delay]
+    {
         transition: none;
         transition-delay: 0ms !important;
     }
