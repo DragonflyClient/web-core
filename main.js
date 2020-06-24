@@ -152,8 +152,8 @@ function toggleNav() {
 
 // Close the nav menu
 function closeMenu(e) {
-    nav.classList.toggle('nav-active');
-    ham.classList.toggle('ham-active');
+    nav.classList.remove('nav-active');
+    ham.classList.remove('ham-active');
 }
 
 // Refresh the page
