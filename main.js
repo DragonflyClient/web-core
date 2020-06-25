@@ -150,6 +150,11 @@ function toggleNav() {
     socials.classList.toggle('socials-active');
 }
 
+function scrollToTop(e) {
+    closeMenu(e)
+    window.scrollTo(0, 0)
+}
+
 // Close the nav menu
 function closeMenu(e) {
     nav.classList.remove('nav-active');
