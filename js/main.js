@@ -193,6 +193,16 @@ if(!window.location.hash) {
 }
 /* #endregion */
 
+function scrollToTop() {
+    const c = document.documentElement.scrollTop || document.body.scrollTop;
+    if (c > 0) {
+        window.requestAnimationFrame(scrollToTop);
+        window.scrollTo(0, c - c / 16); // <--- increase this number to decrease the speed
+    }
+    closeMenu()
+}
+
+scrollToTop();
 // Shrink navbar on scroll
 window.onscroll = function () {
     scrollFunction();
