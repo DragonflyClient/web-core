@@ -17,8 +17,8 @@
       <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
       <!-- link stylesheet -->
-      <link rel="stylesheet" href="https://cdn.icnet.dev/web/drgn/css/style.css" />
-<!--      <link rel="stylesheet" href="css/style.css">-->
+<!--      <link rel="stylesheet" href="https://cdn.icnet.dev/web/drgn/css/style.css" />-->
+      <link rel="stylesheet" href="css/style.css">
 
       <!-- twentytwenty-master -->
       <link rel="stylesheet" href="./twentytwenty-master/css/twentytwenty.css" type="text/css" media="screen" />
@@ -32,7 +32,7 @@
       </div>
       <div class="header" id="navbar" data-aos="fade-down">
          <div class="upper-wrapper">
-            <div class="logo" onclick="scrollToTop()" style="cursor: pointer">
+            <div class="logo" onclick="closeMenu()" style="cursor: pointer">
                <img id="logo-img" src="assets/Dragon.png" alt="Logo" />
             </div>
             <div class="ham-wrapper">
@@ -227,6 +227,12 @@
       <!-- AOS -->
       <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
       <script src="https://cdn.icnet.dev/web/drgn/js/aos.js"></script>
+      <script>
+          const scroll = new SmoothScroll('a[href*="#"]', {
+              speed: 1000,
+              speedAsDuration: true,
+          });
+      </script>
    </body>
 
 </html>

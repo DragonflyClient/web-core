@@ -150,11 +150,6 @@ function toggleNav() {
     socials.classList.toggle('socials-active');
 }
 
-function scrollToTop(e) {
-    closeMenu(e)
-    window.scrollTo(0, 0)
-}
-
 // Close the nav menu
 function closeMenu(e) {
     nav.classList.remove('nav-active');
@@ -163,7 +158,7 @@ function closeMenu(e) {
 
 // Refresh the page
 function refresh() {
-    window.location.href = window.location.href;
+    window.location.reload(false)
 }
 
 // Add a script to the document
@@ -219,8 +214,3 @@ function scrollFunction() {
         }
     }
 }
-
-const scroll = new SmoothScroll('a[href*="#"]', {
-    speed: 1000,
-    speedAsDuration: true,
-});
