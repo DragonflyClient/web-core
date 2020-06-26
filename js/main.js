@@ -172,20 +172,6 @@ function injectScript(source) {
     document.getElementsByTagName('head')[0].appendChild(script);
 }
 
-// Pause / Play the background video
-
-function toggleVideoStatus() {
-
-    if (innerWidth > 1150) {
-
-        if (vid.paused) {
-            vid.srcObject.play();
-        } else {
-            vid.srcObject.pause()
-        }
-    }
-}
-
 if(!window.location.hash) {
     if ('scrollRestoration' in history) {
         history.scrollRestoration = 'manual';
