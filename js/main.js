@@ -5,8 +5,6 @@
 const nav = document.querySelector('.nav');
 const ham = document.querySelector('.ham-wrapper');
 const socials = document.querySelector('.socials');
-const landing = document.querySelector(".landing")
-const vid = document.querySelector('.landing-vid');
 const video = document.querySelector('video');
 const accordionList = document.querySelectorAll('.accordion-item-header');
 const width = window.innerWidth;
@@ -33,7 +31,7 @@ ham.classList.remove('ham-active');
 
 // Twenty Twenty only Laptop+
 if (width > 1000) {
-    injectScript('twentytwenty-master/js/jquery.event.move.js');
+    injectScript('./twentytwenty-master/js/jquery.event.move.js');
     injectScript('./twentytwenty-master/js/jquery.twentytwenty.js');
     withTwentyTwenty = true
 }
