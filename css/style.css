@@ -784,9 +784,11 @@ footer {
 }
 .f-desc p {
     max-width: 350px;
+    font-size: 20px;
 }
 .f-desc p:last-child {
-    margin-top: 20px;
+    margin-top: 10px;
+    font-size: 17px;
 }
 .f-links {
     margin-top: 20px;
