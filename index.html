@@ -214,34 +214,46 @@
                <p>Play like a monster. Play with Dragonfly.</p>
                <p>&copy; 2020 InceptionCloud Network</p>
             </div>
-            <div class="f-links">
-               <h3>Useful links</h3>
-               <ul>
-                  <li><a onclick="scrollToTop()">Home</a></li>
-                  <li><a href="https://inceptioncloud.net/dragonfly/patchnotes/">Updates</a></li>
-                  <li><a href="https://inceptioncloud.net/privacy">Privacy notice</a></li>
-                  <li><a href="https://inceptioncloud.net/dragonfly/download">Download</a></li>
-               </ul>
-            </div>
+            <div class="links-wrapper">
+               <div class="f-links">
+                  <h3>Useful links</h3>
+                  <ul>
+                     <li><a onclick="scrollToTop()">Home</a></li>
+                     <li><a href="https://inceptioncloud.net/dragonfly/patchnotes/">Updates</a></li>
+                     <li><a href="https://inceptioncloud.net/privacy">Privacy notice</a></li>
+                     <li><a href="https://inceptioncloud.net/dragonfly/download">Download</a></li>
+                  </ul>
+               </div>
 
-            <div class="f-links" style="margin-top: -35px">
-               <h3>Latest updates</h3>
-               <ul>
-                  <li><a href="">v1.0.6.0-alpha</a></li>
-                  <li><a href="">v1.0.5.0-alpha</a></li>
-                  <li><a href="">v1.0.4.0-alpha</a></li>
-                  <li><a href="">v1.0.3.0-alpha</a></li>
-                  <li>
-                     <a href="https://inceptioncloud.net/dragonfly/patchnotes/patch/v1.0.2.0-alpha">v1.0.2.0-alpha</a>
-                  </li>
-                  <li>
-                     <a href="https://inceptioncloud.net/dragonfly/patchnotes/patch/v1.0.1.0-alpha">v1.0.1.0-alpha</a>
-                  </li>
-               </ul>
+               <div class="f-links">
+                  <h3>Latest updates</h3>
+                  <ul>
+                     <li><a href="">v1.0.6.0-alpha</a></li>
+                     <li><a href="">v1.0.5.0-alpha</a></li>
+                     <li><a href="">v1.0.4.0-alpha</a></li>
+                     <li><a href="">v1.0.3.0-alpha</a></li>
+                     <li>
+                        <a href="https://inceptioncloud.net/dragonfly/patchnotes/patch/v1.0.2.0-alpha">v1.0.2.0-alpha</a>
+                     </li>
+                     <li>
+                        <a href="https://inceptioncloud.net/dragonfly/patchnotes/patch/v1.0.1.0-alpha">v1.0.1.0-alpha</a>
+                     </li>
+                  </ul>
+               </div>
+               <div class="f-links">
+                  <h3>Work with us</h3>
+                  <ul>
+                     <li><a href="#">Developer</a></li>
+                     <li><a href="#">Moderator</a></li>
+                     <li><a href="#">Designer</a></li>
+                     <li><a href="#">Content Creator</a></li>
+                  </ul>
+               </div>
             </div>
          </div>
          <div class="f-lower">
             <div class="f-socials">
+               <h3>Follow us on social media to stay up to date</h3>
                <a href="https://instagram.com/inceptioncloud">
                   <ion-icon name="logo-instagram"></ion-icon>
                </a>
@@ -274,11 +286,11 @@
 
       <!-- SmoothScroll API -->
       <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
+      <script>const scroll = new SmoothScroll('a[href*="#"]', {speed: 1000, speedAsDuration: true,});</script>
 
       <!-- AOS -->
       <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
       <script src="https://cdn.icnet.dev/web/drgn/js/aos.js"></script>
-      <script>const scroll = new SmoothScroll('a[href*="#"]', {speed: 1000, speedAsDuration: true,});</script>
    </body>
 
 </html>

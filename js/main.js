@@ -188,7 +188,7 @@ if (!window.location.hash) {
 /* #endregion */
 
 function scrollToTop() {
-    window.scrollTo({top: 0, behavior: 'smooth'});
+    $("html, body").animate({ scrollTop: 0 },  400)
     closeMenu()
 }
 
