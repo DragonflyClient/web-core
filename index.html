@@ -18,7 +18,7 @@
 
       <!-- link stylesheet -->
       <link rel="stylesheet" href="https://cdn.icnet.dev/web/drgn/css/style.css" />
-<!--      <link rel="stylesheet" href="css/style.css">-->
+      <!--      <link rel="stylesheet" href="css/style.css">-->
 
       <!-- twentytwenty-master -->
       <link rel="stylesheet" href="./twentytwenty-master/css/twentytwenty.css" type="text/css" media="screen" />
@@ -26,13 +26,13 @@
 
    <body>
       <div class="pre-loader">
-          <div class="pre-loader-point"></div>
-          <div class="pre-loader-point"></div>
-          <div class="pre-loader-point"></div>
+         <div class="pre-loader-point"></div>
+         <div class="pre-loader-point"></div>
+         <div class="pre-loader-point"></div>
       </div>
       <div class="header" id="navbar" data-aos="fade-down">
          <div class="upper-wrapper">
-            <div class="logo" onclick="closeMenu()" style="cursor: pointer">
+            <div class="logo" onclick="scrollToTop()" style="cursor: pointer">
                <img id="logo-img" src="assets/Dragon.png" alt="Logo" />
             </div>
             <div class="ham-wrapper">
@@ -63,7 +63,7 @@
       </div>
       <div id="vid-wrapper"></div>
       <!--    <video class="desktop-only landing-vid" src="https://cdn.icnet.dev/web/drgn/assets/media/landing-vid.mp4" autoplay muted loop></video>-->
-      <div class="landing" onclick="toggleVideoStatus()">
+      <div class="landing" id="landing">
          <div class="hero-img" data-aos="zoom-in" data-aos-delay="350">
             <img src="assets/Dragon.svg" alt="logo" />
          </div>
@@ -91,9 +91,10 @@
                <div class="desc">
                   <h2>Main Menu</h2>
                   <p>
-                     The menu has been completely revised and redesigned in the colors of InceptionCloud. Cool
-                     animations leave the main menu nice and clear. The direct connect makes it easier for you to join
-                     the desired server or world immediately.
+                     The menu has been completely redesigned and redesigned in four different color themes that you can
+                     choose from. Cool
+                     animations leave the main menu nice and clear. A simple taskbar at the bottom of the screen makes
+                     it easy to switch between several useful features, such as the account manager or the mod options.
                   </p>
                </div>
                <div class="container" id="container1">
@@ -206,6 +207,65 @@
             </div>
          </div>
       </div>
+      <footer>
+         <div class="f-upper">
+            <div class="f-desc">
+               <img onclick="scrollToTop()" src="./assets/Dragon.svg" alt="">
+               <p>Play like a monster. Play with Dragonfly.</p>
+               <p>&copy; 2020 InceptionCloud Network</p>
+            </div>
+            <div class="links-wrapper">
+               <div class="f-links">
+                  <h3>Useful links</h3>
+                  <ul>
+                     <li><a onclick="scrollToTop()">Home</a></li>
+                     <li><a href="https://inceptioncloud.net/dragonfly/patchnotes/">Updates</a></li>
+                     <li><a href="https://inceptioncloud.net/privacy">Privacy notice</a></li>
+                     <li><a href="https://inceptioncloud.net/dragonfly/download">Download</a></li>
+                  </ul>
+               </div>
+
+               <div class="f-links">
+                  <h3>Latest updates</h3>
+                  <ul>
+                     <li><a href="">v1.0.6.0-alpha</a></li>
+                     <li><a href="">v1.0.5.0-alpha</a></li>
+                     <li><a href="">v1.0.4.0-alpha</a></li>
+                     <li><a href="https://inceptioncloud.net/dragonfly/patchnotes/patch/v1.0.3.0-alpha">v1.0.3.0-alpha</a></li>
+                     <li>
+                        <a href="https://inceptioncloud.net/dragonfly/patchnotes/patch/v1.0.2.0-alpha">v1.0.2.0-alpha</a>
+                     </li>
+                     <li>
+                        <a href="https://inceptioncloud.net/dragonfly/patchnotes/patch/v1.0.1.0-alpha">v1.0.1.0-alpha</a>
+                     </li>
+                  </ul>
+               </div>
+               <div class="f-links">
+                  <h3>Work with us</h3>
+                  <ul>
+                     <li><a href="#">Developer</a></li>
+                     <li><a href="#">Moderator</a></li>
+                     <li><a href="#">Designer</a></li>
+                     <li><a href="#">Content Creator</a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="f-lower">
+            <div class="f-socials">
+               <h3>Follow us on social media to stay up to date</h3>
+               <a href="https://instagram.com/inceptioncloud">
+                  <ion-icon name="logo-instagram"></ion-icon>
+               </a>
+               <a href="https://twitter.com/inceptioncloud">
+                  <ion-icon name="logo-twitter"></ion-icon>
+               </a>
+               <a href="https://discord.com/invite/NUGbCgW">
+                  <i class="fab fa-discord"></i>
+               </a>
+            </div>
+         </div>
+      </footer>
 
       <!-- <div class="cs-text">
             <h2 class="coming-soon">Coming soon</h2>
@@ -214,25 +274,23 @@
       <!-- Twenty Twenty Master -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
       <script src="https://cdn.icnet.dev/web/drgn/js/twenty-twenty.js"></script>
+
+      <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+
       <!-- Fontawesome -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
 
       <!-- Local js -->
-<!--      <script src="main.js"></script>-->
+      <!--      <script src="main.js"></script>-->
       <script src="https://cdn.icnet.dev/web/drgn/js/main.js"></script>
 
       <!-- SmoothScroll API -->
       <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
+      <script>const scroll = new SmoothScroll('a[href*="#"]', {speed: 1000, speedAsDuration: true,});</script>
 
       <!-- AOS -->
       <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
       <script src="https://cdn.icnet.dev/web/drgn/js/aos.js"></script>
-      <script>
-          const scroll = new SmoothScroll('a[href*="#"]', {
-              speed: 1000,
-              speedAsDuration: true,
-          });
-      </script>
    </body>
 
 </html>

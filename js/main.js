@@ -5,8 +5,7 @@
 const nav = document.querySelector('.nav');
 const ham = document.querySelector('.ham-wrapper');
 const socials = document.querySelector('.socials');
-const landing = document.querySelector(".landing")
-const vid = document.querySelector('.landing-vid');
+const landing = document.getElementById("landing")
 const video = document.querySelector('video');
 const accordionList = document.querySelectorAll('.accordion-item-header');
 const width = window.innerWidth;
@@ -33,7 +32,7 @@ ham.classList.remove('ham-active');
 
 // Twenty Twenty only Laptop+
 if (width > 1000) {
-    injectScript('twentytwenty-master/js/jquery.event.move.js');
+    injectScript('./twentytwenty-master/js/jquery.event.move.js');
     injectScript('./twentytwenty-master/js/jquery.twentytwenty.js');
     withTwentyTwenty = true
 }
@@ -42,6 +41,7 @@ function createLandingVideo(qualifiedName, value) {
     const video = document.createElement("video")
     video.classList.add("desktop-only")
     video.classList.add("landing-vid")
+    video.setAttribute("id", "landing-vid")
     video.muted = true;
     video.autoplay = true;
     video.loop = true;
@@ -63,7 +63,14 @@ function injectLandingVideo() {
 }
 
 injectLandingVideo()
-
+const landingVid = document.getElementById("landing-vid")
+landing.addEventListener("click", () => {
+    if (landingVid.paused) {
+        landingVid.play()
+    } else {
+        landingVid.pause()
+    }
+})
 /* #endregion */
 
 
@@ -99,7 +106,7 @@ window.addEventListener('load', function () {
     setTimeout(function () {
         const loader = document.querySelector('.pre-loader');
         loader.classList.add('pl-hide');
-    },350)
+    }, 350)
     document.documentElement.style.overflowY = "scroll"
 });
 
@@ -165,34 +172,27 @@ function refresh() {
 function injectScript(source) {
     script = document.createElement('script');
     script.type = 'text/javascript';
-    script.onload = function () {
+    /*script.onload = function () {
         console.log('Script with source' + source + ' was successfully injected!');
-    };
+    };*/
     script.src = source;
     document.getElementsByTagName('head')[0].appendChild(script);
 }
 
-// Pause / Play the background video
-
-function toggleVideoStatus() {
-
-    if (innerWidth > 1150) {
-
-        if (vid.paused) {
-            vid.srcObject.play();
-        } else {
-            vid.srcObject.pause()
-        }
-    }
-}
-
-if(!window.location.hash) {
+if (!window.location.hash) {
     if ('scrollRestoration' in history) {
         history.scrollRestoration = 'manual';
     }
 }
+
 /* #endregion */
 
+function scrollToTop() {
+    $("html, body").animate({ scrollTop: 0 },  400)
+    closeMenu()
+}
+
+scrollToTop();
 // Shrink navbar on scroll
 window.onscroll = function () {
     scrollFunction();
