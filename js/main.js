@@ -109,6 +109,14 @@ window.addEventListener('load', function () {
     }, 350)
     document.documentElement.style.overflowY = "scroll"
 });
+// Pre-loader IE
+window.addEventListener('onload', function () {
+    setTimeout(function () {
+        const loader = document.querySelector('.pre-loader');
+        loader.classList.add('pl-hide');
+    }, 350)
+    document.documentElement.style.overflowY = "scroll"
+});
 
 // Landing video
 window.addEventListener("resize", injectLandingVideo)
