@@ -79,14 +79,7 @@ landing.addEventListener("click", () => {
 /*-------------------*/
 
 /* #region window-events */
-// Autostart Download
-// window.addEventListener("load", () => {
-//     const downloadLink = $("a[data-download]")[0];
-//     setTimeout(() => {
-//         window.location = downloadLink.getAttribute("href");
-//         console.log("Hello");
-//     }, 2000);
-// });
+
 
 // Resize
 window.addEventListener("resize", () => {
@@ -107,15 +100,6 @@ window.addEventListener('load', function () {
         const loader = document.querySelector('.pre-loader');
         loader.classList.add('pl-hide');
     }, 350)
-    document.documentElement.style.overflowY = "scroll"
-});
-// Pre-loader IE
-window.addEventListener('onload', function () {
-    setTimeout(function () {
-        const loader = document.querySelector('.pre-loader');
-        loader.classList.add('pl-hide');
-    }, 350)
-    document.documentElement.style.overflowY = "scroll"
 });
 
 // Landing video

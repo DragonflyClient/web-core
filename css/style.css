@@ -671,7 +671,6 @@ video
 .download
 {
     text-align: center;
-    height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -679,15 +678,15 @@ video
     align-items: center;
     padding: 0 20px;
     background: #fff;
+    margin-top: 17vmax;
 }
 
 .download a
 {
-    display: inline-block;
-    width: 340px
+    color: var(--clr-primary);
 }
 
-.download img
+.download .logo-big
 {
     max-width: 100%;
     animation: bouncing 2s ease infinite
@@ -730,19 +729,18 @@ video
 
 .download h1
 {
-    font-size: 60px;
+    font-size: 50px;
     text-transform: uppercase;
     color: var(--clr-primary);
+    text-align: center;
     margin-bottom: 10px;
-    text-align: center
 }
 
 .download p
 {
     font-size: 20px;
-    color: #d3d3d3;
-    margin-left: 5px;
-    margin-top: 10px
+    color: #4f4d4d;
+    line-height: 1.5;
 }
 
 .download .content
@@ -767,6 +765,21 @@ video
     height: 100%;
     animation: marker 10s ease infinite;
     z-index: -1
+}
+.download .alpha-warning {
+    margin-top: 15px;
+}
+.download .redownload {
+    color: #b5b3b3;
+}
+.download p + p {
+    margin-bottom: 15px;
+}
+.download .alpha-warning ion-icon
+{
+    color: orange;
+    font-size: 25px;
+    margin-bottom: -5px;
 }
 
 footer
@@ -928,15 +941,9 @@ footer a[href=""]
         width: 200px
     }
 
-    .download img
+    .download .logo-big
     {
         max-width: 250px !important
-    }
-
-    .download h1
-    {
-        font-size: 25px;
-        margin-top: 20px
     }
 }
 
@@ -963,11 +970,6 @@ footer a[href=""]
 
 @media (max-width: 800px)
 {
-    html
-    {
-        overflow: hidden;
-    }
-
     .pre-loader
     {
         display: none
@@ -1007,8 +1009,8 @@ footer a[href=""]
 
     .download h1
     {
-        margin-top: 20px;
-        font-size: 22px
+        margin-top: 0;
+        font-size: 25px
     }
 
     .download p
@@ -1208,7 +1210,7 @@ footer a[href=""]
 
 @media (min-width: 800px)
 {
-    .download img
+    .download .logo-big
     {
         width: 100%;
         max-width: 450px;
@@ -1389,7 +1391,12 @@ footer a[href=""]
         display: none
     }
 
-    .download img
+    .download h1
+    {
+        font-size: 35px;
+    }
+
+    .download .logo-big
     {
         width: 200px !important
     }
