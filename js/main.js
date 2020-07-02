@@ -46,7 +46,7 @@ function createLandingVideo(qualifiedName, value) {
     video.autoplay = true;
     video.loop = true;
     video.currentTime = 8;
-    video.setAttribute('playsinline', true);
+    video.setAttribute('playsinline', "true");
     video.setAttribute("preload", "auto")
     document.body.appendChild(video)
     const source = document.createElement('source');
@@ -130,7 +130,7 @@ window.addEventListener("resize", injectLandingVideo)
 /* #region other-events */
 // FAQ Accordion
 accordionList.forEach((accordionHeader) => {
-    accordionHeader.addEventListener('click', (event) => {
+    accordionHeader.addEventListener('click', () => {
         accordionHeader.classList.toggle('accordion-active');
         const accordionItemBody = accordionHeader.nextElementSibling;
         if (accordionHeader.classList.contains('accordion-active')) {
@@ -142,7 +142,7 @@ accordionList.forEach((accordionHeader) => {
             })
             accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + 'px';
         } else {
-            accordionItemBody.style.maxHeight = 0;
+            accordionItemBody.style.maxHeight = "0";
         }
     });
 });
@@ -166,7 +166,7 @@ function toggleNav() {
 }
 
 // Close the nav menu
-function closeMenu(e) {
+function closeMenu() {
     nav.classList.remove('nav-active');
     ham.classList.remove('ham-active');
 }
