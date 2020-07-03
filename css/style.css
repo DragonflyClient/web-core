@@ -793,7 +793,7 @@ footer
     width: 60%;
     padding-top: 30px;
     margin: 0 auto;
-    min-height: 5230px;
+    min-height: 230px;
     justify-content: space-around;
     /*align-items: center;*/
     flex-wrap: wrap;
