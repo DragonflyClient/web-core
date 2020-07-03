@@ -676,9 +676,9 @@ video
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0 20px;
+    padding: 0 10px;
     background: #fff;
-    margin-top: 17vmax;
+    margin: 25vmin 0;
 }
 
 .download a
@@ -968,76 +968,6 @@ footer a[href=""]
     }
 }
 
-@media (max-width: 800px)
-{
-    .pre-loader
-    {
-        display: none
-    }
-
-    .accordion-item-header
-    {
-        font-size: .9rem;
-        font-weight: 500
-    }
-
-    .accordion-item-header span
-    {
-        display: none
-    }
-
-    .accordion-item-body-content
-    {
-        font-size: .9rem
-    }
-
-    .accordion-wrapper
-    {
-        overflow: hidden;
-    }
-
-    .features
-    {
-        padding-top: 100px
-    }
-
-    .faq
-    {
-        height: auto;
-        padding: 0 0 50px
-    }
-
-    .download h1
-    {
-        margin-top: 0;
-        font-size: 25px
-    }
-
-    .download p
-    {
-        font-size: 16px
-    }
-
-    .f-upper
-    {
-        width: 90%;
-    }
-
-    .f-socials
-    {
-        width: 90%;
-    }
-
-    .f-socials h3
-    {
-        font-size: 20px;
-    }
-
-    .f-socials a
-    {
-        font-size: 23px;
-    }
-}
 
 @media (max-width: 1200px)
 {
@@ -1413,6 +1343,11 @@ footer a[href=""]
         transition: none;
         transition-delay: 0ms !important;
     }
+
+    .download p
+    {
+        font-size: 16px
+    }
 }
 
 @media (max-width: 1600px)
@@ -1420,5 +1355,74 @@ footer a[href=""]
     .f-upper, .f-socials
     {
         width: 85%;
+    }
+}
+
+@media (max-width: 800px)
+{
+    .pre-loader
+    {
+        display: none
+    }
+
+    .accordion-item-header
+    {
+        font-size: .9rem;
+        font-weight: 500
+    }
+
+    .accordion-item-header span
+    {
+        display: none
+    }
+
+    .accordion-item-body-content
+    {
+        font-size: .9rem
+    }
+
+    .accordion-wrapper
+    {
+        overflow: hidden;
+    }
+
+    .features
+    {
+        padding-top: 100px
+    }
+
+    .faq
+    {
+        height: auto;
+        padding: 0 0 50px
+    }
+
+    .download h1
+    {
+        margin-top: 0;
+        font-size: 20px
+    }
+
+    .f-upper
+    {
+        width: 90%;
+    }
+
+    .f-socials
+    {
+        width: 90%;
+    }
+
+    .f-socials h3
+    {
+        font-size: 20px;
+    }
+
+    .f-socials a
+    {
+        font-size: 23px;
+    }
+    .download h1 {
+        font-size: 23px;
     }
 }
