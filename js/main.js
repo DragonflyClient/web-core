@@ -183,8 +183,6 @@ function scrollToTop() {
     $("html, body").animate({ scrollTop: 0 },  400)
     closeMenu()
 }
-
-scrollToTop();
 // Shrink navbar on scroll
 window.onscroll = function () {
     scrollFunction();

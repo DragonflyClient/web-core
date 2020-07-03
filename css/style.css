@@ -793,7 +793,7 @@ footer
     width: 60%;
     padding-top: 30px;
     margin: 0 auto;
-    min-height: 230px;
+    min-height: 5230px;
     justify-content: space-around;
     /*align-items: center;*/
     flex-wrap: wrap;
@@ -848,6 +848,7 @@ footer
 
 .f-links li
 {
+    font-size: 16px;
     margin: 9px 0;
     cursor: pointer;
 }
