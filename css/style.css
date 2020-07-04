@@ -869,7 +869,6 @@ footer
 .f-upper a
 {
     color: var(--clr-primary);
-    transition: color .2s linear;
 }
 
 .f-upper a:hover
