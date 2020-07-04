@@ -61,6 +61,9 @@ strong {
     margin: 7px 0;
     line-height: 1.4;
 }
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+}
 h1 {
     margin: 0;
     font-size: 30px;
@@ -86,6 +89,6 @@ p + p {
     .nav-wrapper {
         display: block !important;
         position: static !important;
-        margin: 10px 0 10px -15px !important;
+        margin: 10px 0 10px -10px !important;
     }
 }
