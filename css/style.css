@@ -875,6 +875,18 @@ footer
 {
     color: #d4d0d0;
 }
+.f-socials a {
+    transition: all .2s ease;
+}
+.f-insta:hover {
+    color: #E1306C;
+}
+.f-twitter:hover {
+    color: #1da1f2;
+}
+.f-discord:hover {
+    color: #7289da;
+}
 
 .links-wrapper
 {
