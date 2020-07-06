@@ -678,7 +678,7 @@ video
     align-items: center;
     padding: 0 10px;
     background: #fff;
-    margin: 25vmin 0;
+    margin: 120px 0 40px 0;
 }
 
 .download a
@@ -767,19 +767,44 @@ video
     z-index: -1
 }
 .download .alpha-warning {
-    margin-top: 15px;
+    text-align: left;
+    margin: 30px ;
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    border-left: 5px solid #ff9100;
+    border-radius: 3px;
+    padding-bottom: 10px;
+    box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,.05), 0 0 0.05rem rgba(0,0,0,.1);
+}
+.download .alpha-warning h4 {
+    font-weight: 400;
+    background: #fff4e5;
+    color: #3c3c3c;
+    padding: 10px 15px;
+    font-size: 1.3rem;
+}
+.download .warning-text {
+    margin-top: 10px;
+}
+.download .warning-text p {
+    padding-left: 15px;
+    font-size: 1.2rem;
 }
 .download .redownload {
     color: #b5b3b3;
 }
-.download p + p {
-    margin-bottom: 15px;
+.download .preview {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 30px;
 }
 .download .alpha-warning ion-icon
 {
     color: orange;
     font-size: 25px;
     margin-bottom: -5px;
+    margin-right: 7px;
 }
 
 footer
@@ -959,6 +984,7 @@ footer a[href=""]
     }
 }
 
+
 @media (min-height: 850px)
 {
     .arrow-down a
@@ -977,6 +1003,9 @@ footer a[href=""]
     .landing
     {
         margin-bottom: -20px !important
+    }
+    .download {
+        margin: 90px 0 50px 0;
     }
 }
 
@@ -1360,6 +1389,14 @@ footer a[href=""]
     {
         font-size: 16px
     }
+    .download .warning-text p {
+        padding-left: 15px;
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+    .download .alpha-warning h4 {
+        font-size: 1.2rem;
+    }
 }
 
 @media (max-width: 1600px)
@@ -1413,6 +1450,13 @@ footer a[href=""]
     {
         margin-top: 0;
         font-size: 20px
+    }
+    .download .preview {
+        max-width: 350px;
+    }
+
+    .download .alpha-warning {
+        max-width: 600px;
     }
 
     .f-upper
