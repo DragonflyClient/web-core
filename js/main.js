@@ -9,6 +9,7 @@ const landing = document.getElementById("landing")
 const video = document.querySelector('video');
 const accordionList = document.querySelectorAll('.accordion-item-header');
 const width = window.innerWidth;
+const newsCloseBtn = document.getElementById("news-close")
 /* #endregion */
 
 
@@ -135,6 +136,12 @@ accordionList.forEach((accordionHeader) => {
 ham.addEventListener('click', toggleNav);
 /* #endregion */
 
+newsCloseBtn.addEventListener("click", function () {
+    const news = document.getElementById("news")
+    news.style.transform = `translateY(-${news.offsetHeight}px)`
+    document.getElementById("navbar").style.transform = `translateY(-${news.offsetHeight}px)`
+    document.getElementById("navbar").style.top = `${news.offsetHeight}px`
+})
 
 /*---------------*/
 /*== FUNCTIONS ==*/

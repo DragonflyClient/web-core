@@ -22,7 +22,6 @@ body, html
     width: 100%;
     font-family: Rubik, sans-serif;
     background-color: #FFFFFF;
-    overflow-x: hidden;
     user-select: none;
     -webkit-user-select: none;
 }
@@ -140,6 +139,63 @@ li
     margin-left: 20px
 }
 
+#news
+{
+    background: tomato;
+    color: #ffffff;
+    padding: 20px;
+    position: relative;
+    z-index: 999;
+    transition: all .5s ease;
+}
+
+.news-desc
+{
+    display: flex;
+    max-width: 1700px;
+    margin: 0 auto;
+    justify-content: space-around;
+    align-items: center;
+    transition: all .4s ease;
+    flex-wrap: wrap;
+}
+.news-desc-content {
+    display: flex;
+    align-items: start;
+}
+.news-desc-content > div {
+    margin-top: 3px;
+}
+.news-desc-content .news-emoji {
+    font-size: 20px;
+    margin-right: 10px;
+}
+.news-desc-content h2 {
+    font-weight: 500;
+    font-size: 20px;
+}
+.news-desc-content p {
+    max-width: 500px;
+    margin-top: 5px;
+}
+.news-closed + .header {
+    transform: translateY(-200px);
+}
+
+.news-more-info
+{
+    background: #ffffff;
+    color: var(--clr-bg);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+#news-close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+}
 .header
 {
     position: fixed;
@@ -173,7 +229,7 @@ li
     right: -100vh;
     visibility: hidden;
     background-color: var(--clr-pdark);
-    transform-origin: left
+    transform-origin: left;
 }
 
 .nav-active
@@ -766,39 +822,52 @@ video
     animation: marker 10s ease infinite;
     z-index: -1
 }
-.download .alpha-warning {
+
+.download .alpha-warning
+{
     text-align: left;
-    margin: 30px ;
+    margin: 30px;
     width: 100%;
     max-width: 1000px;
     height: auto;
     border-left: 5px solid #ff9100;
     border-radius: 3px;
     padding-bottom: 10px;
-    box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,.05), 0 0 0.05rem rgba(0,0,0,.1);
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, .05), 0 0 0.05rem rgba(0, 0, 0, .1);
 }
-.download .alpha-warning h4 {
+
+.download .alpha-warning h4
+{
     font-weight: 400;
     background: #fff4e5;
     color: #3c3c3c;
     padding: 10px 15px;
     font-size: 1.3rem;
 }
-.download .warning-text {
+
+.download .warning-text
+{
     margin-top: 10px;
 }
-.download .warning-text p {
+
+.download .warning-text p
+{
     padding-left: 15px;
     font-size: 1.2rem;
 }
-.download .redownload {
+
+.download .redownload
+{
     color: #b5b3b3;
 }
-.download .preview {
+
+.download .preview
+{
     width: 100%;
     max-width: 500px;
     margin-top: 30px;
 }
+
 .download .alpha-warning ion-icon
 {
     color: orange;
@@ -900,16 +969,24 @@ footer
 {
     color: #d4d0d0;
 }
-.f-socials a {
+
+.f-socials a
+{
     transition: all .2s ease;
 }
-.f-insta:hover {
+
+.f-insta:hover
+{
     color: #E1306C;
 }
-.f-twitter:hover {
+
+.f-twitter:hover
+{
     color: #1da1f2;
 }
-.f-discord:hover {
+
+.f-discord:hover
+{
     color: #7289da;
 }
 
@@ -984,7 +1061,6 @@ footer a[href=""]
     }
 }
 
-
 @media (min-height: 850px)
 {
     .arrow-down a
@@ -1004,14 +1080,21 @@ footer a[href=""]
     {
         margin-bottom: -20px !important
     }
-    .download {
+
+    .download
+    {
         margin: 90px 0 50px 0;
     }
 }
 
-
 @media (max-width: 1200px)
 {
+    .nav
+    {
+        position: sticky;
+        top: 0;
+    }
+
     .f-desc
     {
         width: 100%;
@@ -1273,7 +1356,9 @@ footer a[href=""]
 
     .header
     {
-        width: 100%
+        width: 100%;
+        position: sticky;
+        top: 0
     }
 
     .nav ul
@@ -1327,7 +1412,7 @@ footer a[href=""]
 
     .features
     {
-        padding-top: 250px
+        padding-top: 100px
     }
 
     .cta
@@ -1345,7 +1430,7 @@ footer a[href=""]
     .nav
     {
         position: absolute;
-        right: 20%
+        right: 20%;
     }
 }
 
@@ -1389,12 +1474,16 @@ footer a[href=""]
     {
         font-size: 16px
     }
-    .download .warning-text p {
+
+    .download .warning-text p
+    {
         padding-left: 15px;
         font-size: 1rem;
         margin-top: 10px;
     }
-    .download .alpha-warning h4 {
+
+    .download .alpha-warning h4
+    {
         font-size: 1.2rem;
     }
 }
@@ -1451,11 +1540,14 @@ footer a[href=""]
         margin-top: 0;
         font-size: 20px
     }
-    .download .preview {
+
+    .download .preview
+    {
         max-width: 350px;
     }
 
-    .download .alpha-warning {
+    .download .alpha-warning
+    {
         max-width: 600px;
     }
 
@@ -1478,7 +1570,9 @@ footer a[href=""]
     {
         font-size: 23px;
     }
-    .download h1 {
+
+    .download h1
+    {
         font-size: 23px;
     }
 }

@@ -1,277 +1,320 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <meta name="keywords" content="mc, minecraft, minecraftmod, inceptioncloud, inceptioncloudmc">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Play Minecraft with useful features and rolling animations without
+   <head>
+      <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+      <meta name="keywords" content="mc, minecraft, minecraftmod, inceptioncloud, inceptioncloudmc">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="description" content="Play Minecraft with useful features and rolling animations without
     having to worry about your performance.">
-    <title>Inception Cloud Dragonfly</title>
-    <link rel="icon" href="./assets/Dragon.svg" />
-    <meta name="keywords" content="Minecraft, InceptionCloud, Modifiaction, Minecraftmod">
+      <title>Inception Cloud Dragonfly</title>
+      <link rel="icon" href="./assets/Dragon.svg" />
+      <meta name="keywords" content="Minecraft, InceptionCloud, Modifiaction, Minecraftmod">
 
-    <!-- AOS -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+      <!-- AOS -->
+      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-    <!-- link stylesheet -->
-    <link rel="stylesheet" href="https://cdn.icnet.dev/web/drgn/css/style.css" />
-    <!--      <link rel="stylesheet" href="css/style.css">-->
+      <!-- link stylesheet -->
+      <link rel="stylesheet" href="https://cdn.icnet.dev/web/drgn/css/style.css" />
+      <!--      <link rel="stylesheet" href="css/style.css">-->
 
-    <!-- twentytwenty-master -->
-    <link rel="stylesheet" href="./twentytwenty-master/css/twentytwenty.css" type="text/css" media="screen" />
-    <!-- IONICONS -->
-    <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
-</head>
+      <!-- twentytwenty-master -->
+      <link rel="stylesheet" href="./twentytwenty-master/css/twentytwenty.css" type="text/css" media="screen" />
+      <!-- IONICONS -->
+      <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
+   </head>
 
-<body>
-    <div class="pre-loader">
-        <div class="pre-loader-point"></div>
-        <div class="pre-loader-point"></div>
-        <div class="pre-loader-point"></div>
-    </div>
-    <div class="header" id="navbar" data-aos="fade-down">
-        <div class="upper-wrapper">
+   <body>
+      <div class="pre-loader">
+         <div class="pre-loader-point"></div>
+         <div class="pre-loader-point"></div>
+         <div class="pre-loader-point"></div>
+      </div>
+      <div id="news" style="display: none">
+         <div class="news-desc">
+            <div class="news-desc-content">
+               <span class="news-emoji">🔥</span>
+               <div>
+                  <h2> We are open source!!</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi commodi delectus et facilis iste
+                     qui.</p>
+               </div>
+            </div>
+            <a href="#" class="news-more-info">See more</a>
+         </div>
+         <div id="news-close">
+            <ion-icon name="close-outline"></ion-icon>
+         </div>
+      </div>
+      <div class="header" id="navbar" data-aos="fade-down">
+         <div class="upper-wrapper">
             <div class="logo" onclick="scrollToTop()" style="cursor: pointer">
-                <img id="logo-img" src="assets/Dragon.png" alt="Logo" />
+               <img id="logo-img" src="assets/Dragon.png" alt="Logo" />
             </div>
             <div class="ham-wrapper">
-                <div class="line line1"></div>
-                <div class="line line2"></div>
-                <div class="line line3"></div>
+               <div class="line line1"></div>
+               <div class="line line2"></div>
+               <div class="line line3"></div>
             </div>
-        </div>
-        <div class="nav" id="nav">
+         </div>
+         <div class="nav" id="nav">
             <ul>
-                <li class="item" onclick="closeMenu()">
-                    <a href="/dragonfly/patchnotes">Updates</a>
-                </li>
-                <li class="item" onclick="closeMenu()"><a href="#faq">FAQ</a></li>
-                <li class="item" onclick="closeMenu()">
-                    <a href="/dragonfly/download">Download</a>
-                </li>
-                <div class="socials">
-                    <a href="https://instagram.com/inceptioncloud">
-                        <i class="fab fa-instagram"></i></a>
-                    <a href="https://twitter.com/inceptioncloud">
-                        <i class="fab fa-twitter"></i></a>
-                    <a href="https://icnet.dev/discord">
-                        <i class="fab fa-discord"></i></a>
-                </div>
+               <li class="item" onclick="closeMenu()">
+                  <a href="/dragonfly/patchnotes">Updates</a>
+               </li>
+               <li class="item" onclick="closeMenu()"><a href="#faq">FAQ</a></li>
+               <li class="item" onclick="closeMenu()">
+                  <a href="/dragonfly/download">Download</a>
+               </li>
+               <div class="socials">
+                  <a href="https://instagram.com/inceptioncloud">
+                     <i class="fab fa-instagram"></i></a>
+                  <a href="https://twitter.com/inceptioncloud">
+                     <i class="fab fa-twitter"></i></a>
+                  <a href="https://icnet.dev/discord">
+                     <i class="fab fa-discord"></i></a>
+               </div>
             </ul>
-        </div>
-    </div>
-    <div id="vid-wrapper"></div>
-    <!--    <video class="desktop-only landing-vid" src="https://cdn.icnet.dev/web/drgn/assets/media/landing-vid.mp4" autoplay muted loop></video>-->
-    <div class="landing" id="landing">
-        <div class="hero-img" data-aos="zoom-in" data-aos-delay="350">
+         </div>
+      </div>
+      <div id="vid-wrapper"></div>
+      <!--    <video class="desktop-only landing-vid" src="https://cdn.icnet.dev/web/drgn/assets/media/landing-vid.mp4" autoplay muted loop></video>-->
+      <div class="landing" id="landing">
+         <div class="hero-img" data-aos="zoom-in" data-aos-delay="350">
             <img src="assets/Dragon.svg" alt="logo" />
-        </div>
-        <div class="hero-desc" data-aos="fade-up" data-aos-delay="350">
+         </div>
+         <div class="hero-desc" data-aos="fade-up" data-aos-delay="350">
             <h1 class="hero">
-                A NEW<br /> EXPERIENCE
+               A NEW<br /> EXPERIENCE
             </h1>
             <p>
-                Play Minecraft with useful features and rolling animations without having to worry about your performance.
+               Play Minecraft with useful features and rolling animations without having to worry about your
+               performance.
             </p>
-        </div>
-        <div class="cta-container" id="cta-container" data-aos="fade-up" data-aos-delay="450">
+         </div>
+         <div class="cta-container" id="cta-container" data-aos="fade-up" data-aos-delay="450">
             <a href="/dragonfly/download" class="cta cta-download"><i class="fas fa-download"></i>Download</a>
             <a href="#faq" class="cta cta-faq">FAQ</a>
-        </div>
-        <div class="arrow-down">
+         </div>
+         <div class="arrow-down">
             <a href="#features"><i class="fas fa-angle-right"></i></a>
-        </div>
-        <div class="t-shape"></div>
-    </div>
-    <div class="features" id="features">
-        <div class="slider-wrapper">
+         </div>
+         <div class="t-shape"></div>
+      </div>
+      <div class="features" id="features">
+         <div class="slider-wrapper">
             <div class="big-cont" data-aos="fade-up" data-aos-offset="-250" data-aos-anchor-placement="center-bottom" data-aos-easing="ease-in-out-back">
-                <div class="desc">
-                    <h2>Main Menu</h2>
-                    <p>
-                        The menu has been completely redesigned and redesigned in four different color themes that you can choose from. Cool animations leave the main menu nice and clear. A simple taskbar at the bottom of the screen makes it easy to switch between several useful
-                        features, such as the account manager or the mod options.
-                    </p>
-                </div>
-                <div class="container" id="container1">
-                    <img src="https://cdn.icnet.dev/web/drgn/assets/img/png/first-main-menu.jpg" alt="" />
-                    <img src="https://cdn.icnet.dev/web/drgn/assets/img/png/second-main-menu.jpg" alt="" />
-                </div>
+               <div class="desc">
+                  <h2>Main Menu</h2>
+                  <p>
+                     The menu has been completely redesigned and redesigned in four different color themes that you can
+                     choose from. Cool animations leave the main menu nice and clear. A simple taskbar at the bottom of
+                     the screen makes it easy to switch between several useful
+                     features, such as the account manager or the mod options.
+                  </p>
+               </div>
+               <div class="container" id="container1">
+                  <img src="https://cdn.icnet.dev/web/drgn/assets/img/png/first-main-menu.jpg" alt="" />
+                  <img src="https://cdn.icnet.dev/web/drgn/assets/img/png/second-main-menu.jpg" alt="" />
+               </div>
             </div>
             <div class="big-cont" data-aos="fade-up" data-aos-offset="-250" data-aos-anchor-placement="center-bottom" data-aos-easing="ease-in-out-back">
-                <div class="desc">
-                    <h2>Ingame Menu</h2>
-                    <p>
-                        The in-game menu has also been completely revised and redesigned in the InceptionCloud colors. Again we have added some cool animations. We also removed the "Open to LAN" button and replaced it with the InceptionCloud mod options.
-                    </p>
-                </div>
-                <div class="container" id="container2">
-                    <img src="https://cdn.icnet.dev/web/drgn/assets/img/png/first-ingame-menu.jpg" alt="" />
-                    <img src="https://cdn.icnet.dev/web/drgn/assets/img/png/second-ingame-menu.jpg" alt="" />
-                </div>
+               <div class="desc">
+                  <h2>Ingame Menu</h2>
+                  <p>
+                     The in-game menu has also been completely revised and redesigned in the InceptionCloud colors.
+                     Again we have added some cool animations. We also removed the "Open to LAN" button and replaced it
+                     with the InceptionCloud mod options.
+                  </p>
+               </div>
+               <div class="container" id="container2">
+                  <img src="https://cdn.icnet.dev/web/drgn/assets/img/png/first-ingame-menu.jpg" alt="" />
+                  <img src="https://cdn.icnet.dev/web/drgn/assets/img/png/second-ingame-menu.jpg" alt="" />
+               </div>
             </div>
             <div class="big-cont" data-aos="fade-up" data-aos-offset="-150" data-aos-anchor-placement="top-bottom" data-aos-easing="ease-in-out-back">
-                <div class="desc">
-                    <h2>Advanced Tablist</h2>
-                    <p>
-                        We also made an effort with the tab list. An animation will make it appear cool and smooth on your screen. As a player, you will be marked with a golden apple in the tab list. If you are in a party, this is shown by a cake.
-                    </p>
-                </div>
-                <div class="container" id="container3">
-                    <img src="https://cdn.icnet.dev/web/drgn/assets/img/png/first-tablist.jpg" alt="" />
-                    <img src="https://cdn.icnet.dev/web/drgn/assets/img/png/second-tablist.jpg" alt="" />
-                </div>
+               <div class="desc">
+                  <h2>Advanced Tablist</h2>
+                  <p>
+                     We also made an effort with the tab list. An animation will make it appear cool and smooth on your
+                     screen. As a player, you will be marked with a golden apple in the tab list. If you are in a party,
+                     this is shown by a cake.
+                  </p>
+               </div>
+               <div class="container" id="container3">
+                  <img src="https://cdn.icnet.dev/web/drgn/assets/img/png/first-tablist.jpg" alt="" />
+                  <img src="https://cdn.icnet.dev/web/drgn/assets/img/png/second-tablist.jpg" alt="" />
+               </div>
             </div>
-        </div>
-    </div>
-    <div class="faq">
-        <div class="anchor" id="faq"></div>
-        <div class="accordion-wrapper">
+         </div>
+      </div>
+      <div class="faq">
+         <div class="anchor" id="faq"></div>
+         <div class="accordion-wrapper">
             <div class="accordion-item" data-aos="fade-up" data-aos-delay="300" data-aos-anchor-placement="top-bottom">
-                <div class="accordion-item-header">
-                    <span>1</span>What are the advantages of playing with Dragonfly?
-                </div>
-                <div class="accordion-item-body">
-                    <div class="accordion-item-body-content">
-                        <p style="margin-bottom: 10px; font-weight: 500;">Dragonfly provides several features that will make your life playing Minecraft more convenient than ever!</p>
-                        <p>We are aiming to make your Minecraft Multiplayer experience the best possible, but most of our highlights will also apply to the Singleplayer mode. Our users can modify the look of the client and customize the behavior of our features
-                            the way they want. Thanks to a well-structured design, you can create your own color theme and even use a custom font! The Inception Cloud team is constantly working to improve your experience while orienting to the suggestions
-                            of our community, maybe even yours!</p>
-                    </div>
-                </div>
+               <div class="accordion-item-header">
+                  <span>1</span>What are the advantages of playing with Dragonfly?
+               </div>
+               <div class="accordion-item-body">
+                  <div class="accordion-item-body-content">
+                     <p style="margin-bottom: 10px; font-weight: 500;">Dragonfly provides several features that will
+                        make your life playing Minecraft more convenient than ever!</p>
+                     <p>We are aiming to make your Minecraft Multiplayer experience the best possible, but most of our
+                        highlights will also apply to the Singleplayer mode. Our users can modify the look of the client
+                        and customize the behavior of our features
+                        the way they want. Thanks to a well-structured design, you can create your own color theme and
+                        even use a custom font! The Inception Cloud team is constantly working to improve your
+                        experience while orienting to the suggestions
+                        of our community, maybe even yours!</p>
+                  </div>
+               </div>
             </div>
             <div class="accordion-item" data-aos="fade-up" data-aos-delay="350" data-aos-anchor-placement="top-bottom">
-                <div class="accordion-item-header">
-                    <span>2</span>Can I join any server with Dragonfly?
-                </div>
-                <div class="accordion-item-body">
-                    <div class="accordion-item-body-content">
-                        <p style="margin-bottom: 10px; font-weight: 500;">
-                            Joining any Minecraft server should not be a problem with the modification since you do not get any decisive playing advantages.</p>
-                        <p>In general, Dragonfly only makes playing Minecraft more convenient and does not provide you with unfair privileges. But since every server can decide on its own, whether it will allow these additional features or not, you should
-                            ask the server owners or the support for permission. To keep our users secure, we are working on a list with servers that allow joining with Dragonfly.</p>
-                    </div>
-                </div>
+               <div class="accordion-item-header">
+                  <span>2</span>Can I join any server with Dragonfly?
+               </div>
+               <div class="accordion-item-body">
+                  <div class="accordion-item-body-content">
+                     <p style="margin-bottom: 10px; font-weight: 500;">
+                        Joining any Minecraft server should not be a problem with the modification since you do not get
+                        any decisive playing advantages.</p>
+                     <p>In general, Dragonfly only makes playing Minecraft more convenient and does not provide you with
+                        unfair privileges. But since every server can decide on its own, whether it will allow these
+                        additional features or not, you should
+                        ask the server owners or the support for permission. To keep our users secure, we are working on
+                        a list with servers that allow joining with Dragonfly.</p>
+                  </div>
+               </div>
             </div>
             <div class="accordion-item" data-aos="fade-up" data-aos-delay="400" data-aos-anchor-placement="top-bottom">
-                <div class="accordion-item-header">
-                    <span>3</span>What do I need to be able to use Dragonfly?
-                </div>
-                <div class="accordion-item-body">
-                    <div class="accordion-item-body-content">
-                        <p style="margin-bottom: 10px; font-weight: 500;">
-                            To run the Dragonfly installer, you need to have Java 8 or higher as well as the Minecraft launcher installed on your computer. Usually, a correct Java version comes with the launcher.
-                        </p>
-                        <p>We recommend installing and running the Minecraft Java Edition at least once before using the Dragonfly installer. Joining a Minecraft server without cracked-mode will require you to have a Minecraft (or Mojang) account, but you
-                            do not especially need one to use Dragonfly. There are several servers that allow cracked-players to join and the Singleplayer mode is also an option.</p>
-                    </div>
-                </div>
+               <div class="accordion-item-header">
+                  <span>3</span>What do I need to be able to use Dragonfly?
+               </div>
+               <div class="accordion-item-body">
+                  <div class="accordion-item-body-content">
+                     <p style="margin-bottom: 10px; font-weight: 500;">
+                        To run the Dragonfly installer, you need to have Java 8 or higher as well as the Minecraft
+                        launcher installed on your computer. Usually, a correct Java version comes with the launcher.
+                     </p>
+                     <p>We recommend installing and running the Minecraft Java Edition at least once before using the
+                        Dragonfly installer. Joining a Minecraft server without cracked-mode will require you to have a
+                        Minecraft (or Mojang) account, but you
+                        do not especially need one to use Dragonfly. There are several servers that allow
+                        cracked-players to join and the Singleplayer mode is also an option.</p>
+                  </div>
+               </div>
             </div>
             <div class="accordion-item" data-aos="fade-up" data-aos-delay="450" data-aos-anchor-placement="top-bottom">
-                <div class="accordion-item-header">
-                    <span>4</span>When will Dragonfly be released?
-                </div>
-                <div class="accordion-item-body">
-                    <div class="accordion-item-body-content">
-                        <p style="margin-bottom: 10px; font-weight: 500;">
-                            Since Dragonfly and other Inception Cloud services are currently under heavy development, the modification is also in a closed alpha phase.</p>
-                        <p>We do not actually know a fixed date on which Dragonfly will be released to everyone, but what we know is that we are working as hard as we can to make the first version available for you! Until we have reached this point, there
-                            will probably be more than one public beta, so there will be a chance for you to contribute to our client! Make sure to follow our social media accounts to stay tuned on new updates and releases!
-                        </p>
-                    </div>
-                </div>
+               <div class="accordion-item-header">
+                  <span>4</span>When will Dragonfly be released?
+               </div>
+               <div class="accordion-item-body">
+                  <div class="accordion-item-body-content">
+                     <p style="margin-bottom: 10px; font-weight: 500;">
+                        Since Dragonfly and other Inception Cloud services are currently under heavy development, the
+                        modification is also in a closed alpha phase.</p>
+                     <p>We do not actually know a fixed date on which Dragonfly will be released to everyone, but what
+                        we know is that we are working as hard as we can to make the first version available for you!
+                        Until we have reached this point, there
+                        will probably be more than one public beta, so there will be a chance for you to contribute to
+                        our client! Make sure to follow our social media accounts to stay tuned on new updates and
+                        releases!
+                     </p>
+                  </div>
+               </div>
             </div>
-        </div>
-    </div>
-    <footer>
-        <div class="f-upper">
+         </div>
+      </div>
+      <footer>
+         <div class="f-upper">
             <div class="f-desc">
-                <img onclick="scrollToTop()" src="./assets/Dragon.svg" alt="">
-                <p>Play like a monster. Play with Dragonfly.</p>
-                <p>&copy; 2020 InceptionCloud Network</p>
+               <img onclick="scrollToTop()" src="./assets/Dragon.svg" alt="">
+               <p>Play like a monster. Play with Dragonfly.</p>
+               <p>&copy; 2020 InceptionCloud Network</p>
             </div>
             <div class="links-wrapper">
-                <div class="f-links">
-                    <h3>Useful links</h3>
-                    <ul>
-                        <li><a onclick="scrollToTop()">Home</a></li>
-                        <li><a href="https://inceptioncloud.net/dragonfly/patchnotes/">Updates</a></li>
-                        <li><a href="https://inceptioncloud.net/privacy">Privacy notice</a></li>
-                        <li><a href="https://inceptioncloud.net/dragonfly/download">Download</a></li>
-                    </ul>
-                </div>
+               <div class="f-links">
+                  <h3>Useful links</h3>
+                  <ul>
+                     <li><a onclick="scrollToTop()">Home</a></li>
+                     <li><a href="https://inceptioncloud.net/dragonfly/patchnotes/">Updates</a></li>
+                     <li><a href="https://inceptioncloud.net/privacy">Privacy notice</a></li>
+                     <li><a href="https://inceptioncloud.net/dragonfly/download">Download</a></li>
+                  </ul>
+               </div>
 
-                <div class="f-links">
-                    <h3>Latest updates</h3>
-                    <ul>
-                        <li><a href="">v1.0.6.0-alpha</a></li>
-                        <li><a href="">v1.0.5.0-alpha</a></li>
-                        <li><a href="">v1.0.4.0-alpha</a></li>
-                        <li><a href="https://inceptioncloud.net/dragonfly/patchnotes/patch/v1.0.3.0-alpha">v1.0.3.0-alpha</a></li>
-                        <li>
-                            <a href="https://inceptioncloud.net/dragonfly/patchnotes/patch/v1.0.2.0-alpha">v1.0.2.0-alpha</a>
-                        </li>
-                        <li>
-                            <a href="https://inceptioncloud.net/dragonfly/patchnotes/patch/v1.0.1.0-alpha">v1.0.1.0-alpha</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="f-links">
-                    <h3>Work with us</h3>
-                    <ul>
-                        <li><a href="#">Developer</a></li>
-                        <li><a href="#">Moderator</a></li>
-                        <li><a href="#">Designer</a></li>
-                        <li><a href="#">Content Creator</a></li>
-                    </ul>
-                </div>
+               <div class="f-links">
+                  <h3>Latest updates</h3>
+                  <ul>
+                     <li><a href="">v1.0.6.0-alpha</a></li>
+                     <li><a href="">v1.0.5.0-alpha</a></li>
+                     <li><a href="">v1.0.4.0-alpha</a></li>
+                     <li>
+                        <a href="https://inceptioncloud.net/dragonfly/patchnotes/patch/v1.0.3.0-alpha">v1.0.3.0-alpha</a>
+                     </li>
+                     <li>
+                        <a href="https://inceptioncloud.net/dragonfly/patchnotes/patch/v1.0.2.0-alpha">v1.0.2.0-alpha</a>
+                     </li>
+                     <li>
+                        <a href="https://inceptioncloud.net/dragonfly/patchnotes/patch/v1.0.1.0-alpha">v1.0.1.0-alpha</a>
+                     </li>
+                  </ul>
+               </div>
+               <div class="f-links">
+                  <h3>Work with us</h3>
+                  <ul>
+                     <li><a href="#">Developer</a></li>
+                     <li><a href="#">Moderator</a></li>
+                     <li><a href="#">Designer</a></li>
+                     <li><a href="#">Content Creator</a></li>
+                  </ul>
+               </div>
             </div>
-        </div>
-        <div class="f-lower">
+         </div>
+         <div class="f-lower">
             <div class="f-socials">
-                <h3>Follow us on social media to stay up to date</h3>
-                <a class="f-insta" href="https://instagram.com/inceptioncloud">
-                    <ion-icon name="logo-instagram"></ion-icon>
-                </a>
-                <a class="f-twitter" href="https://twitter.com/inceptioncloud">
-                    <ion-icon name="logo-twitter"></ion-icon>
-                </a>
-                <a class="f-discord" href="https://icnet.dev/discord">
-                    <i class="fab fa-discord"></i>
-                </a>
+               <h3>Follow us on social media to stay up to date</h3>
+               <a class="f-insta" href="https://instagram.com/inceptioncloud">
+                  <ion-icon name="logo-instagram"></ion-icon>
+               </a>
+               <a class="f-twitter" href="https://twitter.com/inceptioncloud">
+                  <ion-icon name="logo-twitter"></ion-icon>
+               </a>
+               <a class="f-discord" href="https://icnet.dev/discord">
+                  <i class="fab fa-discord"></i>
+               </a>
             </div>
-        </div>
-    </footer>
+         </div>
+      </footer>
 
-    <!-- <div class="cs-text">
-            <h2 class="coming-soon">Coming soon</h2>
-            <p>We do our best to publish this content as soon as possible!</p>
-        </div> -->
-    <!-- Twenty Twenty Master -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
-    <script src="https://cdn.icnet.dev/web/drgn/js/twenty-twenty.js"></script>
+      <!-- <div class="cs-text">
+              <h2 class="coming-soon">Coming soon</h2>
+              <p>We do our best to publish this content as soon as possible!</p>
+          </div> -->
+      <!-- Twenty Twenty Master -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+      <script src="https://cdn.icnet.dev/web/drgn/js/twenty-twenty.js"></script>
 
-    <!-- Fontawesome -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+      <!-- Fontawesome -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
 
-    <!-- Local js -->
-    <!--      <script src="main.js"></script>-->
-    <script src="https://cdn.icnet.dev/web/drgn/js/main.js"></script>
+      <!-- Local js -->
+      <!--      <script src="main.js"></script>-->
+      <script src="https://cdn.icnet.dev/web/drgn/js/main.js"></script>
 
-    <!-- SmoothScroll API -->
-    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
-    <script>
-        const scroll = new SmoothScroll('a[href*="#"]', {
-            speed: 1000,
-            speedAsDuration: true,
-        });
-    </script>
+      <!-- SmoothScroll API -->
+      <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
+      <script>
+          const scroll = new SmoothScroll('a[href*="#"]', {
+              speed: 1000,
+              speedAsDuration: true,
+          });
+      </script>
 
-    <!-- AOS -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="https://cdn.icnet.dev/web/drgn/js/aos.js"></script>
-</body>
+      <!-- AOS -->
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+      <script src="https://cdn.icnet.dev/web/drgn/js/aos.js"></script>
+   </body>
 
 </html>
