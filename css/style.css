@@ -143,10 +143,10 @@ li
 {
     background: tomato;
     color: #ffffff;
-    padding: 20px;
+    padding: 15px;
     position: relative;
     z-index: 999;
-    transition: all .5s ease;
+    transition: all .45s ease;
 }
 
 .news-desc
@@ -198,7 +198,8 @@ li
 }
 .header
 {
-    position: fixed;
+    position: sticky;
+    top: 0;
     height: 60px;
     width: 100%;
     background-color: #FFFFFF;
@@ -226,8 +227,7 @@ li
     width: 100%;
     height: 100vh;
     position: fixed;
-    right: -100vh;
-    visibility: hidden;
+    transform: translateY(100vh);
     background-color: var(--clr-pdark);
     transform-origin: left;
 }
@@ -235,8 +235,7 @@ li
 .nav-active
 {
     transform-origin: left;
-    right: 00vh;
-    visibility: visible
+    transform: translateY(0vh);
 }
 
 .nav ul
@@ -269,7 +268,7 @@ li
     opacity: 1;
     transform: scale(1.6);
     transition: .5s ease;
-    transition-delay: .5s
+    transition-delay: .2s
 }
 
 .socials a:hover
@@ -333,20 +332,20 @@ li
 {
     transform: rotate(45deg);
     transform-origin: left;
-    transition: .6s ease
+    transition: .3s ease
 }
 
 .ham-active .line2
 {
     transform: translateX(10vh);
-    transition: transform .5s ease
+    transition: transform .2s ease
 }
 
 .ham-active .line3
 {
     transform: rotate(-45deg);
     transform-origin: left;
-    transition: transform .6s ease
+    transition: transform .3s ease
 }
 
 .line
@@ -354,7 +353,7 @@ li
     background-color: var(--clr-pdark);
     height: 3px;
     width: 25px;
-    transition: transform .6s ease;
+    transition: transform .4s ease;
     transform-origin: left
 }
 
@@ -370,7 +369,8 @@ li
     margin-bottom: -95px;
     padding-top: 90px;
     background-image: linear-gradient(180deg, var(--clr-pdark) 30%, var(--clr-plight) 80%);
-    position: relative
+    position: relative;
+    transition: all .5s ease !important;
 }
 
 .t-shape
@@ -1073,7 +1073,7 @@ footer a[href=""]
 {
     .nav
     {
-        transition: .5s cubic-bezier(.98, -.25, .27, 1)
+        transition: .4s ease;
     }
 
     .landing
@@ -1136,7 +1136,8 @@ footer a[href=""]
         right: 0;
         opacity: 1;
         visibility: visible;
-        transition: none
+        transition: none;
+        transform: none;
     }
 
     .nav .socials
@@ -1412,7 +1413,7 @@ footer a[href=""]
 
     .features
     {
-        padding-top: 100px
+        padding-top: 160px
     }
 
     .cta

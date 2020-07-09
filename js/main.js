@@ -2,7 +2,7 @@
 /*== SELECTORS ==*/
 /*---------------*/
 /* #region selectors */
-const nav = document.querySelector('.nav');
+const nav = document.querySelector('#nav');
 const ham = document.querySelector('.ham-wrapper');
 const socials = document.querySelector('.socials');
 const landing = document.getElementById("landing")
@@ -136,12 +136,34 @@ accordionList.forEach((accordionHeader) => {
 ham.addEventListener('click', toggleNav);
 /* #endregion */
 
-newsCloseBtn.addEventListener("click", function () {
-    const news = document.getElementById("news")
+const news = document.getElementById("news")
+newsCloseBtn.addEventListener("click", manageNews)
+let newsClosed = false
+
+function manageNews() {
+    newsClosed = true
+    hideNews()
+}
+
+function hideNews() {
     news.style.transform = `translateY(-${news.offsetHeight}px)`
     document.getElementById("navbar").style.transform = `translateY(-${news.offsetHeight}px)`
     document.getElementById("navbar").style.top = `${news.offsetHeight}px`
-})
+
+    if (newsClosed && width < 1000) {
+        document.getElementById("features").style.paddingTop = "0px"
+        document.getElementById("features").style.marginTop = "-50px"
+    }
+    if (newsClosed) {
+        landing.style.transform = `translateY(-${news.offsetHeight}px)`
+    }
+}
+
+function showNews() {
+    news.style.transform = `translateY(0px)`
+    document.getElementById("navbar").style.transform = `translateY(0px)`
+    document.getElementById("navbar").style.top = `0px`
+}
 
 /*---------------*/
 /*== FUNCTIONS ==*/
@@ -154,6 +176,28 @@ function toggleNav() {
     nav.classList.toggle('nav-active');
     ham.classList.toggle('ham-active');
     socials.classList.toggle('socials-active');
+    // Check if user is at top to prevent bugs
+    if (document.documentElement.scrollTop < 50) {
+        document.getElementById("navbar").style.transition = "all .35s ease"
+    } else {
+        document.getElementById("navbar").style.transition = "none"
+    }
+    // Hide news while the menu is open
+    if (socials.classList.contains("socials-active")) {
+        hideNews()
+        nav.style.position = "fixed"
+        nav.style.top = "auto"
+        landing.style.transform = `translateY(-${news.offsetHeight}px)`
+    } else {
+        if (!newsClosed) {
+            landing.style.transform = `translateY(0px)`
+            showNews()
+            setTimeout(function () {
+                nav.style.position = "sticky"
+                nav.style.top = "0"
+            }, 1000)
+        }
+    }
 }
 
 // Close the nav menu
@@ -187,15 +231,19 @@ if (!window.location.hash) {
 /* #endregion */
 
 function scrollToTop() {
-    $("html, body").animate({ scrollTop: 0 },  400)
+    $("html, body").animate({scrollTop: 0}, 400)
     closeMenu()
 }
+
 // Shrink navbar on scroll
 window.onscroll = function () {
     scrollFunction();
 };
 window.onload = function () {
     scrollFunction()
+    if (!news.getAttribute("style")) {
+        document.getElementById("features").style.paddingTop = "80px"
+    }
 };
 
 function scrollFunction() {
