@@ -93,6 +93,15 @@ window.addEventListener("resize", () => {
         refresh();
         withTwentyTwenty = false;
     }
+
+    // Nav
+    if (nav.classList.contains("nav-active")) {
+        setTimeout(function () {
+            nav.style.display = "none"
+        }, 400)
+    } else {
+        nav.style.display = "flex"
+    }
 });
 
 // Pre-Loader
@@ -173,9 +182,22 @@ function showNews() {
 
 // Open / Close the nav menu
 function toggleNav() {
-    nav.classList.toggle('nav-active');
-    ham.classList.toggle('ham-active');
-    socials.classList.toggle('socials-active');
+    if (nav.classList.contains("nav-active")) {
+        setTimeout(function () {
+            nav.style.display = "none"
+            console.log("here")
+        }, 400)
+    } else {
+        if(nav.classList.contains("dfo")) {
+            nav.classList.remove("dfo")
+        }
+        nav.style.display = "flex"
+    }
+    setTimeout(function () {
+        nav.classList.toggle('nav-active');
+        ham.classList.toggle('ham-active');
+        socials.classList.toggle('socials-active');
+    }, 5)
     // Check if user is at top to prevent bugs
     if (document.documentElement.scrollTop < 50) {
         document.getElementById("navbar").style.transition = "all .35s ease"
