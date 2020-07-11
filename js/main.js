@@ -65,13 +65,19 @@ function injectLandingVideo() {
 
 injectLandingVideo()
 const landingVid = document.getElementById("landing-vid")
-landing.addEventListener("click", () => {
+
+landing.addEventListener("click", toggleLandingVid)
+
+let landingVidStatus = true
+function toggleLandingVid() {
     if (landingVid.paused) {
+        landingVidStatus = true
         landingVid.play()
     } else {
+        landingVidStatus = false
         landingVid.pause()
     }
-})
+}
 /* #endregion */
 
 
@@ -260,6 +266,12 @@ function scrollToTop() {
 // Shrink navbar on scroll
 window.onscroll = function () {
     scrollFunction();
+
+    if(document.documentElement.scrollTop > window.innerHeight) {
+        landingVid.pause()
+    } else if (landingVidStatus){
+        landingVid.play()
+    }
 };
 window.onload = function () {
     scrollFunction()

@@ -374,7 +374,7 @@ li
     padding-top: 50px;
     background-image: linear-gradient(180deg, var(--clr-pdark) 30%, var(--clr-plight) 80%);
     position: relative;
-    transition: all .4s ease !important;
+    transition: transform .4s ease !important;
 }
 
 .t-shape
