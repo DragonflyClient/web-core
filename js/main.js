@@ -69,6 +69,7 @@ const landingVid = document.getElementById("landing-vid")
 landing.addEventListener("click", toggleLandingVid)
 
 let landingVidStatus = true
+
 function toggleLandingVid() {
     if (landingVid.paused) {
         landingVidStatus = true
@@ -78,6 +79,7 @@ function toggleLandingVid() {
         landingVid.pause()
     }
 }
+
 /* #endregion */
 
 
@@ -191,13 +193,14 @@ function toggleNav() {
     if (nav.classList.contains("nav-active")) {
         setTimeout(function () {
             nav.style.display = "none"
-            console.log("here")
-        }, 400)
+            nav.style.position = "fixed"
+        }, 350)
     } else {
-        if(nav.classList.contains("dfo")) {
+        if (nav.classList.contains("dfo")) {
             nav.classList.remove("dfo")
         }
         nav.style.display = "flex"
+        nav.style.position = "sticky"
     }
     setTimeout(function () {
         nav.classList.toggle('nav-active');
@@ -267,13 +270,18 @@ function scrollToTop() {
 window.onscroll = function () {
     scrollFunction();
 
-    if(document.documentElement.scrollTop > window.innerHeight) {
-        landingVid.pause()
-    } else if (landingVidStatus){
-        landingVid.play()
+    if (landingVid) {
+        if (document.documentElement.scrollTop > window.innerHeight) {
+            landingVid.pause()
+        } else if (landingVidStatus) {
+            landingVid.play()
+        }
     }
 };
 window.onload = function () {
+    if (!document.getElementById("news")) {
+        nav.style.position = "fixed"
+    }
     scrollFunction()
     if (!news.getAttribute("style")) {
         document.getElementById("features").style.paddingTop = "80px"

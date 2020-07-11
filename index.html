@@ -239,67 +239,7 @@
             </div>
          </div>
       </div>
-      <footer>
-         <div class="f-upper">
-            <div class="f-desc">
-               <img onclick="scrollToTop()" src="./assets/Dragon.svg" alt="">
-               <p>Play like a monster. Play with Dragonfly.</p>
-               <p>&copy; 2020 InceptionCloud Network</p>
-            </div>
-            <div class="links-wrapper">
-               <div class="f-links">
-                  <h3>Useful links</h3>
-                  <ul>
-                     <li><a onclick="scrollToTop()">Home</a></li>
-                     <li><a href="https://inceptioncloud.net/dragonfly/patchnotes/">Updates</a></li>
-                     <li><a href="https://inceptioncloud.net/privacy">Privacy notice</a></li>
-                     <li><a href="https://inceptioncloud.net/dragonfly/download">Download</a></li>
-                  </ul>
-               </div>
-
-               <div class="f-links">
-                  <h3>Latest updates</h3>
-                  <ul>
-                     <li><a href="">v1.0.6.0-alpha</a></li>
-                     <li><a href="">v1.0.5.0-alpha</a></li>
-                     <li><a href="">v1.0.4.0-alpha</a></li>
-                     <li>
-                        <a href="https://inceptioncloud.net/dragonfly/patchnotes/patch/v1.0.3.0-alpha">v1.0.3.0-alpha</a>
-                     </li>
-                     <li>
-                        <a href="https://inceptioncloud.net/dragonfly/patchnotes/patch/v1.0.2.0-alpha">v1.0.2.0-alpha</a>
-                     </li>
-                     <li>
-                        <a href="https://inceptioncloud.net/dragonfly/patchnotes/patch/v1.0.1.0-alpha">v1.0.1.0-alpha</a>
-                     </li>
-                  </ul>
-               </div>
-               <div class="f-links">
-                  <h3>Work with us</h3>
-                  <ul>
-                     <li><a href="https://inceptioncloud.net/de/apply/developer">Developer</a></li>
-                     <li><a href="">Moderator</a></li>
-                     <li><a href="">Designer</a></li>
-                     <li><a href="">Content Creator</a></li>
-                  </ul>
-               </div>
-            </div>
-         </div>
-         <div class="f-lower">
-            <div class="f-socials">
-               <h3>Follow us on social media to stay up to date</h3>
-               <a class="f-insta" href="https://instagram.com/inceptioncloud">
-                  <ion-icon name="logo-instagram"></ion-icon>
-               </a>
-               <a class="f-twitter" href="https://twitter.com/inceptioncloud">
-                  <ion-icon name="logo-twitter"></ion-icon>
-               </a>
-               <a class="f-discord" href="https://icnet.dev/discord">
-                  <i class="fab fa-discord"></i>
-               </a>
-            </div>
-         </div>
-      </footer>
+      <div id="footer"></div>
 
       <!-- <div class="cs-text">
               <h2 class="coming-soon">Coming soon</h2>
@@ -328,6 +268,9 @@
       <!-- AOS -->
       <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
       <script src="https://cdn.icnet.dev/web/drgn/js/aos.js"></script>
+      <script>
+          $( "#footer" ).load( "https://cdn.icnet.dev/web/drgn/components/footer.html");
+      </script>
    </body>
 
 </html>
