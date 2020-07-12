@@ -709,7 +709,7 @@ video
     position: relative;
 }
 
-/*.accordion-item-body-content::before
+.accordion-item-body-content::before
 {
     content: '';
     position: absolute;
@@ -718,7 +718,7 @@ video
     width: 100%;
     height: 2px;
     background-image: linear-gradient(to right, var(--clr-primary) 50%, #fff 75%);
-}*/
+}
 
 .accordion-item-body
 {
