@@ -1122,7 +1122,7 @@ footer a[href=""]
 {
     .header, .upper-wrapper
     {
-        height: 90px;
+        height: 80px;
         display: flex;
         align-items: center
     }
@@ -1181,7 +1181,7 @@ footer a[href=""]
 
     .logo img
     {
-        width: 180px
+        width: 150px
     }
 
     .landing

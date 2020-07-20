@@ -159,6 +159,7 @@ let newsClosed = false
 
 function manageNews() {
     newsClosed = true
+    localStorage.setItem('newsClosed', 'true')
     hideNews()
 }
 
@@ -214,8 +215,9 @@ function toggleNav() {
         document.getElementById("navbar").style.transition = "none"
     }
     // Hide news while the menu is open
-    if (socials.classList.contains("socials-active")) {
+    if (!socials.classList.contains("socials-active")) {
         hideNews()
+        console.log('now')
         nav.style.position = "fixed"
         nav.style.top = "auto"
         landing.style.transform = `translateY(-${news.offsetHeight}px)`
@@ -268,7 +270,6 @@ function scrollToTop() {
 
 // Shrink navbar on scroll
 window.onscroll = function () {
-    scrollFunction();
 
     if (landingVid) {
         if (document.documentElement.scrollTop > window.innerHeight) {
@@ -278,26 +279,16 @@ window.onscroll = function () {
         }
     }
 };
+
 window.onload = function () {
+    if(localStorage.getItem('newsClosed') !== 'true') {
+        news.style.display = 'block'
+    }
+
     if (!document.getElementById("news")) {
         nav.style.position = "fixed"
     }
-    scrollFunction()
     if (!news.getAttribute("style")) {
         document.getElementById("features").style.paddingTop = "80px"
     }
 };
-
-function scrollFunction() {
-    if (window.innerWidth > 800 || document.innerWidth > 800) {
-        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-            document.getElementById("navbar").style.height = "70px";
-            document.getElementById("logo-img").style.width = "150px";
-            document.getElementById('nav').style.fontSize = "18px";
-        } else {
-            document.getElementById("navbar").style.height = "90px";
-            document.getElementById("logo-img").style.width = "180px";
-            document.getElementById('nav').style.fontSize = "22px";
-        }
-    }
-}
