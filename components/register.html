@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+   <head>
+      <meta charset="UTF-8">
+      <title>Register</title>
+   </head>
+
+   <body>
+      <form id="form">
+         <div>
+            <label for="name">Username</label><br>
+            <input type="text" name="name" id="name">
+         </div>
+         <div>
+            <label for="password">Password</label><br>
+            <input type="password" name="password" id="password">
+         </div>
+         <input type="submit" value="Register">
+      </form>
+   </body>
+
+   <script>
+       const form = document.getElementById("form")
+
+       form.addEventListener('submit', event => {
+           event.preventDefault()
+           const formData = new FormData(form)
+           const name = formData.get("name")
+           const password = formData.get("password")
+           const body = {
+               "name": name,
+               "password": password
+           }
+
+           fetch("https://api.inceptioncloud.net/register", {
+               method: "POST",
+               body: JSON.stringify(body),
+               headers: {
+                   "Content-Type": "application/json"
+               }
+           }).then(result => result.json())
+               .then(result => {
+                   if (result.success) {
+                       console.log(result);
+                       // handle register success
+                   } else {
+                       const error = result.error
+                       console.log(result);
+                       // handle register no success
+                   }
+               })
+       });
+   </script>
+
+</html>
