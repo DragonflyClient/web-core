@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 body {
     font-family: Rubik;
 }
 
 /* Full-width input fields */
-input[type=text], input[type=password] {
+input[type=text],
+input[type=password] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0 25px;
@@ -14,7 +16,7 @@ input[type=text], input[type=password] {
 }
 
 /* Set a style for all buttons */
-button {
+.auth-submit {
     background: #37393A;
     color: #FFFFFF;
     padding: 14px 20px;
@@ -26,7 +28,7 @@ button {
     font-family: Rubik;
 }
 
-button:hover {
+.auth-submit:hover {
     opacity: 0.8;
 }
 
@@ -78,28 +80,42 @@ span.psw {
     font-family: Rubik;
 }
 
+span.psw a {
+    color: #ef852e;
+}
+
 /* The Modal (background) */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
     padding-top: 60px;
     font-family: Rubik;
+    z-index: 999;
 }
 
 /* Modal Content/Box */
 .modal-content {
     background-color: #fefefe;
-    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    margin: 5% auto 15% auto;
+    /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid #888;
-    width: 450px;
+    width: 550px;
     max-width: 100%;
     position: relative;
     font-family: Rubik;
@@ -109,7 +125,7 @@ span.psw {
 .close {
     position: absolute;
     right: 25px;
-    top: 0;
+    top: 15px;
     color: #000;
     font-size: 35px;
     font-weight: bold;
@@ -118,7 +134,7 @@ span.psw {
 
 .close:hover,
 .close:focus {
-    color: red;
+    opacity: 0.7;
     cursor: pointer;
     font-family: Rubik;
 }
@@ -131,13 +147,23 @@ span.psw {
 }
 
 @-webkit-keyframes animatezoom {
-    from {-webkit-transform: scale(0)}
-    to {-webkit-transform: scale(1)}
+    from {
+        -webkit-transform: scale(0)
+    }
+
+    to {
+        -webkit-transform: scale(1)
+    }
 }
 
 @keyframes animatezoom {
-    from {transform: scale(0)}
-    to {transform: scale(1)}
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
 }
 
 /* Change styles for span and cancel button on extra small screens */
@@ -146,6 +172,7 @@ span.psw {
         display: block;
         float: none;
     }
+
     .cancelbtn {
         width: 100%;
     }

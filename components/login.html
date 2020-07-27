@@ -1,81 +1,98 @@
-<!DOCTYPE html>
-<html lang="en">
-
-   <head>
-      <meta charset="UTF-8">
-      <title>Login</title>
-   </head>
-
-   <body>
-      <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
-
-      <div id="id01" class="modal">
-
-         <form class="modal-content animate" action="/action_page.php" method="post">
-            <div class="imgcontainer">
-               <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-               <img src="img_avatar2.png" alt="Avatar" class="avatar">
-            </div>
-
-            <div class="container">
-               <label for="uname"><b>Username</b></label>
-               <input type="text" placeholder="Enter Username" name="uname" required>
-
-               <label for="psw"><b>Password</b></label>
-               <input type="password" placeholder="Enter Password" name="psw" required>
-
-               <button type="submit">Login</button>
-               <label>
-                  <input type="checkbox" checked="checked" name="remember"> Remember me
-               </label>
-            </div>
-
-            <div class="container" style="background-color:#f1f1f1">
-               <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">
-                  Cancel
-               </button>
-               <span class="psw">Forgot <a href="#">password?</a></span>
-            </div>
-         </form>
+<div id="id01" class="modal">
+   <form id="form-login" class="modal-content animate" method="post">
+      <div onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;
       </div>
-   </body>
 
-   <script>
-       const form = document.getElementById("form")
+      <div class="container">
+         <h2 style="text-align: center; margin-bottom: 10px;">Login</h2>
+         <label for="name"><b>Username</b></label>
+         <input type="text" placeholder="Enter Username" name="name" required>
 
-       form.addEventListener('submit', event => {
-           event.preventDefault()
-           const formData = new FormData(form)
-           const name = formData.get("name")
-           const password = formData.get("password")
-           const body = {
-               "name": name,
-               "password": password
-           }
+         <label for="password"><b>Password</b></label>
+         <input type="password" placeholder="Enter Password" name="password" required>
 
-           fetch("https://api.inceptioncloud.net/login", {
-               method: "POST",
-               body: JSON.stringify(body),
-               headers: {
-                   "Content-Type": "application/json"
-               }
-           }).then(result => result.json())
-               .then(result => {
-                   if (result.success) {
-                       const username = result.username
-                       const token = result.token
+         <button class="auth-submit" type="submit">Login</button>
+         <span class="psw">Forgot <a href="#">password?</a></span>
+         <span style="float: left;" class="psw">Don't have an account? <a href="#" onclick="toRegister()">Sign
+               up</a></span>
+      </div>
+   </form>
+</div>
 
-                       localStorage.setItem('dragonfly-token', token)
-                       console.log(token)
+<script>
+   const formLogin = document.getElementById("form-login")
+   const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      onOpen: (toast) => {
+         toast.addEventListener('mouseenter', Swal.stopTimer)
+         toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+   })
+   formLogin.addEventListener('submit', event => {
+      event.preventDefault()
+      const formDataLogin = new FormData(formLogin)
+      const name = formDataLogin.get("name")
+      const password = formDataLogin.get("password")
+      const body = {
+         "name": name,
+         "password": password
+      }
 
-                       // handle login success
-                   } else {
-                       const error = result.error
-                       console.log(error)
-                       // handle login no success
-                   }
+      fetch("https://api.inceptioncloud.net/cookie/login", {
+            method: "POST",
+            body: JSON.stringify(body),
+            headers: {
+               "Content-Type": "application/json"
+            },
+            credentials: 'include'
+         }).then(result => result.json())
+         .then(result => {
+            if (result.success) {
+               console.log(result)
+               const username = result.username
+
+               Toast.fire({
+                  icon: 'success',
+                  title: 'Signed in successfully'
                })
-       });
-   </script>
 
-</html>
+               document.getElementById('id01').style.display = 'none'
+
+               const container = document.getElementById("username-info")
+               const pre = document.createElement("span")
+               const post = document.createElement("span")
+               const strong = document.createElement('strong')
+
+               container.innerText = ""
+               pre.innerText = "You are currently logged in as "
+               strong.innerText = username
+               post.innerText = ". Posts you create are marked with your name."
+
+               container.appendChild(pre)
+               container.appendChild(strong)
+               container.appendChild(post)
+            } else {
+               const error = result.error
+               console.log(error)
+               Toast.fire({
+                  icon: 'error',
+                  title: result.error
+               })
+            }
+         })
+   });
+
+   function toSignIn() {
+      document.getElementById('id02').style.display = 'none'
+      document.getElementById('id01').style.display = 'block'
+   }
+
+   function toRegister() {
+      document.getElementById('id01').style.display = 'none'
+      document.getElementById('id02').style.display = 'block'
+   }
+</script>
