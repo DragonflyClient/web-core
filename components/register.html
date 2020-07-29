@@ -4,7 +4,7 @@
             &times;
         </div>
 
-        <div class="container">
+        <div class="container auth">
             <h2 style="text-align: center; margin-bottom: 10px;">Register</h2>
             <label for="name"><b>Username</b></label>
             <input type="text" placeholder="Enter Username" name="name" required>
@@ -14,61 +14,9 @@
 
             <button class="auth-submit" type="submit">Sign up</button>
             <span class="psw">Forgot <a href="#">password?</a></span>
-            <span style="float: left;" class="psw">Already have an account? <a href="#" onclick="toSignIn()">Sign
+            <span style="float: left;" class="psw">Already have an account? <a href="#"
+                    onclick="switchAuth('login')">Sign
                     in</a></span>
         </div>
     </form>
 </div>
-
-<script>
-    const formRegister = document.getElementById("form-register")
-    formRegister.addEventListener('submit', event => {
-        event.preventDefault()
-        const formDataRegister = new FormData(formRegister)
-        console.log(formDataRegister)
-        const name = formDataRegister.get("name")
-        const password = formDataRegister.get("password")
-        const body = {
-            "name": name,
-            "password": password
-        }
-
-        fetch("https://api.inceptioncloud.net/register", {
-                method: "POST",
-                body: JSON.stringify(body),
-                headers: {
-                    "Content-Type": "application/json"
-                }
-            }).then(result => result.json())
-            .then(result => {
-                if (result.success) {
-                    setTimeout(() => {
-                        location.reload()
-                    }, 3000)
-                    console.log(result);
-                    Toast.fire({
-                        icon: 'success',
-                        title: 'Account successfully created!'
-                    })
-                    document.getElementById('id02').style.display = 'none'
-                } else {
-                    const error = result.error
-                    console.log(result);
-                    Toast.fire({
-                        icon: 'error',
-                        title: result.error
-                    })
-                }
-            })
-    });
-
-    function toSignIn() {
-        document.getElementById('id02').style.display = 'none'
-        document.getElementById('id01').style.display = 'block'
-    }
-
-    function toRegister() {
-        document.getElementById('id01').style.display = 'none'
-        document.getElementById('id02').style.display = 'block'
-    }
-</script>

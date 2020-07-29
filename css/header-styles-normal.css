@@ -36,7 +36,7 @@
 .nav {
     width: 100%;
     position: fixed;
-    transform: translateX(-100vw);
+    transform: translateX(-150vw);
     background-color: var(--clr-pdark);
     transform-origin: left;
 }
