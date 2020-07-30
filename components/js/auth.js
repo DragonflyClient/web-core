@@ -87,9 +87,6 @@ formRegister.addEventListener('submit', event => {
     }).then(result => result.json())
         .then(result => {
             if (result.success) {
-                setTimeout(() => {
-                    location.reload()
-                }, 3000)
                 console.log(result);
                 Toast.fire({
                     icon: 'success',
