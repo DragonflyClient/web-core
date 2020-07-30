@@ -1,10 +1,11 @@
 <div id="id02" class="modal">
-    <form id="form-register" class="modal-content animate" method="post">
-        <div onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">
+   <div class="flex-container">
+      <form id="form-register" class="modal-content animate" method="post">
+         <div onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">
             &times;
-        </div>
+         </div>
 
-        <div class="container auth">
+         <div class="container auth">
             <h2 style="text-align: center; margin-bottom: 10px;">Register</h2>
             <label for="name"><b>Username</b></label>
             <input type="text" placeholder="Enter Username" name="name" required>
@@ -14,8 +15,15 @@
 
             <button class="auth-submit" type="submit">Sign up</button>
             <span style="float: left;" class="psw">Already have an account? <a href="#"
-                    onclick="switchAuth('login')">Sign
+                                                                               onclick="switchAuth('login')">Sign
                     in</a></span>
-        </div>
-    </form>
+            <span style="float: left;" class="hint">By creating a Dragonfly account you accept the Inception Cloud privacy policy.
+                    A Dragonfly account will only be of interest to your "Ideas" area if you want to rate a post
+            or display your name on a post you have written. At the moment, a Dragonfly account is only used to
+            identify users and thereby respond to further requests or the like. In the future, it is planned that
+            you can link your Dragonfly account to one or more Minecraft accounts to make in-game accessories as
+            well as the ability to record and (graphically) display statistics possible.</span>
+         </div>
+      </form>
+   </div>
 </div>
