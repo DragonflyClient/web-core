@@ -40,20 +40,6 @@ formLogin.addEventListener('submit', event => {
                 })
 
                 document.getElementById('id01').style.display = 'none'
-
-                const container = document.getElementById("username-info")
-                const pre = document.createElement("span")
-                const post = document.createElement("span")
-                const strong = document.createElement('strong')
-
-                container.innerText = ""
-                pre.innerText = "You are currently logged in as "
-                strong.innerText = username
-                post.innerText = ". Posts you create are marked with your name."
-
-                container.appendChild(pre)
-                container.appendChild(strong)
-                container.appendChild(post)
             } else {
                 const error = result.error
                 console.log(error)
@@ -62,6 +48,7 @@ formLogin.addEventListener('submit', event => {
                     title: result.error
                 })
             }
+            afterLogin(result.success, result.username)
         })
 });
 
@@ -78,12 +65,13 @@ formRegister.addEventListener('submit', event => {
         "password": password
     }
 
-    fetch("https://api.playdragonfly.net/register", {
+    fetch("https://api.playdragonfly.net/cookie/register", {
         method: "POST",
         body: JSON.stringify(body),
         headers: {
             "Content-Type": "application/json"
-        }
+        },
+        credentials: 'include'
     }).then(result => result.json())
         .then(result => {
             if (result.success) {
@@ -101,6 +89,7 @@ formRegister.addEventListener('submit', event => {
                     title: result.error
                 })
             }
+            afterLogin(result.success, result.username)
         })
 });
 
