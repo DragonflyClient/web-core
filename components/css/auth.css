@@ -69,7 +69,7 @@ img.avatar {
     font-family: Rubik;
 }
 
-.container {
+.container.auth {
     padding: 60px 40px;
     font-family: Rubik;
 }
