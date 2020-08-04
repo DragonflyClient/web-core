@@ -5,6 +5,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 :root {
   --clr-fg: #eff1f3;
   --clr-bg: #37393a;
@@ -12,6 +13,7 @@
   --clr-primary: #ef852e;
   --clr-plight: #ffc247;
 }
+
 body {
   height: 100%;
   font-family: Rubik, sans-serif;
@@ -21,12 +23,27 @@ li,
 #log-out {
   list-style: none;
   cursor: pointer;
+  font-size: 20px;
+}
+
+li.active {
+  background-color: var(--clr-pdark);
+  color: #ffffff;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+main {
+  margin: 30px auto 0 auto;
+  width: 60%;
 }
 
 #sidebar {
   height: 85vh;
-  width: 200px;
-  margin-top: 10vh;
+  width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -34,7 +51,7 @@ li,
 }
 
 #sidebar ul {
-  height: 40%;
+  height: 220px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -46,14 +63,28 @@ li,
   justify-content: start;
   width: 100%;
   padding: 12px 20px;
-  transition: color 0.2s ease, background 0.1s ease;
+  transition: color 0.2s ease,
+    background 0.1s ease;
+  user-select: none;
 }
+
 #sidebar ul li:hover,
 #log-out:hover {
   color: #ffffff;
   background-color: var(--clr-pdark);
 }
-#sidebar li ion-icon,
-#log-out ion-icon {
+
+#sidebar li svg,
+#log-out svg {
   margin-right: 10px;
+}
+
+#content {
+  display: none;
+}
+
+@media (max-width: 1250px) {
+  main {
+    width: 100%;
+  }
 }
