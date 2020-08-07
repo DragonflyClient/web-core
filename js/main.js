@@ -120,6 +120,7 @@ window.addEventListener('load', function () {
     }, 350)
 });
 
+
 // Landing video
 window.addEventListener("resize", injectLandingVideo)
 /* #endregion */
@@ -264,7 +265,7 @@ if (!window.location.hash) {
 /* #endregion */
 
 function scrollToTop() {
-    $("html, body").animate({scrollTop: 0}, 400)
+    $("html, body").animate({ scrollTop: 0 }, 400)
     closeMenu()
 }
 
@@ -281,7 +282,7 @@ window.onscroll = function () {
 };
 
 window.onload = function () {
-    if(localStorage.getItem('newsClosed') !== 'true') {
+    if (localStorage.getItem('newsClosed') !== 'true') {
         news.style.display = 'block'
     }
 
@@ -292,3 +293,24 @@ window.onload = function () {
         document.getElementById("features").style.paddingTop = "80px"
     }
 };
+
+/* Logout dropdown */
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function (event) {
+    if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+}
