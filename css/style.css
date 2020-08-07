@@ -334,7 +334,9 @@ li {
 .drgn-information {
   background-color: var(--clr-pdark);
   color: #ffffff;
-  padding: 5px 20px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  padding: 5px 15px;
 }
 
 #drgn-accountname-icon {
@@ -1060,7 +1062,7 @@ footer a[href=""] {
   }
 
   .upper-wrapper {
-    width: 50%;
+    width: 40%;
     z-index: 9999;
   }
 
@@ -1102,6 +1104,7 @@ footer a[href=""] {
 
   .nav li::after {
     background-color: var(--clr-pdark);
+    pointer-events: none;
   }
 
   .logo img {

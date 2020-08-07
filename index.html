@@ -61,7 +61,7 @@
         <div class="line line3"></div>
       </div>
     </div>
-    <div class="nav" id="nav" style="overflow: hidden;">
+    <div class="nav" id="nav">
       <ul>
         <li class="item" onclick="closeMenu()">
           <a href="https://ideas.playdragonfly.net">Ideas</a>
@@ -72,6 +72,20 @@
         <li class="item" onclick="closeMenu()"><a href="#faq">FAQ</a></li>
         <li class="item" onclick="closeMenu()">
           <a href="/download">Download</a>
+        </li>
+        <li class="item dropdown dropdown-account">
+          <a id="drgn-account-login">
+            <div class=" drgn-information" onclick="myFunction()">
+              <span style="pointer-events: none;" id="drgn-accountname" class="dropbtn">Log in</span><span
+                style="pointer-events: none;" id="drgn-accountname-icon"><i class="fas fa-angle-down"></i></span>
+            </div>
+            <div id="myDropdown" class="dropdown-content">
+              <div class="dropdown-item" href="#" onclick="logOut()" data-toggle="modal" data-target="#logoutModal">
+                <i class="fas fa-sign-out-alt"></i>
+                Logout
+              </div>
+            </div>
+          </a>
         </li>
         <div class="socials">
           <a href="https://instagram.com/inceptioncloud">
@@ -290,6 +304,7 @@
   <!-- AOS -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script src="https://cdn.icnet.dev/web/drgn/js/aos.js"></script>
+  <script src="https://cdn.icnet.dev/web/drgn/js/common.js"></script>
   <script>
     $('#footer').load(
       'https://cdn.icnet.dev/web/drgn/components/footer.html'
