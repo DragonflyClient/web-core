@@ -368,6 +368,8 @@ li {
   z-index: 1;
   right: 0;
   margin-top: 10px;
+  transform-origin: top right;
+  animation: reveal .25s ease;
 }
 
 /* Links inside the dropdown */
@@ -389,8 +391,18 @@ li {
 }
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {
+.show-acc-dropdown {
   display: block;
+}
+
+@keyframes reveal {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 .landing {
