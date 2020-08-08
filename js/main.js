@@ -113,7 +113,7 @@ window.addEventListener("resize", () => {
 });
 
 // Pre-Loader
-window.addEventListener('load', function () {
+window.addEventListener('DOMContentLoaded', function () {
     setTimeout(function () {
         const loader = document.querySelector('.pre-loader');
         loader.classList.add('pl-hide');
