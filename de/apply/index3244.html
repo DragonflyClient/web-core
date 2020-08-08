@@ -1,81 +1,120 @@
 <!DOCTYPE html>
-<html>
-   <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="https://cdn.icnet.dev/web/drgn/components/css/auth.css">
-      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-   </head>
-   <body>
+<html lang="en">
 
-      <h2>Modal Login Form</h2>
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Submit feedback</title>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+   <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet" />
+   <link rel="icon" href="https://cdn.icnet.dev/web/drgn/assets/img/svg/Dragon.svg" />
+   <link rel="stylesheet" href="./css/style.css" />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js"></script>
+   <!-- IONICONS -->
+   <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
+   <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
+   <meta name="description" content="In order to make the Dragonfly Client and all of its components even better, we need your help. So if you have a
+        bug in the client, on the website or on our Discord server, please do not hesitate to report it here.">
+   <style>
+      .ql-editor {
+         min-height: 300px;
+      }
+   </style>
+</head>
 
-      <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
-      <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Register</button>
-
-      <!-- Login popup -->
-      <div id="id01" class="modal">
-
-         <form class="modal-content animate" id="form">
-
-            <div class="cancel" onclick="document.getElementById('id01').style.display='none'">
-               <i class="fas fa-times"></i>
+<body>
+   <div class="container py-5">
+      <h2>Bewerbung</h2>
+      <p>Hoffentlich bist du mit viel Vorfreude hierhergekommen, um dich zu bewerben. Wenn das der Fall ist, füge bitte
+         im
+         untenstehenden Formular deine E-Mail-Adresse ein, wähle die gewünschte Position aus, und Verfasse einen kurzen
+         Text über dich und deine Erfahrungen. Wir freuen uns auf dich!</p>
+      <hr class="submit">
+      <form id="suggestion-form">
+         <div class="form-group">
+            <label for="email">E-Mail-Addresse <span class="text-danger">*</span></label>
+            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp"
+               placeholder="ricks@pickles.com" required />
+            <small id="emailHelp" class="form-text text-muted">Bitte gebe deine E-Mail-Adresse an, damit wir dich für
+               weiteres kontaktieren können.</small>
+         </div>
+         <div class="row">
+            <div class="col-md-6">
+               <div class="form-group">
+                  <label for="subject">Vorname <span class="text-danger">*</span></label>
+                  <input type="text" minlength="10" required maxlength="100" class="form-control" id="subject"
+                     aria-describedby="emailHelp" placeholder="Rick" name="subject" />
+               </div>
             </div>
-            <div class="container">
-               <label for="name"><b>Username</b></label>
-               <input type="text" placeholder="Enter Username" name="name" id="name" required>
-
-               <label for="password"><b>Password</b></label>
-               <input type="password" placeholder="Enter Password" name="password" id="password" required>
-
-               <button type="submit" style="background: #EF852E">Login</button>
-               <p>Want to create an account? <a href="#" onclick="register()">Register!</a></p>
+            <div class="col-md-6">
+               <div class="form-group">
+                  <label for="subject">Nachname </label>
+                  <input type="text" minlength="10" maxlength="100" class="form-control" id="subject"
+                     aria-describedby="emailHelp" placeholder="Sanchez" name="subject" />
+               </div>
             </div>
-         </form>
-      </div>
-
-      <!-- Register popup -->
-      <div id="id02" class="modal">
-
-         <form class="modal-content animate" id="form2">
-
-            <div class="cancel" onclick="document.getElementById('id02').style.display='none'">
-               <i class="fas fa-times"></i>
+            <div class="col-md-12">
+               <div class="form-group">
+                  <label for="language">Position <span class="text-danger">*</span></label>
+                  <select class="form-control" name="language" id="language">
+                     <option value="mc-client-dev" selected>Minecraft Client Developer</option>
+                     <option value="mc-server-dev">Minecraft Server Developer</option>
+                  </select>
+               </div>
             </div>
-            <div class="container">
-               <label for="name2"><b>Username</b></label>
-               <input type="text" placeholder="Enter Username" name="name" id="name2" required>
+         </div>
+         <label for="message1">Message <span class="text-danger">*</span></label>
+         <div class="form-group" id="message1">
+            <textarea class="form-control" name="message" id="message" style="resize: none;" rows="15"></textarea>
+         </div>
+         <button type="submit" id="submit-btn" class="btn btn-primary">
+            Submit
+         </button>
+         <hr class="submit" />
+         <p class="form-text text-muted">
+            <span class="text-danger">*</span> Required
+         </p>
+      </form>
+   </div>
 
-               <label for="password2"><b>Password</b></label>
-               <input type="password" placeholder="Enter Password" name="password" id="password2" required>
+   <div id="login"></div>
+   <div id="register"></div>
+   <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+   </script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+   </script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+   </script>
+   <script>
+      var toolbarOptions = [
+         ["bold", "italic", "underline", "strike"], // toggled buttons
+         ["blockquote", "code-block"],
 
-               <button type="submit">Register</button>
-               <p>Already have an account? <a href="#" onclick="login()">Login!</a></p>
-            </div>
-         </form>
-      </div>
+         [{
+            header: 1
+         }, {
+            header: 2
+         }], // custom button values
+         [{
+            list: "ordered"
+         }, {
+            list: "bullet"
+         }],
 
-      <script>
-          function login() {
-              document.getElementById('id01').style.display='block'
-              document.getElementById('id02').style.display='none'
-          }
-          function register() {
-              document.getElementById('id01').style.display='none'
-              document.getElementById('id02').style.display='block'
-          }
-          // Get the modal
-          var modal = document.getElementById('id01');
-          var modal2 = document.getElementById('id02');
+         ["clean"], // remove formatting button
+      ];
 
-          // When the user clicks anywhere outside of the modal, close it
-          window.onclick = function(event) {
-              if (event.target === modal || event.target === modal2) {
-                  modal.style.display = "none";
-                  modal2.style.display = "none";
-              }
-          }
-      </script>
-      <script src="https://cdn.icnet.dev/web/drgn/components/js/auth.js"></script>
-      <!-- Fontawesome -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+      var quill = new Quill("#message1", {
+         modules: {
+            toolbar: toolbarOptions,
+         },
+         theme: "snow",
+      });
+   </script>
+</body>
+
 </html>
