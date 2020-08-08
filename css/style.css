@@ -1085,7 +1085,7 @@ footer a[href=""] {
 
   .nav ul {
     height: 90px;
-    width: 350px;
+    width: 650px;
     right: 0;
     display: flex;
     justify-content: space-around;
@@ -1261,17 +1261,8 @@ footer a[href=""] {
   }
 
   .header {
-    width: 100%;
     position: sticky;
     top: 0;
-  }
-
-  .nav ul {
-    height: 90px;
-    width: 35%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
   }
 
   .nav li {
@@ -1315,6 +1306,17 @@ footer a[href=""] {
   .cta {
     font-size: 22px;
     padding: 12px 30px;
+  }
+
+}
+
+@media (min-width: 1450px) {
+  .nav ul {
+    height: 90px;
+    width: 35%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .logo {
@@ -1380,6 +1382,7 @@ footer a[href=""] {
     width: 85%;
   }
 }
+
 
 @media (max-width: 800px) {
   .pre-loader {
@@ -1472,5 +1475,11 @@ footer a[href=""] {
   #news-close {
     top: 7px;
     right: 7px;
+  }
+}
+
+@media (max-width: 870px) {
+  .dropdown-account {
+    display: none !important;
   }
 }
