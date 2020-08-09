@@ -367,14 +367,12 @@ li {
   box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   right: 0;
-  margin-top: 10px;
   transform-origin: top right;
   animation: reveal .25s ease;
 }
 
 /* Links inside the dropdown */
 .dropdown-content a {
-  color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -383,6 +381,12 @@ li {
 .dropdown-item {
   font-size: 15px;
   padding: 10px 20px;
+  color: var(--clr-pdark);
+}
+
+.dropdown-item:active {
+  background-color: var(--clr-pdark) !important;
+  color: #ffffff;
 }
 
 /* Change color of dropdown links on hover */
