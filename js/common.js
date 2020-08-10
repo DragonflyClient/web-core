@@ -3,8 +3,9 @@ getDragonflyAccount()
 /* Dropdown menu
  When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
-function toggleDropdown() {
-    document.getElementById("myDropdown").classList.toggle("show-acc-dropdown");
+function toggleDropdown(element) {
+    console.log(element)
+    element.nextElementSibling.classList.toggle("show-acc-dropdown");
 }
 
 // Close the dropdown menu if the user clicks outside of it
@@ -41,6 +42,7 @@ function getDragonflyAccount() {
                     localStorage.setItem('user', res.username)
                 } else {
                     console.log(res.error)
+                    localStorage.removeItem('user')
                     document.getElementById('drgn-accountname').innerText = 'Log in'
 
                     document.querySelector('.dropdown-account').style.display = 'inline-block'
@@ -71,6 +73,7 @@ function logOut() {
             res.json().then(res => {
                 if (res.success) {
                     location.reload()
+                    localStorage.removeItem('user')
                 }
             })
         }
