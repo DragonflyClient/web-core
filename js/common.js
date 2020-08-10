@@ -1,7 +1,5 @@
 
-window.onload = () => {
-    getDragonflyAccount()
-}
+getDragonflyAccount()
 /* Dropdown menu
  When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
@@ -11,7 +9,6 @@ function toggleDropdown() {
 
 // Close the dropdown menu if the user clicks outside of it
 window.onclick = function (event) {
-    console.log(event.target)
     if (!event.target.matches('.drgn-information')) {
         var dropdowns = document.getElementsByClassName("dropdown-content");
         var i;
@@ -24,6 +21,7 @@ window.onclick = function (event) {
     }
 }
 function getDragonflyAccount() {
+    document.getElementById('drgn-accountname').innerText = localStorage.getItem('user')
     fetch("https://api.playdragonfly.net/cookie/auth", {
         method: 'POST',
         credentials: 'include'
@@ -50,6 +48,7 @@ function getDragonflyAccount() {
         }
     })
 }
+
 /* Dragonfly account logout */
 function logOut() {
 
