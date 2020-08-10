@@ -21,20 +21,24 @@ window.onclick = function (event) {
     }
 }
 function getDragonflyAccount() {
-    document.getElementById('drgn-accountname').innerText = localStorage.getItem('user')
+    const accNameIcon = document.getElementById('drgn-accountname-icon')
+    const savedUser = localStorage.getItem('user')
+    if (savedUser !== null) {
+        document.getElementById('drgn-accountname').innerText = savedUser
+        document.querySelector('.dropdown-account').style.display = 'inline-block'
+        accNameIcon.style.display = 'inline-block'
+    }
+
     fetch("https://api.playdragonfly.net/cookie/auth", {
         method: 'POST',
         credentials: 'include'
     }).then(res => {
         if (res.status === 200) {
             res.json().then(res => {
-                const accNameIcon = document.getElementById('drgn-accountname-icon')
                 if (res.success) {
                     console.log(res.username)
                     document.getElementById('drgn-accountname').innerText = res.username
-
-                    document.querySelector('.dropdown-account').style.display = 'inline-block'
-                    accNameIcon.style.display = 'inline-block'
+                    localStorage.setItem('user', res.username)
                 } else {
                     console.log(res.error)
                     document.getElementById('drgn-accountname').innerText = 'Log in'
@@ -47,6 +51,13 @@ function getDragonflyAccount() {
             })
         }
     })
+}
+
+/* Set parameter from page before */
+if (window.location.href.indexOf('login') > -1) {
+    document.getElementById('switch-register').href = `register?ref=${params.get('ref')}`
+} else if (window.location.href.indexOf('register') > -1) {
+    document.getElementById('switch-login').href = `login?ref=${params.get('ref')}`
 }
 
 /* Dragonfly account logout */
