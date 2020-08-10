@@ -5,7 +5,7 @@ window.onload = () => {
 /* Dropdown menu
  When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
-function myFunction() {
+function toggleDropdown() {
     document.getElementById("myDropdown").classList.toggle("show-acc-dropdown");
 }
 
@@ -44,7 +44,7 @@ function getDragonflyAccount() {
                     document.querySelector('.dropdown-account').style.display = 'inline-block'
                     document.getElementById('myDropdown').remove()
                     accNameIcon.remove()
-                    document.getElementById('drgn-account-login').setAttribute('href', "https://playdragonfly.net/login")
+                    document.getElementById('drgn-account-login').setAttribute('href', `https://playdragonfly.net/login?ref=${window.location.href}`)
                 }
             })
         }
@@ -60,7 +60,6 @@ function logOut() {
         if (res.status === 200) {
             res.json().then(res => {
                 if (res.success) {
-                    console.log(res)
                     location.reload()
                 }
             })
