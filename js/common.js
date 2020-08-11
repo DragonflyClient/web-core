@@ -1,5 +1,18 @@
 
-getDragonflyAccount()
+document.addEventListener('DOMContentLoaded', function () {
+    const accNameIcon = document.getElementById('drgn-accountname-icon')
+    const savedUser = localStorage.getItem('user')
+    console.log('Dom loaded')
+    if (savedUser !== null) {
+        document.getElementById('drgn-accountname').innerText = savedUser
+        document.querySelector('.dropdown-account').style.display = 'inline-block'
+    } else {
+        document.getElementById('drgn-accountname').innerText = 'Log in'
+    }
+
+    getDragonflyAccount()
+})
+
 /* Dropdown menu
  When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
@@ -24,12 +37,6 @@ window.onclick = function (event) {
 function getDragonflyAccount() {
     const accNameIcon = document.getElementById('drgn-accountname-icon')
     const savedUser = localStorage.getItem('user')
-    if (savedUser !== null) {
-        document.getElementById('drgn-accountname').innerText = savedUser
-        document.querySelector('.dropdown-account').style.display = 'inline-block'
-        accNameIcon.style.display = 'inline-block'
-    }
-
     fetch("https://api.playdragonfly.net/cookie/auth", {
         method: 'POST',
         credentials: 'include'

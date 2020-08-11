@@ -341,7 +341,7 @@ li {
 
 #drgn-accountname-icon {
   margin-left: 10px;
-  display: none;
+  display: inline-block;
 }
 
 /* .dropdown-account {
