@@ -363,7 +363,7 @@ html {
 @media (min-width: 1250px) {
 
     .header {
-        position: sticky;
+        position: fixed;
         top: 0;
     }
 
