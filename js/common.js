@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function () {
  When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 function toggleDropdown(element) {
-    console.log(element)
     element.nextElementSibling.classList.toggle("show-acc-dropdown");
 }
 
@@ -85,4 +84,10 @@ function logOut() {
             })
         }
     })
+}
+function scrollToTop() {
+    $("html, body").animate({
+        scrollTop: 0
+    }, 400)
+    closeMenu()
 }
