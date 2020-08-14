@@ -46,7 +46,7 @@ function createLandingVideo(qualifiedName, value) {
     video.muted = true;
     video.autoplay = true;
     video.loop = true;
-    video.currentTime = 8;
+    video.currentTime = 9;
     video.setAttribute('playsinline', "true");
     video.setAttribute("preload", "auto")
     document.body.appendChild(video)
@@ -117,7 +117,7 @@ window.addEventListener('DOMContentLoaded', function () {
     setTimeout(function () {
         const loader = document.querySelector('.pre-loader');
         loader.classList.add('pl-hide');
-    }, 350)
+    }, 100)
 });
 
 
