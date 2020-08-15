@@ -61,16 +61,20 @@ function injectLandingVideo() {
         createLandingVideo()
         withLandingImg = true
     }
+    setTimeout(() => {
+        document.querySelector('.landing-vid-freeze').style.display = 'none'
+        console.log('landing freeze out')
+    }, 1000);
 }
 
-injectLandingVideo()
-const landingVid = document.getElementById("landing-vid")
+
 
 landing.addEventListener("click", toggleLandingVid)
 
 let landingVidStatus = true
 
 function toggleLandingVid() {
+    const landingVid = document.getElementById("landing-vid")
     if (landingVid.paused) {
         landingVidStatus = true
         landingVid.play()
@@ -114,10 +118,9 @@ window.addEventListener("resize", () => {
 
 // Pre-Loader
 window.addEventListener('load', function () {
-    setTimeout(function () {
-        const loader = document.querySelector('.pre-loader');
-        loader.classList.add('pl-hide');
-    }, 0)
+    console.log("doc loaded")
+    const loader = document.querySelector('.pre-loader');
+    loader.classList.add('pl-hide');
 });
 
 
@@ -271,7 +274,7 @@ function scrollToTop() {
 
 // Shrink navbar on scroll
 window.onscroll = function () {
-
+    const landingVid = document.getElementById("landing-vid")
     if (landingVid) {
         if (document.documentElement.scrollTop > window.innerHeight) {
             landingVid.pause()
