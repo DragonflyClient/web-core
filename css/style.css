@@ -225,7 +225,7 @@ li {
 
 .nav ul {
   width: 100%;
-  height: 100vh;
+  height: 94vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -309,7 +309,7 @@ li {
 }
 
 .ham-active .line2 {
-  transform: translateX(10vh);
+  transform: translateX(50vh);
   transition: transform 0.2s ease;
 }
 
@@ -1046,6 +1046,7 @@ footer a[href=""] {
 @media (max-width: 640px) {
   .nav {
     transition: 0.4s ease;
+    width: 100% !important;
   }
 
   .landing {
@@ -1503,7 +1504,13 @@ footer a[href=""] {
 }
 
 @media (max-width: 870px) {
-  .dropdown-account {
-    display: none !important;
+  .nav {
+    width: 75%;
+    position: fixed;
+    top: 0;
+  }
+
+  .drgn-information {
+    font-size: 1.1rem;
   }
 }
