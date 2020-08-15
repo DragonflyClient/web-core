@@ -57,14 +57,16 @@ function createLandingVideo(qualifiedName, value) {
 }
 
 function injectLandingVideo() {
-    if (window.innerWidth > 1000 && !withLandingImg) {
+    if (!withLandingImg) {
         createLandingVideo()
         withLandingImg = true
     }
-    setTimeout(() => {
-        document.querySelector('.landing-vid-freeze').style.display = 'none'
-        console.log('landing freeze out')
-    }, 1000);
+    if (withLandingImg) {
+        setTimeout(() => {
+            document.querySelector('.landing-vid-freeze').style.display = 'none'
+            console.log('landing freeze out')
+        }, 1000);
+    }
 }
 
 
@@ -107,13 +109,13 @@ window.addEventListener("resize", () => {
     }
 
     // Nav
-    if (nav.classList.contains("nav-active")) {
-        setTimeout(function () {
-            nav.style.display = "none"
-        }, 400)
-    } else {
-        nav.style.display = "flex"
-    }
+    // if (nav.classList.contains("nav-active")) {
+    //     setTimeout(function () {
+    //         nav.style.display = "none"
+    //     }, 400)
+    // } else {
+    //     nav.style.display = "flex"
+    // }
 });
 
 // Pre-Loader
@@ -121,11 +123,20 @@ window.addEventListener('load', function () {
     console.log("doc loaded")
     const loader = document.querySelector('.pre-loader');
     loader.classList.add('pl-hide');
+
+    if (window.innerWidth >= 1250) {
+        injectLandingVideo()
+    }
+
 });
 
 
 // Landing video
-window.addEventListener("resize", injectLandingVideo)
+window.addEventListener("resize", function () {
+    if (window.innerWidth > 1000) {
+        injectLandingVideo()
+    }
+})
 /* #endregion */
 
 
@@ -193,6 +204,15 @@ function showNews() {
 
 /* #region functions */
 
+window.addEventListener('resize', function () {
+    if (window.innerWidth > 640) {
+        nav.classList.remove('nav-active')
+        ham.classList.remove('ham-active')
+        nav.style.display = "flex"
+        nav.style.position = "fixed"
+        nav.style.top = 0
+    }
+})
 // Open / Close the nav menu
 function toggleNav() {
     if (nav.classList.contains("nav-active")) {

@@ -1,6 +1,5 @@
 
 document.addEventListener('DOMContentLoaded', function () {
-    const accNameIcon = document.getElementById('drgn-accountname-icon')
     const savedUser = localStorage.getItem('user')
     console.log('Dom loaded')
     if (savedUser !== null) {
