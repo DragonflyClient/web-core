@@ -1075,6 +1075,10 @@ footer a[href=""] {
   .links-wrapper {
     width: 100%;
   }
+
+  .landing-vid-freeze {
+    display: none;
+  }
 }
 
 @media (min-width: 640px) {
