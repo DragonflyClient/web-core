@@ -62,7 +62,7 @@ form.addEventListener('submit', async function (event) {
                         console.log('Success:', data);
                         Swal.fire({
                             title: 'Success!',
-                            text: "Your application was successfully sent!",
+                            text: "Deine Bewerbung wurde erfolgreich abgesendet!",
                             icon: 'success',
                             confirmButtonText: 'Yeah',
                         });
@@ -71,12 +71,12 @@ form.addEventListener('submit', async function (event) {
                 form.reset()
             } else {
                 response.json().then((err) => {
-                    console.log('Error', err)
+                    console.log('Error: ', err)
                     Swal.fire({
-                        title: 'Error!',
+                        title: 'Fehler!',
                         text: err.message,
                         icon: 'error',
-                        confirmButtonText: 'Got it',
+                        confirmButtonText: 'Okay',
                     });
                 })
             }
