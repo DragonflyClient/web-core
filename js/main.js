@@ -46,7 +46,7 @@ function createLandingVideo(qualifiedName, value) {
     video.muted = true;
     video.autoplay = true;
     video.loop = true;
-    video.currentTime = 8;
+    video.currentTime = 9;
     video.setAttribute('playsinline', "true");
     video.setAttribute("preload", "auto")
     document.body.appendChild(video)
@@ -57,20 +57,26 @@ function createLandingVideo(qualifiedName, value) {
 }
 
 function injectLandingVideo() {
-    if (window.innerWidth > 1000 && !withLandingImg) {
+    if (!withLandingImg) {
         createLandingVideo()
         withLandingImg = true
     }
+    if (withLandingImg) {
+        setTimeout(() => {
+            document.querySelector('.landing-vid-freeze').style.display = 'none'
+            console.log('landing freeze out')
+        }, 1000);
+    }
 }
 
-injectLandingVideo()
-const landingVid = document.getElementById("landing-vid")
+
 
 landing.addEventListener("click", toggleLandingVid)
 
 let landingVidStatus = true
 
 function toggleLandingVid() {
+    const landingVid = document.getElementById("landing-vid")
     if (landingVid.paused) {
         landingVidStatus = true
         landingVid.play()
@@ -103,26 +109,34 @@ window.addEventListener("resize", () => {
     }
 
     // Nav
-    if (nav.classList.contains("nav-active")) {
-        setTimeout(function () {
-            nav.style.display = "none"
-        }, 400)
-    } else {
-        nav.style.display = "flex"
-    }
+    // if (nav.classList.contains("nav-active")) {
+    //     setTimeout(function () {
+    //         nav.style.display = "none"
+    //     }, 400)
+    // } else {
+    //     nav.style.display = "flex"
+    // }
 });
 
 // Pre-Loader
-window.addEventListener('DOMContentLoaded', function () {
-    setTimeout(function () {
-        const loader = document.querySelector('.pre-loader');
-        loader.classList.add('pl-hide');
-    }, 350)
+window.addEventListener('load', function () {
+    console.log("doc loaded")
+    const loader = document.querySelector('.pre-loader');
+    loader.classList.add('pl-hide');
+
+    if (window.innerWidth >= 1250) {
+        injectLandingVideo()
+    }
+
 });
 
 
 // Landing video
-window.addEventListener("resize", injectLandingVideo)
+window.addEventListener("resize", function () {
+    if (window.innerWidth > 1000) {
+        injectLandingVideo()
+    }
+})
 /* #endregion */
 
 
@@ -190,6 +204,15 @@ function showNews() {
 
 /* #region functions */
 
+window.addEventListener('resize', function () {
+    if (window.innerWidth > 640) {
+        nav.classList.remove('nav-active')
+        ham.classList.remove('ham-active')
+        nav.style.display = "flex"
+        nav.style.position = "fixed"
+        nav.style.top = 0
+    }
+})
 // Open / Close the nav menu
 function toggleNav() {
     if (nav.classList.contains("nav-active")) {
@@ -271,7 +294,7 @@ function scrollToTop() {
 
 // Shrink navbar on scroll
 window.onscroll = function () {
-
+    const landingVid = document.getElementById("landing-vid")
     if (landingVid) {
         if (document.documentElement.scrollTop > window.innerHeight) {
             landingVid.pause()

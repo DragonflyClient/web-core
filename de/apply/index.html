@@ -8,12 +8,8 @@
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet" />
-   <link rel="icon" href="https://cdn.icnet.dev/web/drgn/assets/img/svg/Dragon.svg" />
-   <link rel="stylesheet" href="./css/style.css" />
+   <link rel="icon" href="https://cdn.icnet.dev/web/drgn/assets/img/svg/logo.svg" />
    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js"></script>
-   <!-- IONICONS -->
-   <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
-   <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
    <meta name="description" content="In order to make the Dragonfly Client and all of its components even better, we need your help. So if you have a
         bug in the client, on the website or on our Discord server, please do not hesitate to report it here.">
    <style>
@@ -26,38 +22,45 @@
 <body>
    <div class="container py-5">
       <h2>Bewerbung</h2>
-      <p>Hoffentlich bist du mit viel Vorfreude hierhergekommen, um dich zu bewerben. Wenn das der Fall ist, füge bitte
-         im
-         untenstehenden Formular deine E-Mail-Adresse ein, wähle die gewünschte Position aus, und Verfasse einen kurzen
-         Text über dich und deine Erfahrungen. Wir freuen uns auf dich!</p>
+      <p>Hoffentlich bist du mit viel Vorfreude hierhergekommen, um dich zu bewerben. Falls du die Vorrausetzungen für einen Aufgabenbereich nicht mehr im Kopf hast, 
+         kannst du sie <a href="https://inceptioncloud.net/de/apply/developer">hier</a> nachlesen. Wenn das der Fall ist, füge bitte im untenstehenden 
+         Formular deine E-Mail-Adresse ein, wähle die gewünschte Position aus, und Verfasse einen kurzen Text über dich und deine Erfahrungen. 
+         Wir freuen uns auf dich!</p>
       <hr class="submit">
-      <form id="suggestion-form">
+      <form id="apply-form">
          <div class="form-group">
             <label for="email">E-Mail-Addresse <span class="text-danger">*</span></label>
             <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp"
-               placeholder="ricks@pickles.com" required />
-            <small id="emailHelp" class="form-text text-muted">Bitte gebe deine E-Mail-Adresse an, damit wir dich für
+               placeholder="rick@ilovepickles.com"  />
+            <small id="emailHelp" class="form-text text-muted">Bitte gib deine E-Mail-Adresse an, damit wir dich für
                weiteres kontaktieren können.</small>
          </div>
          <div class="row">
             <div class="col-md-6">
                <div class="form-group">
-                  <label for="subject">Vorname <span class="text-danger">*</span></label>
-                  <input type="text" minlength="10" required maxlength="100" class="form-control" id="subject"
-                     aria-describedby="emailHelp" placeholder="Rick" name="subject" />
+                  <label for="subject">Name <span class="text-danger">*</span></label>
+                  <input type="text"  class="form-control" id="name"
+                     aria-describedby="emailHelp" placeholder="Rick Sanchez" name="name" />
                </div>
             </div>
             <div class="col-md-6">
                <div class="form-group">
-                  <label for="subject">Nachname </label>
-                  <input type="text" minlength="10" maxlength="100" class="form-control" id="subject"
-                     aria-describedby="emailHelp" placeholder="Sanchez" name="subject" />
+                  <label for="subject">Nickname </label>
+                  <input type="text"  class="form-control" id="nickname"
+                     aria-describedby="emailHelp" placeholder="Smartest man in the universe" name="nickname" />
                </div>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-6">
+               <div class="form-group">
+                  <label for="subject">Discord Name <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="discordName"
+                     aria-describedby="emailHelp" placeholder="ricksanchez#3852" name="discordName" />
+               </div>
+            </div>
+            <div class="col-md-6">
                <div class="form-group">
                   <label for="language">Position <span class="text-danger">*</span></label>
-                  <select class="form-control" name="language" id="language">
+                  <select class="form-control" name="position" id="position">
                      <option value="mc-client-dev" selected>Minecraft Client Developer</option>
                      <option value="mc-server-dev">Minecraft Server Developer</option>
                   </select>
@@ -68,12 +71,12 @@
          <div class="form-group" id="message1">
             <textarea class="form-control" name="message" id="message" style="resize: none;" rows="15"></textarea>
          </div>
-         <button type="submit" id="submit-btn" class="btn btn-primary">
-            Submit
+         <button type="submit" id="submit-btn" style="margin-top: 20px;" class="btn btn-primary">
+            Senden
          </button>
          <hr class="submit" />
          <p class="form-text text-muted">
-            <span class="text-danger">*</span> Required
+            <span class="text-danger">* </span> Erforderlich
          </p>
       </form>
    </div>
@@ -89,32 +92,9 @@
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
    </script>
-   <script>
-      var toolbarOptions = [
-         ["bold", "italic", "underline", "strike"], // toggled buttons
-         ["blockquote", "code-block"],
-
-         [{
-            header: 1
-         }, {
-            header: 2
-         }], // custom button values
-         [{
-            list: "ordered"
-         }, {
-            list: "bullet"
-         }],
-
-         ["clean"], // remove formatting button
-      ];
-
-      var quill = new Quill("#message1", {
-         modules: {
-            toolbar: toolbarOptions,
-         },
-         theme: "snow",
-      });
-   </script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+   <script src="main.js"></script>
 </body>
 
 </html>
