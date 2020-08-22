@@ -1091,7 +1091,8 @@ footer a[href=""] {
   }
 
   .upper-wrapper {
-    width: 40%;
+    width: 150px;
+    overflow: visible;
     z-index: 9999;
   }
 
