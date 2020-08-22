@@ -22,7 +22,7 @@ if (location.href.indexOf('login') > -1 || location.href.indexOf('ideas') > -1) 
             "password": password
         }
 
-        fetch("https://api.playdragonfly.net/cookie/login", {
+        fetch("https://api.playdragonfly.net/v1/authentication/cookie/login", {
             method: "POST",
             body: JSON.stringify(body),
             headers: {
@@ -68,7 +68,7 @@ if (location.href.indexOf('register') > -1 || location.href.indexOf('ideas') > -
             "password": password
         }
 
-        fetch("https://api.playdragonfly.net/cookie/register", {
+        fetch("https://api.playdragonfly.net/v1/authentication/cookie/register", {
             method: "POST",
             body: JSON.stringify(body),
             headers: {

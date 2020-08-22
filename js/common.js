@@ -35,7 +35,7 @@ window.onclick = function (event) {
 function getDragonflyAccount() {
     const accNameIcon = document.getElementById('drgn-accountname-icon')
     const savedUser = localStorage.getItem('user')
-    fetch("https://api.playdragonfly.net/cookie/auth", {
+    fetch("https://api.playdragonfly.net/v1/authentication/cookie/auth", {
         method: 'POST',
         credentials: 'include'
     }).then(res => {
@@ -70,7 +70,7 @@ if (window.location.href.indexOf('login') > -1) {
 /* Dragonfly account logout */
 function logOut() {
 
-    fetch("https://api.playdragonfly.net/cookie/logout", {
+    fetch("https://api.playdragonfly.net/v1/authentication/cookie/logout", {
         method: 'POST',
         credentials: 'include'
     }).then(res => {
