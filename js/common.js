@@ -35,7 +35,7 @@ window.onclick = function (event) {
 function getDragonflyAccount() {
     const accNameIcon = document.getElementById('drgn-accountname-icon')
     const savedUser = localStorage.getItem('user')
-    fetch("https://api.playdragonfly.net/v1/authentication/cookie/auth", {
+    fetch("https://api.playdragonfly.net/v1/authentication/cookie/token", {
         method: 'POST',
         credentials: 'include'
     }).then(res => {
