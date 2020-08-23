@@ -1141,12 +1141,12 @@ footer a[href=""] {
     width: 150px;
   }
 
-  .landing {
-    background-image: none;
-  }
-
   .ham-wrapper {
     display: none;
+  }
+
+  .landing {
+    background-image: none;
   }
 
   .landing {

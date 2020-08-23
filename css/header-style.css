@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  outline: 0;
-}
-
 /* Styles for the default (non-special) dragonfly header */
 :root {
   --clr-fg: #eff1f3;
@@ -39,10 +32,6 @@ div:has(.anchor) {
   top: -150px;
 }
 
-li {
-  list-style: none;
-}
-
 .header {
   position: sticky;
   top: 0;
@@ -55,17 +44,6 @@ li {
 
 #navbar {
   transition: 0.5s ease;
-  position: fixed;
-  top: 0;
-  height: 60px;
-  width: 100%;
-  background-color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
-  z-index: 999;
-}
-
-#navbar {
-  transition: 0.15s ease;
 }
 
 .upper-wrapper {
@@ -83,12 +61,6 @@ li {
   transform: translateY(1000px);
   background-color: var(--clr-pdark);
   transform-origin: left;
-  width: 100%;
-  height: 100vh;
-  position: fixed;
-  opacity: 0;
-  background-color: var(--clr-pdark);
-  transform-origin: left;
 }
 
 .dfo {
@@ -101,29 +73,6 @@ li {
 }
 
 .nav ul {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  animation: showNav .2s;
-  display: block;
-  opacity: 1;
-}
-
-@keyframes showNav {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-.nav ul {
-  padding-left: 0;
   width: 100%;
   height: 94vh;
   display: flex;
@@ -171,7 +120,7 @@ li {
 }
 
 .nav li:after {
-  content: '';
+  content: "";
   width: 100%;
   height: 2px;
   background-color: #fff;
@@ -209,8 +158,6 @@ li {
 }
 
 .ham-active .line2 {
-  transform: translateX(10vh);
-  transition: transform 0.2s ease;
   transform: translateX(50vh);
   transition: transform 0.2s ease;
 }
@@ -227,11 +174,6 @@ li {
   width: 25px;
   transition: transform 0.4s ease;
   transform-origin: left;
-  background-color: var(--clr-pdark);
-  height: 3px;
-  width: 25px;
-  transition: transform 0.2s ease;
-  transform-origin: left;
 }
 
 .line+.line {
@@ -247,8 +189,6 @@ li {
 }
 
 #drgn-accountname-icon {
-  margin-left: 10px;
-  display: none;
   margin-left: 10px;
   display: inline-block;
 }
@@ -277,7 +217,7 @@ li {
   z-index: 1;
   right: 0;
   transform-origin: top right;
-  animation: reveal 0.25s ease;
+  animation: reveal .25s ease;
 }
 
 /* Links inside the dropdown */
@@ -300,7 +240,7 @@ li {
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
-  background-color: #ddd;
+  background-color: #ddd
 }
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
@@ -310,7 +250,7 @@ li {
 
 @keyframes reveal {
   0% {
-    transform: scale(0);
+    transform: scale(0.8);
   }
 
   100% {
@@ -333,18 +273,6 @@ li {
       transform: scale(1);
       opacity: 1;
     }
-  }
-}
-
-@media (max-width: 870px) {
-  .nav {
-    width: 75%;
-    position: fixed;
-    top: 0;
-  }
-
-  .drgn-information {
-    font-size: 1.1rem;
   }
 }
 
@@ -380,7 +308,7 @@ li {
   .nav {
     background-color: unset;
     width: 100%;
-    height: 80px;
+    height: 90px;
     display: flex;
     justify-content: flex-end;
     right: 0;
@@ -395,7 +323,7 @@ li {
   }
 
   .nav ul {
-    height: 80px;
+    height: 90px;
     width: 650px;
     right: 0;
     display: flex;
@@ -427,32 +355,9 @@ li {
   }
 }
 
-@media (min-width: 800px) {
-  .download .logo-big {
-    width: 100%;
-    max-width: 450px;
-    animation: bouncing 2s ease infinite;
-  }
-
-  .landing {
-    height: 100vh;
-  }
-}
-
-@media (min-width: 950px) {
-  .t-shape {
-    display: none;
-  }
-}
-
 @media (min-width: 1250px) {
   .header {
     position: sticky;
-    top: 0;
-  }
-
-  header {
-    position: fixed;
     top: 0;
   }
 
@@ -472,19 +377,25 @@ li {
     align-items: center;
   }
 
-  .nav {
-    position: absolute;
-    right: 20%;
-  }
-
   .logo {
     position: absolute;
     left: 20%;
   }
+
+  .nav {
+    position: absolute;
+    right: 20%;
+  }
 }
 
 @media (max-width: 870px) {
-  .dropdown-account {
-    display: none !important;
+  .nav {
+    width: 75%;
+    position: fixed;
+    top: 0;
+  }
+
+  .drgn-information {
+    font-size: 1.1rem;
   }
 }
