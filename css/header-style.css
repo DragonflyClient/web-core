@@ -58,7 +58,7 @@ div:has(.anchor) {
 .nav {
   width: 100%;
   position: fixed;
-  transform: translateY(1000px);
+  transform: translateX(-100vw);
   background-color: var(--clr-pdark);
   transform-origin: left;
 }
@@ -392,7 +392,10 @@ div:has(.anchor) {
   .nav {
     width: 75%;
     position: fixed;
-    top: 0;
+
+    /* REALLY IMPORTANT!! */
+    top: 60px;
+    display: block;
   }
 
   .drgn-information {

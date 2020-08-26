@@ -209,7 +209,7 @@ li {
 .nav {
   width: 100%;
   position: fixed;
-  transform: translateY(1000px);
+  transform: translateX(-100vw);
   background-color: var(--clr-pdark);
   transform-origin: left;
 }
@@ -220,7 +220,7 @@ li {
 
 .nav-active {
   transform-origin: left;
-  transform: translateY(0);
+  transform: translateX(0);
 }
 
 .nav ul {
@@ -1511,7 +1511,6 @@ footer a[href=""] {
 @media (max-width: 870px) {
   .nav {
     width: 75%;
-    position: fixed;
     top: 0;
   }
 
