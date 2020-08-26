@@ -2,14 +2,19 @@
 /*== SELECTORS ==*/
 /*---------------*/
 /* #region selectors */
-const nav = document.querySelector('#nav');
-const ham = document.querySelector('.ham-wrapper');
-const socials = document.querySelector('.socials');
+// const nav = document.querySelector('#nav');
+// const ham = document.querySelector('.ham-wrapper');
+// const socials = document.querySelector('.socials');
 const landing = document.getElementById("landing")
 const video = document.querySelector('video');
 const accordionList = document.querySelectorAll('.accordion-item-header');
 const width = window.innerWidth;
+const ham = document.querySelector('.ham-wrapper')
+const nav = document.getElementById('nav')
+const socials = document.querySelector('.socials');
+const news = document.getElementById("news")
 const newsCloseBtn = document.getElementById("news-close")
+// const newsCloseBtn = document.getElementById("news-close")
 /* #endregion */
 
 
@@ -28,8 +33,8 @@ let withLandingImg = false
 /*---------------------*/
 
 /* #region main-statements */
-nav.classList.remove('nav-active');
-ham.classList.remove('ham-active');
+// nav.classList.remove('nav-active');
+// ham.classList.remove('ham-active');
 
 // Twenty Twenty only Laptop+
 if (width > 1000) {
@@ -165,96 +170,83 @@ accordionList.forEach((accordionHeader) => {
 });
 
 // Hamburger Menu
-ham.addEventListener('click', toggleNav);
-/* #endregion */
+nav.classList.remove('nav-active');
+ham.classList.remove('ham-active');
+console.log('nav test active')
+let navOpen = false
+ham.addEventListener('click', e => {
 
-const news = document.getElementById("news")
-newsCloseBtn.addEventListener("click", manageNews)
-let newsClosed = false
+    if (!navOpen) {
+        nav.classList.add('nav-active')
+        ham.classList.add('ham-active')
+        socials.classList.add('socials-active')
+        if (news && news.getAttribute('closed') !== "true") {
+            console.log('first if')
+            setTimeout(() => {
+                hideNews()
+            }, 250);
+        } else {
+            console.log('first else')
+            hideNews()
+        }
+        navOpen = true
+    } else {
+        if (news && news.getAttribute('closed') !== "true") {
+            showNews()
+            setTimeout(() => {
+                nav.classList.remove('nav-active')
+                ham.classList.remove('ham-active')
+                socials.classList.remove('socials-active')
+            }, 250);
+        } else {
+            nav.classList.remove('nav-active')
+            ham.classList.remove('ham-active')
+            socials.classList.remove('socials-active')
+        }
 
-function manageNews() {
-    newsClosed = true
-    localStorage.setItem('newsClosed', 'true')
-    hideNews()
-}
+        navOpen = false
+    }
+})
 
 function hideNews() {
-    news.style.transform = `translateY(-${news.offsetHeight}px)`
-    document.getElementById("navbar").style.transform = `translateY(-${news.offsetHeight}px)`
-    document.getElementById("navbar").style.top = `${news.offsetHeight}px`
+    let op = "-"
+    if (news.getAttribute('closed') !== "true") {
+        news.style.transform = `translateY(${op}${news.offsetHeight}px)`
+        document.getElementById("navbar").style.transform = `translateY(${op}${news.offsetHeight}px)`
+        document.getElementById("navbar").style.top = `${news.offsetHeight}px`
+    }
 
-    if (newsClosed && width < 1000) {
+    console.log(op, `translateY(${op}${news.offsetHeight}px)`)
+
+    if (news.getAttribute('closed') == "true" && width < 1000) {
         document.getElementById("features").style.paddingTop = "0px"
         document.getElementById("features").style.marginTop = "-50px"
     }
-    if (newsClosed) {
+    console.log(news.getAttribute('closed') == "true")
+    if (news.getAttribute('closed') == "true") {
         landing.style.transform = `translateY(-${news.offsetHeight}px)`
     }
 }
-
 function showNews() {
-    news.style.transform = `translateY(0px)`
-    document.getElementById("navbar").style.transform = `translateY(0px)`
-    document.getElementById("navbar").style.top = `0px`
+    if (news.getAttribute('closed') !== "true") {
+        news.style.transform = `translateY(0px)`
+        document.getElementById("navbar").style.transform = `translateY(0px)`
+        document.getElementById("navbar").style.top = `0px`
+    }
 }
 
-/*---------------*/
-/*== FUNCTIONS ==*/
-/*---------------*/
+if (news) {
+    newsCloseBtn.addEventListener("click", manageNews)
+}
 
-/* #region functions */
-
-window.addEventListener('resize', function () {
-    if (window.innerWidth > 640) {
-        nav.classList.remove('nav-active')
-        ham.classList.remove('ham-active')
-        nav.style.display = "flex"
-        nav.style.position = "fixed"
-        nav.style.top = 0
-    }
-})
-// Open / Close the nav menu
-function toggleNav() {
-    if (nav.classList.contains("nav-active")) {
-        setTimeout(function () {
-            nav.style.display = "none"
-            nav.style.position = "fixed"
-        }, 350)
-    } else {
-        if (nav.classList.contains("dfo")) {
-            nav.classList.remove("dfo")
-        }
-        nav.style.display = "flex"
-        nav.style.position = "sticky"
-    }
-    setTimeout(function () {
-        nav.classList.toggle('nav-active');
-        ham.classList.toggle('ham-active');
-        socials.classList.toggle('socials-active');
-    }, 5)
-    // Check if user is at top to prevent bugs
-    if (document.documentElement.scrollTop < 50) {
-        document.getElementById("navbar").style.transition = "all .35s ease"
-    } else {
-        document.getElementById("navbar").style.transition = "none"
-    }
-    // Hide news while the menu is open
-    if (!socials.classList.contains("socials-active")) {
-        hideNews()
-        console.log('now')
-        nav.style.position = "fixed"
-        nav.style.top = "auto"
-        landing.style.transform = `translateY(-${news.offsetHeight}px)`
-    } else {
-        if (!newsClosed) {
-            landing.style.transform = `translateY(0px)`
-            showNews()
-            setTimeout(function () {
-                nav.style.position = "sticky"
-                nav.style.top = "0"
-            }, 1000)
-        }
-    }
+function manageNews() {
+    console.log('closing')
+    news.style.transform = `translateY(-${news.offsetHeight}px)`
+    document.getElementById("navbar").style.transform = `translateY(-${news.offsetHeight}px)`
+    document.getElementById("navbar").style.top = `${news.offsetHeight}px`
+    localStorage.setItem('newsClosed', 'true')
+    news.setAttribute('closed', 'true')
+    hideNews()
 }
 
 // Close the nav menu
@@ -284,7 +276,6 @@ if (!window.location.hash) {
         history.scrollRestoration = 'manual';
     }
 }
-
 /* #endregion */
 
 function scrollToTop() {
