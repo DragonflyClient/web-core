@@ -39,7 +39,12 @@ if (location.href.indexOf('login') > -1 || location.href.indexOf('ideas') > -1) 
                         icon: 'success',
                         title: 'Signed in successfully'
                     })
+                    afterLogin(result.success, username)
+                    console.log(location.href, location.href.indexOf('ideas'))
 
+                    if (location.href.indexOf('ideas') < 10) {
+                        location.reload()
+                    }
                 } else {
                     const error = result.error
                     console.log(error)
@@ -48,7 +53,6 @@ if (location.href.indexOf('login') > -1 || location.href.indexOf('ideas') > -1) 
                         title: result.error
                     })
                 }
-                afterLogin(result.success, result.username)
             })
     });
 }
