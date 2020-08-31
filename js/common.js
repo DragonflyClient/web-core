@@ -42,7 +42,7 @@ function getDragonflyAccount() {
         if (res.status === 200) {
             res.json().then(res => {
                 if (res.success) {
-                    console.log(res.username)
+                    console.log(res.username, "fertig!")
                     document.getElementById('drgn-accountname').innerText = res.username
                     localStorage.setItem('user', res.username)
                 } else {
@@ -56,6 +56,15 @@ function getDragonflyAccount() {
                     document.getElementById('drgn-account-login').setAttribute('href', `https://playdragonfly.net/login?ref=${window.location.href}`)
                 }
             })
+        } else {
+            console.log(res.error)
+            localStorage.removeItem('user')
+            document.getElementById('drgn-accountname').innerText = 'Log in'
+
+            document.querySelector('.dropdown-account').style.display = 'inline-block'
+            document.getElementById('myDropdown').remove()
+            accNameIcon.remove()
+            document.getElementById('drgn-account-login').setAttribute('href', `https://playdragonfly.net/login?ref=${window.location.href}`)
         }
     })
 }
