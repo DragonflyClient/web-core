@@ -186,6 +186,7 @@ div:has(.anchor) {
   font-size: 1.2rem;
   border-radius: 5px;
   padding: 5px 15px;
+  min-width: 70px;
 }
 
 #drgn-accountname-icon {
@@ -396,9 +397,5 @@ div:has(.anchor) {
     /* REALLY IMPORTANT!! */
     top: 60px;
     display: block;
-  }
-
-  .drgn-information {
-    font-size: 1.1rem;
   }
 }
