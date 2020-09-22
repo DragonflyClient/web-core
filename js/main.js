@@ -133,6 +133,10 @@ window.addEventListener('load', function () {
         injectLandingVideo()
     }
 
+    if (window.location.search.indexOf("utm_source") > -1)
+        setTimeout(() => {
+            window.history.pushState({}, document.title, "/");
+        }, 50);
 });
 
 
