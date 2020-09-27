@@ -1,5 +1,6 @@
 /* Handle login */
 const formLogin = document.getElementById("form-login")
+const reloadDelay = 500
 const Toast = Swal.mixin({
     toast: true,
     position: 'top-end',
@@ -32,18 +33,21 @@ if (location.href.indexOf('login') > -1 || location.href.indexOf('ideas') > -1) 
         }).then(result => result.json())
             .then(result => {
                 if (result.success) {
-                    console.log(result)
                     const username = result.username
 
                     Toast.fire({
                         icon: 'success',
                         title: 'Signed in successfully'
                     })
-                    afterLogin(result.success, username)
-                    console.log(location.href, location.href.indexOf('ideas'))
+                    setTimeout(() => {
+                        afterLogin(result.success, username)
+                    }, reloadDelay);
 
-                    if (location.href.indexOf('ideas') < 10) {
-                        location.reload()
+                    if (location.href.indexOf('ideas') >= 8) {
+                        console.log(location.href.indexOf('ideas') >= 8)
+                        setTimeout(() => {
+                            location.reload()
+                        }, reloadDelay);
                     }
                 } else {
                     const error = result.error
@@ -89,13 +93,15 @@ if (location.href.indexOf('register') > -1 || location.href.indexOf('ideas') > -
                     })
                 } else {
                     const error = result.error
-                    console.log(result);
+                    console.log(error);
                     Toast.fire({
                         icon: 'error',
-                        title: result.error
+                        title: error
                     })
                 }
-                afterLogin(result.success, result.username)
+                setTimeout(() => {
+                    afterLogin(result.success, result.username)
+                }, reloadDelay);
             })
     });
 
