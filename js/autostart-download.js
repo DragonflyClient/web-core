@@ -4,4 +4,8 @@ window.addEventListener("load", () => {
     setTimeout(() => {
         window.location = downloadLink.getAttribute("href");
     }, 1000);
+
+    fetch("https://api.playdragonfly.net/v1/analytics/download", {
+        method: "POST"
+    })
 });
