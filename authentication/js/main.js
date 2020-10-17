@@ -33,8 +33,19 @@ function afterLogin(success, user, errorCode) {
   } else if (errorCode == 23142) {
     console.log('2FA ERROR')
     const formGroupCode = document.getElementById('form-group_code')
+    const pass = document.getElementById('form-group_password')
+    const user = document.getElementById('form-group_username')
+    const loginGreeting = document.getElementById('login-greeting')
+    const loginSub = document.getElementById('login-subheading')
+
+    pass.style.display = 'none'
+    user.style.display = 'none'
     console.log(formGroupCode)
+    loginGreeting.innerText = 'Confirm your login'
+    loginGreeting.classList.remove('mb-5')
+    loginGreeting.classList.add('mb-1')
     formGroupCode.style.display = "block"
+    loginSub.style.display = 'block'
   }
 }
 
