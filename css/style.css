@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 * {
   margin: 0;
@@ -116,7 +116,7 @@ li {
   }
 }
 
-.pre-loader-point+.pre-loader-point {
+.pre-loader-point + .pre-loader-point {
   margin-left: 20px;
 }
 
@@ -145,7 +145,7 @@ li {
   align-items: start;
 }
 
-.news-desc-content>div {
+.news-desc-content > div {
   margin-top: 3px;
 }
 
@@ -164,7 +164,7 @@ li {
   margin-top: 5px;
 }
 
-.news-closed+.header {
+.news-closed + .header {
   transform: translateY(-200px);
 }
 
@@ -271,7 +271,7 @@ li {
 }
 
 .nav li:after {
-  content: "";
+  content: '';
   width: 100%;
   height: 2px;
   background-color: #fff;
@@ -327,7 +327,7 @@ li {
   transform-origin: left;
 }
 
-.line+.line {
+.line + .line {
   margin-top: 6px;
 }
 
@@ -368,7 +368,7 @@ li {
   z-index: 1;
   right: 0;
   transform-origin: top right;
-  animation: reveal .25s ease;
+  animation: reveal 0.25s ease;
 }
 
 /* Links inside the dropdown */
@@ -382,6 +382,7 @@ li {
   font-size: 15px;
   padding: 10px 20px;
   color: var(--clr-pdark);
+  cursor: pointer;
 }
 
 .dropdown-item:active {
@@ -391,7 +392,7 @@ li {
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
-  background-color: #ddd
+  background-color: #ddd;
 }
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
@@ -414,9 +415,7 @@ li {
   height: 100vh;
   margin-bottom: -95px;
   padding-top: 50px;
-  background-image: linear-gradient(180deg,
-      var(--clr-pdark) 30%,
-      var(--clr-plight) 80%);
+  background-image: linear-gradient(180deg, var(--clr-pdark) 30%, var(--clr-plight) 80%);
   position: relative;
   transition: transform 0.4s ease !important;
 }
@@ -469,7 +468,7 @@ li {
   transition: margin 0.3s ease;
 }
 
-.cta+.cta {
+.cta + .cta {
   margin-left: 10px;
 }
 
@@ -543,7 +542,7 @@ video {
 }
 
 .features:before {
-  content: "";
+  content: '';
   width: 100%;
   height: 10vh;
   clip-path: polygon(0 90%, 0 100%, 100% 100%, 100% 50%);
@@ -574,7 +573,7 @@ video {
 
 .big-cont:nth-child(2)::after,
 .big-cont:nth-child(3)::after {
-  content: "";
+  content: '';
   display: block;
   width: 50%;
   margin: 0 auto;
@@ -585,7 +584,7 @@ video {
   position: absolute;
 }
 
-.big-cont+.big-cont {
+.big-cont + .big-cont {
   margin-top: 100px;
 }
 
@@ -625,7 +624,7 @@ video {
 }
 
 .f-heading::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 34px;
   left: 2px;
@@ -655,7 +654,7 @@ video {
 }
 
 .faq::before {
-  content: "";
+  content: '';
   width: 100%;
   height: 75px;
   clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
@@ -706,7 +705,7 @@ video {
 }
 
 .accordion-item-header::before {
-  content: "\002B";
+  content: '\002B';
   font-size: 2rem;
   position: absolute;
   right: 1rem;
@@ -724,7 +723,7 @@ video {
 }
 
 .accordion-item-body-content::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -817,7 +816,7 @@ video {
 }
 
 .download .content::after {
-  content: "";
+  content: '';
   position: absolute;
   left: -1rem;
   background-color: var(--clr-primary);
@@ -837,8 +836,7 @@ video {
   border-left: 5px solid #ff9100;
   border-radius: 3px;
   padding-bottom: 10px;
-  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.05),
-    0 0 0.05rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.05), 0 0 0.05rem rgba(0, 0, 0, 0.1);
 }
 
 .download .alpha-warning h4 {
@@ -1001,7 +999,7 @@ footer {
   font-size: 25px;
 }
 
-.f-socials a+a {
+.f-socials a + a {
   margin-left: 50px;
 }
 
@@ -1011,7 +1009,7 @@ footer {
   font-size: 25px;
 }
 
-footer a[href=""] {
+footer a[href=''] {
   display: none;
 }
 
@@ -1082,7 +1080,6 @@ footer a[href=""] {
 }
 
 @media (min-width: 640px) {
-
   .header,
   .upper-wrapper {
     height: 80px;
@@ -1276,7 +1273,7 @@ footer a[href=""] {
 
   .big-cont:nth-child(2)::after,
   .big-cont:nth-child(3)::after {
-    content: "";
+    content: '';
     display: none;
   }
 }
@@ -1325,7 +1322,7 @@ footer a[href=""] {
     padding: 12px 25px;
   }
 
-  .cta+.cta {
+  .cta + .cta {
     margin-left: 30px;
   }
 
@@ -1337,7 +1334,6 @@ footer a[href=""] {
     font-size: 22px;
     padding: 12px 30px;
   }
-
 }
 
 @media (min-width: 1450px) {
@@ -1406,13 +1402,11 @@ footer a[href=""] {
 }
 
 @media (max-width: 1600px) {
-
   .f-upper,
   .f-socials {
     width: 85%;
   }
 }
-
 
 @media (max-width: 800px) {
   .pre-loader {
