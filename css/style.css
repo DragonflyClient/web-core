@@ -385,9 +385,10 @@ li {
   cursor: pointer;
 }
 
-.dropdown-item:active {
+.dropdown-item:active,
+.dropdown-item:hover {
   background-color: var(--clr-pdark) !important;
-  color: #ffffff;
+  color: #fff !important;
 }
 
 /* Change color of dropdown links on hover */
@@ -402,11 +403,11 @@ li {
 
 @keyframes reveal {
   0% {
-    transform: scale(0.8);
+    opacity: 0;
   }
 
   100% {
-    transform: scale(1);
+    opacity: 1;
   }
 }
 

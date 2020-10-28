@@ -217,7 +217,7 @@ div:has(.anchor) {
   box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   right: 0;
-  transform-origin: top right;
+  transform-origin: top;
   animation: reveal 0.25s ease;
 }
 
@@ -234,9 +234,10 @@ div:has(.anchor) {
   color: var(--clr-pdark);
 }
 
-.dropdown-item:active {
+.dropdown-item:active,
+.dropdown-item:hover {
   background-color: var(--clr-pdark) !important;
-  color: #ffffff;
+  color: #fff !important;
 }
 
 /* Change color of dropdown links on hover */
@@ -251,11 +252,11 @@ div:has(.anchor) {
 
 @keyframes reveal {
   0% {
-    transform: scale(0.8);
+    opacity: 0;
   }
 
   100% {
-    transform: scale(1);
+    opacity: 1;
   }
 }
 
@@ -266,12 +267,10 @@ div:has(.anchor) {
 
   @keyframes reveal {
     0% {
-      transform: scale(0.75);
       opacity: 0;
     }
 
     100% {
-      transform: scale(1);
       opacity: 1;
     }
   }
