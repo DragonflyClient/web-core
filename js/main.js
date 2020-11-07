@@ -34,6 +34,50 @@ let withLandingImg = false;
 // nav.classList.remove('nav-active');
 // ham.classList.remove('ham-active');
 
+const Toast = Swal.mixin({
+	toast: true,
+	position: 'top-end',
+	showConfirmButton: false,
+	timer: 3000,
+	timerProgressBar: true,
+	didOpen: toast => {
+		toast.addEventListener('mouseenter', Swal.stopTimer);
+		toast.addEventListener('mouseleave', Swal.resumeTimer);
+	}
+});
+
+const params = new URLSearchParams(window.location.search);
+
+window.addEventListener('load', () => {
+	const partnerStatus = params.get('partner_status');
+
+	if (partnerStatus === 'success') {
+		Toast.fire({
+			icon: 'success',
+			title: `Successfully activated ${params.get('utm_campaign')}'s partner code!`
+		});
+		window.history.pushState({}, document.title, './');
+	} else if (partnerStatus === 'failure') {
+		const partnerError = params.get('partner_error');
+		if (partnerError === 'not_found') {
+			const partnerName = params.get('partner_name');
+			console.log(partnerName, 'OB');
+			if (partnerName === 'undefined') {
+				Toast.fire({
+					icon: 'error',
+					title: 'Please specify a partner code.'
+				});
+			} else {
+				Toast.fire({
+					icon: 'error',
+					title: `Partner "${params.get('partner_name')}" couldn't be found!`
+				});
+			}
+			window.history.pushState({}, document.title, './');
+		}
+	}
+});
+
 // Twenty Twenty only Laptop+
 if (width > 1000) {
 	injectScript('./twentytwenty-master/js/jquery.event.move.js');
