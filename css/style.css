@@ -7,6 +7,10 @@
   outline: 0;
 }
 
+.swal2-title {
+  font-weight: 500 !important;
+}
+
 :root {
   --clr-fg: #eff1f3;
   --clr-bg: #37393a;
